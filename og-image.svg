@@ -1,0 +1,25 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Logo icon -->
+  <rect x="100" y="220" width="64" height="64" rx="14" fill="#14b8a6"/>
+  <path d="M116 260 L124 240 L132 252 L140 232 L148 260" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M112 264 C118 260 126 268 134 260 C142 252 150 264 150 264" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" fill="none"/>
+  <!-- Text -->
+  <text x="190" y="242" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff">River Mountain Systems</text>
+  <text x="190" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#94a3b8">IT Services &amp; Solutions</text>
+  <!-- Tagline -->
+  <text x="100" y="380" font-family="system-ui, -apple-system, sans-serif" font-size="32" fill="#2dd4bf">IT that works so you can too.</text>
+  <!-- Services -->
+  <text x="100" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#64748b">Managed IT  |  Cloud Solutions  |  Cybersecurity  |  Network Infrastructure</text>
+  <!-- URL -->
+  <text x="100" y="530" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#475569">rivermountainsystems.com</text>
+  <!-- Accent line -->
+  <rect x="100" y="330" width="80" height="3" rx="1.5" fill="#14b8a6"/>
+  <defs>
+    <radialGradient id="bg" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
