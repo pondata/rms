@@ -363,21 +363,46 @@
           <a href="tel:+13607261468" style="color: inherit; text-decoration: none;">(360) 726-1468</a>
         </div>
       </div>
-      <form class="contact-form" id="contactForm" action="https://formspree.io/f/joberg@rivermountainsystems.com" method="POST">
-        <input type="hidden" name="_subject" value="New inquiry from rivermountainsystems.com">
-        <input type="text" name="_gotcha" style="display:none">
+      <form class="contact-form" id="contactForm">
         <div class="form-row">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Email Address" required>
+          <input type="text" name="name" id="formName" placeholder="Your Name" required>
+          <input type="email" name="email" id="formEmail" placeholder="Email Address" required>
         </div>
-        <input type="text" name="company" placeholder="Company Name">
-        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <input type="text" name="company" id="formCompany" placeholder="Company Name">
+        <textarea name="message" id="formMessage" placeholder="How can we help?" required></textarea>
         <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send Message</button>
+        <p id="formStatus" style="margin-top: 0.5rem; font-size: 0.9rem; display: none;"></p>
       </form>
       <script>
-        document.getElementById('contactForm').addEventListener('submit', function() {
-          document.getElementById('submitBtn').textContent = 'Sending...';
-          document.getElementById('submitBtn').disabled = true;
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('submitBtn');
+          var status = document.getElementById('formStatus');
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+          status.style.display = 'none';
+          fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {
+            method: 'POST',
+            body: JSON.stringify({
+              name: document.getElementById('formName').value,
+              email: document.getElementById('formEmail').value,
+              company: document.getElementById('formCompany').value,
+              message: document.getElementById('formMessage').value
+            })
+          }).then(function() {
+            status.textContent = 'Message sent! We\'ll be in touch shortly.';
+            status.style.color = '#14b8a6';
+            status.style.display = 'block';
+            document.getElementById('contactForm').reset();
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+          }).catch(function() {
+            status.textContent = 'Something went wrong. Please email us directly.';
+            status.style.color = '#ef4444';
+            status.style.display = 'block';
+            btn.textContent = 'Send Message';
+            btn.disabled = false;
+          });
         });
       </script>
     </div>
