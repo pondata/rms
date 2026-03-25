@@ -383,6 +383,8 @@
           status.style.display = 'none';
           fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {
             method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain' },
             body: JSON.stringify({
               name: document.getElementById('formName').value,
               email: document.getElementById('formEmail').value,
