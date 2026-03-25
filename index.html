@@ -363,25 +363,21 @@
           <a href="tel:+13607261468" style="color: inherit; text-decoration: none;">(360) 726-1468</a>
         </div>
       </div>
-      <form class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/joberg@rivermountainsystems.com" method="POST">
+        <input type="hidden" name="_subject" value="New inquiry from rivermountainsystems.com">
+        <input type="text" name="_gotcha" style="display:none">
         <div class="form-row">
-          <input type="text" name="name" id="formName" placeholder="Your Name" required>
-          <input type="email" name="email" id="formEmail" placeholder="Email Address" required>
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Email Address" required>
         </div>
-        <input type="text" name="company" id="formCompany" placeholder="Company Name">
-        <textarea name="message" id="formMessage" placeholder="How can we help?" required></textarea>
-        <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message</button>
+        <input type="text" name="company" placeholder="Company Name">
+        <textarea name="message" placeholder="How can we help?" required></textarea>
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send Message</button>
       </form>
       <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-          e.preventDefault();
-          var name = document.getElementById('formName').value;
-          var email = document.getElementById('formEmail').value;
-          var company = document.getElementById('formCompany').value;
-          var message = document.getElementById('formMessage').value;
-          var subject = encodeURIComponent('Inquiry from ' + name + (company ? ' (' + company + ')' : ''));
-          var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + (company ? '\nCompany: ' + company : '') + '\n\n' + message);
-          window.location.href = 'mailto:joberg@rivermountainsystems.com?subject=' + subject + '&body=' + body;
+        document.getElementById('contactForm').addEventListener('submit', function() {
+          document.getElementById('submitBtn').textContent = 'Sending...';
+          document.getElementById('submitBtn').disabled = true;
         });
       </script>
     </div>
