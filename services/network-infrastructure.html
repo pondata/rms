@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Infrastructure — River Mountain Systems</title>
+  <meta name="description" content="Business network design, deployment, and management. Structured cabling, Wi-Fi, firewalls, VPNs, and network monitoring from River Mountain Systems.">
+  <meta property="og:title" content="Network Infrastructure — River Mountain Systems">
+  <meta property="og:description" content="Business network design, deployment, and management. Structured cabling, Wi-Fi, firewalls, and VPNs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivermountainsystems.com/services/network-infrastructure.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+      --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569;
+      --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+      --blue-500: #3b82f6; --blue-600: #2563eb; --blue-700: #1d4ed8;
+      --teal-400: #2dd4bf; --teal-500: #14b8a6; --teal-600: #0d9488;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-800); background: var(--slate-50);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 64px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem;
+    }
+    .logo svg { flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--slate-400); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-600); }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    .hero {
+      padding: 10rem 1.5rem 5rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }
+    .hero h1 span { color: var(--teal-400); }
+    .hero p { font-size: 1.15rem; color: var(--slate-400); max-width: 560px; margin: 0 auto 2.5rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
+    .btn-outline:hover { border-color: var(--slate-400); background: rgba(255,255,255,0.04); }
+
+    section { padding: 5rem 1.5rem; }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+    .section-header h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--slate-900); }
+    .section-header p { color: var(--slate-500); font-size: 1.05rem; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    .content-section { background: #fff; }
+    .content-section:nth-child(even) { background: var(--slate-50); }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .content-grid.reverse { direction: rtl; }
+    .content-grid.reverse > * { direction: ltr; }
+    .content-text h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; color: var(--slate-900); }
+    .content-text p { color: var(--slate-600); margin-bottom: 1rem; font-size: 0.95rem; }
+    .content-text ul { list-style: none; margin-top: 1rem; }
+    .content-text ul li {
+      padding: 0.5rem 0; padding-left: 1.5rem; position: relative;
+      color: var(--slate-600); font-size: 0.95rem;
+    }
+    .content-text ul li::before {
+      content: ''; position: absolute; left: 0; top: 0.85rem;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--teal-500);
+    }
+    .feature-box {
+      background: var(--slate-50); border: 1px solid var(--slate-200);
+      border-radius: 12px; padding: 2rem;
+    }
+    .content-section:nth-child(even) .feature-box { background: #fff; }
+    .feature-box h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .feature-box .stat {
+      font-size: 2.5rem; font-weight: 700; color: var(--teal-500); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .feature-box p { color: var(--slate-500); font-size: 0.9rem; }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--slate-900), #162033);
+      color: #fff; text-align: center; padding: 5rem 1.5rem;
+    }
+    .cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .cta-section p { color: var(--slate-400); max-width: 500px; margin: 0 auto 2rem; font-size: 1.05rem; }
+
+    footer {
+      background: var(--slate-900); color: var(--slate-400);
+      padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--slate-900); padding: 1.5rem; gap: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .content-grid, .content-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Network Infrastructure",
+    "provider": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "url": "https://rivermountainsystems.com"
+    },
+    "description": "Business network design, deployment, and management including structured cabling, enterprise Wi-Fi, firewalls, VPNs, and network monitoring for small and mid-size businesses.",
+    "areaServed": "United States",
+    "serviceType": "Network Infrastructure Services"
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#why">Why Us</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Network infrastructure <span>you can depend on.</span></h1>
+    <p>Slow Wi-Fi, dropped VoIP calls, and network outages cost your team hours every week. We design, build, and maintain networks that perform — reliably, securely, and at scale.</p>
+    <div class="hero-buttons">
+      <a href="../#contact" class="btn btn-primary">Get a Network Assessment</a>
+      <a href="../#services" class="btn btn-outline">All Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>Network Design & Structured Cabling</h2>
+        <p>A reliable network starts with proper design. We plan network architecture around your actual needs — number of users, bandwidth requirements, VoIP traffic, cloud application usage, and growth projections — then build it with structured cabling that lasts decades, not just until the next office rearrangement.</p>
+        <ul>
+          <li>Site surveys and heat mapping to determine optimal switch and access point placement</li>
+          <li>Cat6/Cat6A structured cabling with proper termination, labeling, and documentation</li>
+          <li>VLAN segmentation to isolate guest traffic, IoT devices, and sensitive systems</li>
+          <li>Rack and patch panel organization that makes future troubleshooting straightforward</li>
+          <li>Network diagrams and documentation so any technician can understand your setup</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">10G</div>
+        <h3>Future-ready cabling</h3>
+        <p>We install Cat6A cabling that supports 10 Gigabit speeds — even if you do not need that today. Pulling cable is the most disruptive part of a network build. Do it once, do it right, and you will not need to re-cable when your bandwidth needs grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid reverse">
+      <div class="content-text">
+        <h2>Enterprise Wi-Fi</h2>
+        <p>Consumer-grade routers and mesh systems are not built for business environments. We deploy enterprise access points with centralized management, proper authentication, and the capacity to handle dozens of concurrent users without degradation.</p>
+        <ul>
+          <li>Wi-Fi 6/6E access points from vendors like Ubiquiti, Meraki, or Aruba — matched to your budget and scale</li>
+          <li>Predictive heat mapping and on-site surveys to eliminate dead zones and interference</li>
+          <li>Separate SSIDs for corporate devices, guest access, and IoT with isolated VLANs behind each</li>
+          <li>802.1X authentication for corporate devices — no shared passwords that walk out the door with former employees</li>
+          <li>Centralized management for firmware updates, policy changes, and usage monitoring across all locations</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">0</div>
+        <h3>Dead zones</h3>
+        <p>We do not guess where to put access points. RF site surveys and heat mapping show exactly where coverage gaps exist, where interference is strongest, and where channel overlap is causing slowdowns. The result is consistent, fast Wi-Fi everywhere your team works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>Firewalls, VPNs & Secure Remote Access</h2>
+        <p>Your firewall is the front door of your network. We deploy business-grade firewalls with intrusion detection, content filtering, and VPN capabilities — giving your team secure access from anywhere while keeping threats out.</p>
+        <ul>
+          <li>Next-gen firewalls (Fortinet, SonicWall, Meraki MX) with unified threat management</li>
+          <li>Site-to-site VPN tunnels connecting branch offices with encrypted, low-latency links</li>
+          <li>Remote access VPN for employees working from home — with split tunneling options for performance</li>
+          <li>Content filtering and application control to block malicious sites and shadow IT</li>
+          <li>Geo-IP blocking and IDS/IPS to detect and stop inbound attack patterns</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">99.9%</div>
+        <h3>Uptime target</h3>
+        <p>We configure failover and redundancy into critical network components. Dual WAN connections, high-availability firewall pairs, and automated failover mean a single point of failure does not take your entire business offline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid reverse">
+      <div class="content-text">
+        <h2>Network Monitoring & Management</h2>
+        <p>Once your network is built, it needs ongoing attention. We monitor bandwidth usage, device health, and security events continuously — catching issues like a failing switch port or a saturated uplink before your team notices slowdowns.</p>
+        <ul>
+          <li>SNMP and flow-based monitoring of all switches, routers, access points, and firewalls</li>
+          <li>Automated alerts for link failures, high utilization, temperature warnings, and device reboots</li>
+          <li>Bandwidth reporting that shows who and what is consuming your internet connection</li>
+          <li>Regular firmware updates and configuration backups so you can recover from hardware failures quickly</li>
+          <li>Quarterly network reviews to plan for growth, new locations, or technology upgrades</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">24/7</div>
+        <h3>Network visibility</h3>
+        <p>We know the health of every device on your network at all times. When a switch port goes down at 2 AM, we know about it and can have a plan in place before your team arrives in the morning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Is your network holding your business back?</h2>
+  <p>We will evaluate your current network and show you where performance, reliability, and security improvements will make the biggest impact.</p>
+  <a href="../#contact" class="btn btn-primary">Schedule a Network Assessment</a>
+</section>
+
+<footer>
+  <a href="../" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <ul class="footer-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#why">Why Us</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

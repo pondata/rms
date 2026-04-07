@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cybersecurity Services — River Mountain Systems</title>
+  <meta name="description" content="Cybersecurity for small businesses: threat assessments, endpoint protection, employee security training, and incident response from River Mountain Systems.">
+  <meta property="og:title" content="Cybersecurity Services — River Mountain Systems">
+  <meta property="og:description" content="Threat assessments, endpoint protection, employee training, and incident response for small businesses.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivermountainsystems.com/services/cybersecurity.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+      --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569;
+      --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+      --blue-500: #3b82f6; --blue-600: #2563eb; --blue-700: #1d4ed8;
+      --teal-400: #2dd4bf; --teal-500: #14b8a6; --teal-600: #0d9488;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-800); background: var(--slate-50);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 64px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem;
+    }
+    .logo svg { flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--slate-400); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-600); }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    .hero {
+      padding: 10rem 1.5rem 5rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+    .hero-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }
+    .hero h1 span { color: var(--teal-400); }
+    .hero p { font-size: 1.15rem; color: var(--slate-400); max-width: 560px; margin: 0 auto 2.5rem; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
+    .btn-outline:hover { border-color: var(--slate-400); background: rgba(255,255,255,0.04); }
+
+    section { padding: 5rem 1.5rem; }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 3rem; }
+    .section-header h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--slate-900); }
+    .section-header p { color: var(--slate-500); font-size: 1.05rem; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    .content-section { background: #fff; }
+    .content-section:nth-child(even) { background: var(--slate-50); }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .content-grid.reverse { direction: rtl; }
+    .content-grid.reverse > * { direction: ltr; }
+    .content-text h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; color: var(--slate-900); }
+    .content-text p { color: var(--slate-600); margin-bottom: 1rem; font-size: 0.95rem; }
+    .content-text ul { list-style: none; margin-top: 1rem; }
+    .content-text ul li {
+      padding: 0.5rem 0; padding-left: 1.5rem; position: relative;
+      color: var(--slate-600); font-size: 0.95rem;
+    }
+    .content-text ul li::before {
+      content: ''; position: absolute; left: 0; top: 0.85rem;
+      width: 8px; height: 8px; border-radius: 50%; background: var(--teal-500);
+    }
+    .feature-box {
+      background: var(--slate-50); border: 1px solid var(--slate-200);
+      border-radius: 12px; padding: 2rem;
+    }
+    .content-section:nth-child(even) .feature-box { background: #fff; }
+    .feature-box h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .feature-box .stat {
+      font-size: 2.5rem; font-weight: 700; color: var(--teal-500); line-height: 1; margin-bottom: 0.5rem;
+    }
+    .feature-box p { color: var(--slate-500); font-size: 0.9rem; }
+
+    .cta-section {
+      background: linear-gradient(135deg, var(--slate-900), #162033);
+      color: #fff; text-align: center; padding: 5rem 1.5rem;
+    }
+    .cta-section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+    .cta-section p { color: var(--slate-400); max-width: 500px; margin: 0 auto 2rem; font-size: 1.05rem; }
+
+    footer {
+      background: var(--slate-900); color: var(--slate-400);
+      padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--slate-900); padding: 1.5rem; gap: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .content-grid, .content-grid.reverse { grid-template-columns: 1fr; direction: ltr; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cybersecurity Services",
+    "provider": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "url": "https://rivermountainsystems.com"
+    },
+    "description": "Comprehensive cybersecurity services including threat assessments, endpoint protection, security awareness training, email security, and incident response for small and mid-size businesses.",
+    "areaServed": "United States",
+    "serviceType": "Cybersecurity Services"
+  }
+  </script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#why">Why Us</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Cybersecurity <span>that fits your business.</span></h1>
+    <p>Small businesses are the number one target for cyberattacks — not because they have the most to steal, but because they are the easiest to breach. We change that.</p>
+    <div class="hero-buttons">
+      <a href="../#contact" class="btn btn-primary">Get a Security Assessment</a>
+      <a href="../#services" class="btn btn-outline">All Services</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>Security Assessments & Risk Analysis</h2>
+        <p>You cannot protect what you do not understand. We start every engagement with a thorough assessment of your current security posture — examining your network, endpoints, user accounts, email configuration, and data handling practices against industry frameworks like CIS Controls and NIST CSF.</p>
+        <p>The assessment covers:</p>
+        <ul>
+          <li>Network vulnerability scanning — identifying exposed services, weak protocols, and unpatched systems</li>
+          <li>Email security review — SPF, DKIM, DMARC configuration and phishing susceptibility</li>
+          <li>Access control audit — who has admin rights, stale accounts, password policies, and MFA adoption</li>
+          <li>Data classification — where your sensitive data lives and who can reach it</li>
+          <li>A prioritized remediation roadmap ranked by risk, not by cost</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">43%</div>
+        <h3>of cyberattacks target small businesses</h3>
+        <p>Attackers know small businesses often lack dedicated security staff. A single compromised email account or ransomware infection can cost tens of thousands in recovery and lost revenue. The assessment identifies your highest-risk gaps before an attacker does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid reverse">
+      <div class="content-text">
+        <h2>Endpoint Protection & Email Security</h2>
+        <p>Antivirus alone stopped being sufficient years ago. Modern endpoint protection uses behavioral analysis and machine learning to detect threats that signature-based tools miss — ransomware, fileless malware, and zero-day exploits.</p>
+        <p>We deploy and manage layered defenses:</p>
+        <ul>
+          <li>Next-gen endpoint protection (EDR) on every workstation, laptop, and server — with 24/7 threat monitoring</li>
+          <li>DNS-level filtering that blocks malicious domains before connections are even made</li>
+          <li>Advanced email filtering with attachment sandboxing, URL rewriting, and impersonation protection</li>
+          <li>Mobile device management (MDM) policies for company and BYOD devices accessing business data</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">91%</div>
+        <h3>of breaches start with email</h3>
+        <p>Phishing remains the most common attack vector. We layer email security beyond what Microsoft 365 or Google Workspace provides by default — adding advanced threat protection, link scanning, and impersonation detection to catch what built-in filters miss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid">
+      <div class="content-text">
+        <h2>Security Awareness Training</h2>
+        <p>Technology catches most threats, but your employees are the last line of defense. We run ongoing security awareness programs that go beyond annual compliance videos — real phishing simulations, practical training, and measurable improvement over time.</p>
+        <ul>
+          <li>Monthly simulated phishing campaigns that mimic real-world attacks targeting your industry</li>
+          <li>Short, focused training modules (5-10 minutes) delivered when employees are most likely to engage</li>
+          <li>Role-specific training for finance, HR, and executive staff who face targeted attacks</li>
+          <li>Reporting culture development — making it easy and safe for employees to flag suspicious emails</li>
+          <li>Quarterly reports showing click rates, reporting rates, and improvement trends</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">70%</div>
+        <h3>Reduction in phishing clicks</h3>
+        <p>Within three months of starting a training program, most organizations see phishing click rates drop from 30%+ to under 10%. The goal is not perfection — it is building habits that make your team a security asset instead of a liability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container">
+    <div class="content-grid reverse">
+      <div class="content-text">
+        <h2>Incident Response & Recovery</h2>
+        <p>If a breach does happen, the speed and quality of your response determines the damage. We build incident response plans before you need them and provide rapid response when you do — containing threats, preserving evidence, and restoring operations.</p>
+        <ul>
+          <li>Documented incident response plan with clear roles, escalation paths, and communication templates</li>
+          <li>Rapid containment — isolating affected systems to prevent lateral movement within minutes</li>
+          <li>Forensic analysis to determine what was accessed, how the attacker got in, and what needs to change</li>
+          <li>Coordinated recovery from backups with verification that restored systems are clean</li>
+          <li>Post-incident review and security improvements to prevent recurrence</li>
+        </ul>
+      </div>
+      <div class="feature-box">
+        <div class="stat">4h</div>
+        <h3>Target containment time</h3>
+        <p>The average small business takes over 200 days to detect a breach. With active monitoring and a prepared response plan, we aim to detect and contain incidents within hours — limiting exposure and dramatically reducing recovery costs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>How secure is your business today?</h2>
+  <p>Our security assessment reveals exactly where your vulnerabilities are — and what to do about them. No scare tactics, just actionable priorities.</p>
+  <a href="../#contact" class="btn btn-primary">Request a Security Assessment</a>
+</section>
+
+<footer>
+  <a href="../" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <ul class="footer-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#why">Why Us</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

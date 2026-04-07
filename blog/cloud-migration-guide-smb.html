@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Migration for Small Business: A Step-by-Step Guide — River Mountain Systems</title>
+  <meta name="description" content="A practical cloud migration guide for small businesses. Learn how to plan your move, avoid common pitfalls, and choose the right cloud platform for your team.">
+  <meta property="og:title" content="Cloud Migration for Small Business: A Step-by-Step Guide">
+  <meta property="og:description" content="A practical cloud migration guide for small businesses. Plan your move, avoid pitfalls, and choose the right cloud platform.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rivermountainsystems.com/blog/cloud-migration-guide-smb.html">
+  <meta property="og:image" content="https://rivermountainsystems.com/og-image.png">
+  <meta property="article:published_time" content="2026-03-18">
+  <meta property="article:author" content="River Mountain Systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cloud Migration for Small Business: A Step-by-Step Guide">
+  <meta name="twitter:description" content="A practical cloud migration guide for small businesses. Plan your move, avoid pitfalls, and choose the right cloud platform.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Cloud Migration for Small Business: A Step-by-Step Guide",
+    "description": "A practical cloud migration guide for small businesses. Learn how to plan your move, avoid common pitfalls, and choose the right cloud platform.",
+    "datePublished": "2026-03-18",
+    "author": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "url": "https://rivermountainsystems.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "url": "https://rivermountainsystems.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://rivermountainsystems.com/favicon.svg"
+      }
+    },
+    "mainEntityOfPage": "https://rivermountainsystems.com/blog/cloud-migration-guide-smb.html"
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --blue-500: #3b82f6;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --teal-400: #2dd4bf;
+      --teal-500: #14b8a6;
+      --teal-600: #0d9488;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-800);
+      background: var(--slate-50);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 64px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem;
+    }
+    .logo svg { flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--slate-400); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-600); }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    .article-header {
+      padding: 8rem 1.5rem 3rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .article-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+    .article-header-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .article-header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }
+    .article-meta { font-size: 0.9rem; color: var(--slate-400); }
+
+    .article-body {
+      max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem;
+    }
+    .article-body h2 {
+      font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--slate-900);
+    }
+    .article-body h3 {
+      font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.75rem; color: var(--slate-800);
+    }
+    .article-body p {
+      margin-bottom: 1.25rem; color: var(--slate-700); font-size: 1.02rem; line-height: 1.75;
+    }
+    .article-body ul, .article-body ol {
+      margin: 0 0 1.25rem 1.5rem; color: var(--slate-700); font-size: 1.02rem; line-height: 1.75;
+    }
+    .article-body li { margin-bottom: 0.5rem; }
+    .article-body a { color: var(--teal-600); text-decoration: underline; }
+    .article-body a:hover { color: var(--teal-500); }
+    .article-body strong { color: var(--slate-800); }
+    .article-body blockquote {
+      border-left: 3px solid var(--teal-500); padding: 1rem 1.5rem; margin: 1.5rem 0;
+      background: var(--slate-100); border-radius: 0 8px 8px 0;
+      color: var(--slate-600); font-style: italic;
+    }
+
+    .article-cta {
+      background: linear-gradient(135deg, var(--slate-900), #162033);
+      color: #fff; border-radius: 12px; padding: 2.5rem; margin-top: 3rem; text-align: center;
+    }
+    .article-cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; }
+    .article-cta p { color: var(--slate-400); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
+    }
+    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.35rem;
+      color: var(--teal-500); text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .back-link:hover { color: var(--teal-600); }
+
+    footer {
+      background: var(--slate-900); color: var(--slate-400);
+      padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--slate-900); padding: 1.5rem; gap: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#why">Why Us</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-content">
+    <h1>Cloud Migration for Small Business: A Step-by-Step Guide</h1>
+    <div class="article-meta">March 18, 2026 &middot; 7 min read</div>
+  </div>
+</div>
+
+<div class="article-body">
+  <a href="./" class="back-link"><span>&larr;</span> All Articles</a>
+
+  <p>"Move to the cloud" has become the default advice for any business still running local servers or on-premise software. And for most small businesses, the advice is correct. But the how matters far more than the whether, and a botched migration can be worse than not migrating at all.</p>
+
+  <p>This guide walks through the real decisions you'll face, in the order you'll face them.</p>
+
+  <h2>Step 1: Inventory What You Actually Have</h2>
+
+  <p>Before you can plan a migration, you need to know what you're migrating. Most businesses underestimate how much they have because data sprawls across devices and systems over time.</p>
+
+  <p>Create an inventory that covers:</p>
+  <ul>
+    <li><strong>File storage:</strong> Shared drives, NAS devices, local hard drives, USB backups. How much data total? What's actively used vs. archived?</li>
+    <li><strong>Applications:</strong> What software does your team use daily? What's installed locally vs. already web-based? Are there desktop-only apps (like specialized accounting software or industry tools) that don't have cloud equivalents?</li>
+    <li><strong>Email:</strong> Where is email hosted now? How much historical email do you need to preserve?</li>
+    <li><strong>Databases:</strong> Any line-of-business applications with databases? CRM systems, inventory management, custom tools?</li>
+    <li><strong>Hardware:</strong> Servers, firewalls, switches, printers that rely on local network resources.</li>
+  </ul>
+
+  <p>This inventory is the foundation of every decision that follows. Skip it, and you'll discover critical systems you forgot about halfway through the migration.</p>
+
+  <h2>Step 2: Decide What Moves and What Doesn't</h2>
+
+  <p>Not everything should go to the cloud. This is where a lot of generic "cloud migration" advice breaks down. Some specific considerations:</p>
+
+  <ul>
+    <li><strong>Large file workflows</strong> (video editing, CAD, large datasets) may perform poorly in the cloud due to upload/download speeds. These often work better with a hybrid approach: local storage for active projects, cloud backup for finished work.</li>
+    <li><strong>Legacy applications</strong> that require a Windows server may need to move to a cloud-hosted virtual machine rather than a SaaS replacement. This is more complex and more expensive than moving to a native cloud app.</li>
+    <li><strong>Compliance requirements</strong> may dictate where certain data can be stored. Healthcare (HIPAA), financial services, and government contractors all have specific rules about cloud storage.</li>
+    <li><strong>Printer and device dependencies</strong> sometimes require a local server or print server. Don't assume you can eliminate all on-premise infrastructure.</li>
+  </ul>
+
+  <p>The realistic outcome for most small businesses is a <strong>hybrid environment</strong>: most things in the cloud, with a few things remaining local for practical reasons.</p>
+
+  <h2>Step 3: Choose Your Cloud Platform</h2>
+
+  <p>For most small businesses, the primary decision is between <a href="microsoft-365-vs-google-workspace.html">Microsoft 365 and Google Workspace</a> for productivity and email. This is where you'll spend most of your cloud budget, and it affects everything else.</p>
+
+  <p>Beyond the productivity suite, you may also need:</p>
+  <ul>
+    <li><strong>Cloud file storage</strong> beyond what's included in your productivity suite (OneDrive, SharePoint, or Google Drive)</li>
+    <li><strong>Cloud-hosted servers</strong> on Azure or AWS if you have applications that need dedicated infrastructure</li>
+    <li><strong>SaaS replacements</strong> for on-premise software (e.g., QuickBooks Online instead of QuickBooks Desktop)</li>
+  </ul>
+
+  <p>Avoid the trap of moving to the cloud for its own sake. Every service you add is a monthly cost that compounds. A 20-person company paying for 5 different cloud services at $10-30 per user per month adds up fast.</p>
+
+  <h2>Step 4: Plan the Migration Sequence</h2>
+
+  <p>The biggest mistake in cloud migration is trying to do everything at once. A phased approach reduces risk and gives your team time to adapt.</p>
+
+  <p>A typical sequence for a small business:</p>
+  <ol>
+    <li><strong>Email first</strong> (1-2 weeks). This is usually the lowest-risk, highest-value migration. Move email to Microsoft 365 or Google Workspace. Migrate historical email in batches.</li>
+    <li><strong>File storage second</strong> (2-4 weeks). Move shared drives to SharePoint/OneDrive or Google Drive. This takes longer because you'll need to clean up folder structures, set permissions, and train people on the new workflow.</li>
+    <li><strong>Applications third</strong> (varies). Replace or migrate line-of-business applications one at a time. Each one is its own mini-project with its own training needs.</li>
+    <li><strong>Server decommission last</strong> (after everything is confirmed working). Don't shut down the old server until you've verified everything is working in the cloud and you've kept a backup for at least 90 days.</li>
+  </ol>
+
+  <h2>Step 5: Handle the Human Side</h2>
+
+  <p>This is where most migrations actually fail. The technology works, but people resist the change because they weren't prepared for it.</p>
+
+  <ul>
+    <li><strong>Communicate early and often.</strong> Tell your team what's changing, why, and when. Give them specific dates, not vague timelines.</li>
+    <li><strong>Train before the switch, not after.</strong> Even 30 minutes of hands-on training before go-live prevents hours of frustrated support calls afterward.</li>
+    <li><strong>Identify your power users.</strong> Every team has 2-3 people who adapt quickly to new technology. Get them on board early and let them help their colleagues.</li>
+    <li><strong>Expect a productivity dip.</strong> The first two weeks after a major change are always slower. Plan for it. Don't schedule a cloud migration the week before a major deadline.</li>
+  </ul>
+
+  <h2>Step 6: Secure the New Environment</h2>
+
+  <p>Moving to the cloud doesn't automatically make you more secure. In fact, a misconfigured cloud environment can be less secure than a well-managed local server. After migration:</p>
+
+  <ul>
+    <li>Enable <a href="small-business-cybersecurity-checklist.html">multi-factor authentication</a> on all cloud accounts</li>
+    <li>Configure sharing policies (who can share files externally, who can't)</li>
+    <li>Set up data loss prevention rules if your platform supports them</li>
+    <li>Enable audit logging so you can see who accessed what</li>
+    <li>Review admin access: not everyone needs global admin privileges</li>
+  </ul>
+
+  <h2>Common Pitfalls to Avoid</h2>
+
+  <p><strong>Underestimating internet bandwidth.</strong> If your office has a 50 Mbps connection shared by 20 people all accessing cloud files simultaneously, things will feel slow. Upgrade your internet before the migration, not after.</p>
+
+  <p><strong>Forgetting about offline access.</strong> What happens when the internet goes down? Make sure critical files are available offline through OneDrive sync or Google Drive's offline mode.</p>
+
+  <p><strong>Ignoring the cost trajectory.</strong> Cloud costs are recurring. That $12/user/month for Microsoft 365 Business Premium across 30 users is $4,320/year, every year. Compare that honestly against one-time server costs plus maintenance.</p>
+
+  <p><strong>No rollback plan.</strong> Always keep your old systems running (even in read-only mode) for at least 30-90 days after migration. If something goes wrong, you need a way back.</p>
+
+  <blockquote>The best cloud migration is the one your team barely notices. That takes planning, not speed.</blockquote>
+
+  <div class="article-cta">
+    <h3>Planning a cloud migration?</h3>
+    <p>River Mountain Systems handles cloud migrations for small businesses every month. We'll assess your current setup, recommend the right approach, and manage the entire process so your team stays productive.</p>
+    <a href="../#contact" class="btn btn-primary">Get a Migration Assessment</a>
+  </div>
+</div>
+
+<footer>
+  <a href="../" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <ul class="footer-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#why">Why Us</a></li>
+    <li><a href="./">Blog</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

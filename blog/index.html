@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Blog — River Mountain Systems</title>
+  <meta name="description" content="Practical IT insights for small and mid-size businesses. Cybersecurity tips, cloud migration guides, and technology strategy from River Mountain Systems.">
+  <meta property="og:title" content="IT Blog — River Mountain Systems">
+  <meta property="og:description" content="Practical IT insights for small and mid-size businesses. Cybersecurity tips, cloud migration guides, and technology strategy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivermountainsystems.com/blog/">
+  <meta property="og:image" content="https://rivermountainsystems.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IT Blog — River Mountain Systems">
+  <meta name="twitter:description" content="Practical IT insights for small and mid-size businesses. Cybersecurity tips, cloud migration guides, and technology strategy.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --blue-500: #3b82f6;
+      --blue-600: #2563eb;
+      --blue-700: #1d4ed8;
+      --teal-400: #2dd4bf;
+      --teal-500: #14b8a6;
+      --teal-600: #0d9488;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-800);
+      background: var(--slate-50);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 64px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem;
+    }
+    .logo svg { flex-shrink: 0; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--slate-400); text-decoration: none; font-size: 0.9rem;
+      font-weight: 500; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-cta {
+      background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
+      border-radius: 6px; font-weight: 600; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-600); }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    /* PAGE HEADER */
+    .page-header {
+      padding: 8rem 1.5rem 3rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
+      color: #fff; text-align: center; position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
+                  radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+    }
+    .page-header-content { position: relative; max-width: 720px; margin: 0 auto; }
+    .page-header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
+    .page-header p { font-size: 1.1rem; color: var(--slate-400); }
+
+    /* SECTIONS */
+    section { padding: 4rem 1.5rem; }
+    .container { max-width: 1120px; margin: 0 auto; }
+
+    /* BLOG CARDS */
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+    }
+    .blog-card {
+      background: #fff;
+      border: 1px solid var(--slate-200);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: box-shadow 0.25s, border-color 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      border-color: var(--teal-400);
+    }
+    .blog-card-date {
+      font-size: 0.8rem; color: var(--teal-500); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;
+    }
+    .blog-card h2 {
+      font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.35;
+    }
+    .blog-card h2 a {
+      color: var(--slate-900); text-decoration: none; transition: color 0.2s;
+    }
+    .blog-card h2 a:hover { color: var(--teal-600); }
+    .blog-card p {
+      color: var(--slate-500); font-size: 0.93rem; flex: 1; margin-bottom: 1.25rem;
+    }
+    .blog-card .read-more {
+      color: var(--teal-500); text-decoration: none; font-weight: 600; font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 0.35rem; transition: gap 0.2s;
+    }
+    .blog-card .read-more:hover { gap: 0.6rem; }
+
+    /* FOOTER */
+    footer {
+      background: var(--slate-900); color: var(--slate-400);
+      padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
+    }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--slate-900); padding: 1.5rem; gap: 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../#services">Services</a></li>
+      <li><a href="../#why">Why Us</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="../#contact">Contact</a></li>
+      <li><a href="../#contact" class="nav-cta">Get Started</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="page-header-content">
+    <h1>IT Insights for Growing Businesses</h1>
+    <p>Practical advice on cybersecurity, cloud, backups, and IT strategy from the River Mountain Systems team.</p>
+  </div>
+</div>
+
+<!-- BLOG LISTING -->
+<section>
+  <div class="container">
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <div class="blog-card-date">March 28, 2026</div>
+        <h2><a href="microsoft-365-vs-google-workspace.html">Microsoft 365 vs. Google Workspace: Which Is Right for Your Business?</a></h2>
+        <p>A side-by-side comparison covering cost, security, collaboration, and admin features to help you pick the right productivity platform for your team.</p>
+        <a href="microsoft-365-vs-google-workspace.html" class="read-more">Read article <span>&rarr;</span></a>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-date">March 24, 2026</div>
+        <h2><a href="why-backups-arent-enough-disaster-recovery.html">Why Backups Aren't Enough: What Small Businesses Get Wrong About Disaster Recovery</a></h2>
+        <p>Most businesses think having backups means they're protected. Here's why a real disaster recovery plan is fundamentally different, and what yours should include.</p>
+        <a href="why-backups-arent-enough-disaster-recovery.html" class="read-more">Read article <span>&rarr;</span></a>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-date">March 18, 2026</div>
+        <h2><a href="cloud-migration-guide-smb.html">Cloud Migration for Small Business: A Step-by-Step Guide</a></h2>
+        <p>Moving to the cloud doesn't have to be chaotic. This guide walks through the real decisions, common pitfalls, and a practical timeline for SMBs.</p>
+        <a href="cloud-migration-guide-smb.html" class="read-more">Read article <span>&rarr;</span></a>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-date">March 12, 2026</div>
+        <h2><a href="small-business-cybersecurity-checklist.html">The Small Business Cybersecurity Checklist: 15 Things to Do This Quarter</a></h2>
+        <p>Actionable cybersecurity steps you can take right now, ranked by impact. No jargon, no enterprise-only solutions. Just practical protection for real businesses.</p>
+        <a href="small-business-cybersecurity-checklist.html" class="read-more">Read article <span>&rarr;</span></a>
+      </div>
+
+      <div class="blog-card">
+        <div class="blog-card-date">March 5, 2026</div>
+        <h2><a href="5-signs-your-business-needs-managed-it.html">5 Signs Your Business Has Outgrown DIY IT</a></h2>
+        <p>Still relying on "the tech-savvy person" in the office? Here are the warning signs that your business needs professional managed IT support.</p>
+        <a href="5-signs-your-business-needs-managed-it.html" class="read-more">Read article <span>&rarr;</span></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="../" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <ul class="footer-links">
+    <li><a href="../#services">Services</a></li>
+    <li><a href="../#why">Why Us</a></li>
+    <li><a href="./">Blog</a></li>
+    <li><a href="../#contact">Contact</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
