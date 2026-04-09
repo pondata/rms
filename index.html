@@ -441,6 +441,189 @@
   </div>
 </section>
 
+<!-- LIVE DEMO DASHBOARD -->
+<section id="demo" style="background: linear-gradient(180deg, #0c1929 0%, #0f172a 100%); padding: 4rem 1.5rem 5rem;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <p style="color: var(--teal-400); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Live System Monitor</p>
+      <h2 style="color: #fff;">This Is What We Do For You</h2>
+      <p style="color: var(--slate-400);">Real-time view of a managed client environment. This is what proactive IT looks like.</p>
+    </div>
+
+    <!-- Status Bar -->
+    <div style="display: flex; align-items: center; gap: 0.75rem; justify-content: center; margin-bottom: 2.5rem; flex-wrap: wrap;">
+      <span id="liveDot" style="width: 10px; height: 10px; background: #22c55e; border-radius: 50%; display: inline-block; animation: pulse-dot 2s infinite;"></span>
+      <span style="color: #22c55e; font-weight: 600; font-size: 0.9rem;">ALL SYSTEMS OPERATIONAL</span>
+      <span style="color: var(--slate-500); font-size: 0.85rem;" id="liveTime"></span>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+
+      <!-- Uptime -->
+      <div class="dash-card">
+        <div class="dash-label">System Uptime</div>
+        <div class="dash-value" style="color: #22c55e;" id="uptimeVal">99.97%</div>
+        <div class="dash-sub" id="uptimeDays"></div>
+      </div>
+
+      <!-- Threats Blocked -->
+      <div class="dash-card">
+        <div class="dash-label">Threats Blocked (30d)</div>
+        <div class="dash-value" style="color: #f59e0b;" id="threatsVal">2,847</div>
+        <div class="dash-sub">Malware, phishing, intrusion attempts</div>
+      </div>
+
+      <!-- Endpoints -->
+      <div class="dash-card">
+        <div class="dash-label">Endpoints Monitored</div>
+        <div class="dash-value" style="color: var(--teal-400);" id="endpointsVal">148</div>
+        <div class="dash-sub"><span style="color:#22c55e;">&#9679;</span> 146 online &nbsp;<span style="color:var(--slate-500);">&#9679;</span> 2 standby</div>
+      </div>
+
+      <!-- Response Time -->
+      <div class="dash-card">
+        <div class="dash-label">Avg. Response Time</div>
+        <div class="dash-value" style="color: #3b82f6;" id="responseVal">8m 12s</div>
+        <div class="dash-sub">Last 30 day average</div>
+      </div>
+    </div>
+
+    <!-- Live Activity Feed -->
+    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; max-width: 700px; margin: 0 auto;">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem;">
+        <span style="color: var(--slate-300); font-weight: 600; font-size: 0.9rem;">Activity Feed</span>
+        <span style="color: var(--slate-500); font-size: 0.8rem;" id="feedRefresh">Auto-refreshing</span>
+      </div>
+      <div id="activityFeed" style="font-family: 'SF Mono', 'Fira Code', monospace; font-size: 0.8rem; line-height: 1.9; color: var(--slate-400); max-height: 200px; overflow: hidden;">
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 2rem; color: var(--slate-500); font-size: 0.85rem;">
+      Want this level of visibility into your own systems?
+      <a href="#contact" style="color: var(--teal-400); text-decoration: underline;">Let's talk.</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .dash-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  .dash-label { color: var(--slate-400); font-size: 0.8rem; font-weight: 500; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  .dash-value { font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.25rem; }
+  .dash-sub { color: var(--slate-500); font-size: 0.8rem; }
+  @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .feed-line { opacity: 0; animation: feed-in 0.4s ease forwards; }
+  @keyframes feed-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
+
+<script>
+(function() {
+  // Live clock
+  function updateTime() {
+    var now = new Date();
+    var el = document.getElementById('liveTime');
+    if (el) el.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' PST';
+  }
+  setInterval(updateTime, 1000);
+  updateTime();
+
+  // Uptime days
+  var start = new Date('2024-06-15');
+  var days = Math.floor((new Date() - start) / 86400000);
+  var el = document.getElementById('uptimeDays');
+  if (el) el.textContent = days + ' days continuous operation';
+
+  // Animate counters
+  function animateCounter(id, target, prefix, suffix) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var current = 0;
+    var step = Math.ceil(target / 40);
+    var timer = setInterval(function() {
+      current += step;
+      if (current >= target) { current = target; clearInterval(timer); }
+      el.textContent = (prefix || '') + current.toLocaleString() + (suffix || '');
+    }, 40);
+  }
+
+  // Trigger counter animation when section is visible
+  var observed = false;
+  var observer = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !observed) {
+      observed = true;
+      animateCounter('threatsVal', 2847, '');
+      animateCounter('endpointsVal', 148, '');
+    }
+  }, { threshold: 0.3 });
+  var demoSection = document.getElementById('demo');
+  if (demoSection) observer.observe(demoSection);
+
+  // Activity feed
+  var activities = [
+    { icon: '&#9679;', color: '#22c55e', text: 'Backup completed — Acme Corp file server (0 errors)' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Security patch applied — 12 endpoints updated to latest build' },
+    { icon: '&#9679;', color: '#f59e0b', text: 'Phishing email blocked — spoofed invoice attachment quarantined' },
+    { icon: '&#9679;', color: '#22c55e', text: 'SSL certificate renewed — portal.client-domain.com' },
+    { icon: '&#9679;', color: '#3b82f6', text: 'Help desk ticket #4891 resolved — printer driver reinstalled' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Firewall rules updated — blocked 14 suspicious IPs from CN range' },
+    { icon: '&#9679;', color: '#f59e0b', text: 'Disk usage alert — NAS-02 at 78%, cleanup scheduled' },
+    { icon: '&#9679;', color: '#22c55e', text: 'New user provisioned — M365 account + MFA configured' },
+    { icon: '&#9679;', color: '#3b82f6', text: 'Monthly security report generated — 0 incidents, 47 threats blocked' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Antivirus definitions updated across all endpoints' },
+    { icon: '&#9679;', color: '#22c55e', text: 'VPN tunnel health check — all 3 site-to-site links stable' },
+    { icon: '&#9679;', color: '#f59e0b', text: 'Brute force attempt blocked — 23 failed logins from 185.x.x.x' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Windows Server 2022 cumulative update applied — DC-01' },
+    { icon: '&#9679;', color: '#3b82f6', text: 'Help desk ticket #4892 resolved — Outlook calendar sync fixed' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Backup verification — test restore successful (RPO: 2h 14m)' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Network uptime check — all switches and APs responding' },
+    { icon: '&#9679;', color: '#f59e0b', text: 'Suspicious login detected — MFA challenge sent, access denied' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Cloud cost optimization — rightsized 3 Azure VMs, saving $127/mo' }
+  ];
+
+  var feed = document.getElementById('activityFeed');
+  var feedIndex = 0;
+  var maxLines = 7;
+
+  function randomTime() {
+    var h = Math.floor(Math.random() * 12) + 1;
+    var m = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+    var s = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+    return h + ':' + m + ':' + s;
+  }
+
+  function addFeedLine() {
+    if (!feed) return;
+    var item = activities[feedIndex % activities.length];
+    var line = document.createElement('div');
+    line.className = 'feed-line';
+    line.innerHTML = '<span style="color:var(--slate-600);">' + randomTime() + '</span> <span style="color:' + item.color + ';">' + item.icon + '</span> ' + item.text;
+    feed.insertBefore(line, feed.firstChild);
+    feedIndex++;
+    while (feed.children.length > maxLines) { feed.removeChild(feed.lastChild); }
+  }
+
+  // Add initial lines
+  for (var i = 0; i < 5; i++) { addFeedLine(); }
+  // Add new line every 4 seconds
+  setInterval(addFeedLine, 4000);
+
+  // Randomly fluctuate response time
+  var respEl = document.getElementById('responseVal');
+  setInterval(function() {
+    if (!respEl) return;
+    var m = 7 + Math.floor(Math.random() * 4);
+    var s = String(Math.floor(Math.random() * 60)).padStart(2, '0');
+    respEl.textContent = m + 'm ' + s + 's';
+  }, 5000);
+})();
+</script>
+
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
