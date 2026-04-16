@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/ltlai/rms log --oneline -5)",
+      "Bash(git -C /Users/ltlai/rms remote -v)",
+      "Bash(qlmanage -t -s 1200 -o . og-image.svg)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo:*)",
+      "Bash(git rm:*)",
+      "Bash(git push:*)",
+      "Bash(dig rivermountainsystems.com +short)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{redirect_url}\" https://rivermountainsystems.com)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} %{redirect_url}\" http://rivermountainsystems.com)",
+      "Bash(dig www.rivermountainsystems.com +short)",
+      "Bash(dig rivermountainsystems.com MX +short)"
+    ]
+  }
+}
