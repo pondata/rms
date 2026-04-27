@@ -8,12 +8,12 @@
   <meta property="og:title" content="Managed IT Services Vancouver WA | River Mountain Systems">
   <meta property="og:description" content="Managed IT services in Vancouver, WA from $99/user/mo. Local, founder-led IT support for SMBs in the Portland metro area.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rivermountainsystems.com">
-  <meta property="og:image" content="https://rivermountainsystems.com/og-image.png">
+  <meta property="og:url" content="https://www.rivermountainsystems.com">
+  <meta property="og:image" content="https://www.rivermountainsystems.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Managed IT Services Vancouver WA | River Mountain Systems">
   <meta name="twitter:description" content="Managed IT services in Vancouver, WA from $99/user/mo. Local, founder-led IT support for SMBs in the Portland metro area.">
-  <link rel="canonical" href="https://rivermountainsystems.com/">
+  <link rel="canonical" href="https://www.rivermountainsystems.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- ANALYTICS PIXELS — REPLACE PLACEHOLDER IDs (see SETUP.md) -->
@@ -74,7 +74,7 @@
     "additionalType": "http://www.productontology.org/id/Information_technology_consulting",
     "name": "River Mountain Systems",
     "description": "River Mountain Systems provides reliable IT services, managed support, cloud solutions, and cybersecurity for small and mid-size businesses in Vancouver WA and the Portland metro area.",
-    "url": "https://rivermountainsystems.com",
+    "url": "https://www.rivermountainsystems.com",
     "email": "joberg@rivermountainsystems.com",
     "telephone": "+13606444820",
     "address": {
@@ -316,6 +316,10 @@
     .hero h1 span { color: var(--teal-400); }
     .hero p { font-size: 1.15rem; color: var(--slate-400); max-width: 560px; margin: 0 auto 2.5rem; }
     .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-phone-btn { font-size: 1.15rem; padding: 1.05rem 2.25rem; box-shadow: 0 4px 20px rgba(20, 184, 166, 0.35); }
+    @media (max-width: 768px) {
+      .hero-phone-btn { width: 100%; font-size: 1.2rem; padding: 1.1rem 1.5rem; }
+    }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
@@ -520,11 +524,12 @@
       River Mountain Systems
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="services/it-operations.html">IT Operations</a></li>
+      <li><a href="services/it-operations.html">IT</a></li>
       <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="case-studies/">Case Studies</a></li>
+      <li><a href="tools/it-health-check.html">Free Tool</a></li>
+      <li><a href="blog/">Blog</a></li>
       <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
@@ -538,14 +543,57 @@
   <div class="hero-content">
     <h1>Managed IT Services in Vancouver, WA — <span>Without the Big-Company Price Tag</span></h1>
     <p>Local, founder-led IT support, cybersecurity, cloud, and logistics tech for businesses in Vancouver, WA and the greater Portland metro area. Flat-rate from <strong style="color:#fff;">$99/user/mo</strong>. No surprise invoices.</p>
-    <div class="hero-buttons">
-      <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
-      <a href="#contact" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'book_consult',location:'hero'})">Book a 30-min Consult</a>
+    <div class="hero-buttons" style="margin-bottom:0.75rem;">
+      <a href="tel:+13606444820" class="btn btn-primary hero-phone-btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
       <a href="pricing.html" class="btn btn-outline">See Pricing</a>
     </div>
-    <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--slate-400);">
+    <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--slate-400);">
       <span style="color:#22c55e;">●</span> Justin answers Mon–Fri 8a–6p PT
     </p>
+
+    <!-- Quick 3-field contact form -->
+    <form id="quickForm" style="max-width:520px;margin:2rem auto 0;text-align:left;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;">
+      <p style="color:#fff;font-weight:700;font-size:0.95rem;margin-bottom:0.85rem;text-align:center;">…or send us a quick note</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
+        <input type="text" name="name" id="quickName" placeholder="Your name" required style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
+        <input type="email" name="email" id="quickEmail" placeholder="Email" required style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
+      </div>
+      <textarea name="message" id="quickMessage" rows="2" placeholder="What's broken or what do you want to build?" required style="width:100%;padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;margin-bottom:0.6rem;resize:vertical;"></textarea>
+      <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+        <button type="submit" id="quickSubmitBtn" class="btn btn-primary" style="font-size:0.95rem;">Send</button>
+        <a href="contact.html" style="color:var(--slate-400);font-size:0.85rem;text-decoration:underline;">Need to share more? →</a>
+      </div>
+      <p id="quickStatus" style="display:none;font-size:0.85rem;margin-top:0.6rem;"></p>
+    </form>
+    <script>
+      document.getElementById('quickForm').addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = document.getElementById('quickSubmitBtn');
+        var status = document.getElementById('quickStatus');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        var fd = new FormData();
+        fd.append('name', document.getElementById('quickName').value);
+        fd.append('email', document.getElementById('quickEmail').value);
+        fd.append('message', document.getElementById('quickMessage').value);
+        fd.append('source', 'hero_quickform');
+        fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {method:'POST', mode:'no-cors', body: fd}).then(function(){
+          if (window.rmsTrack) rmsTrack('form_submit', {form:'hero_quickform'});
+          status.textContent = '✓ Got it — Justin will reach out within 1 business day. For urgent issues call (360) 644-4820.';
+          status.style.color = '#22c55e';
+          status.style.display = 'block';
+          document.getElementById('quickForm').reset();
+          btn.textContent = 'Send';
+          btn.disabled = false;
+        }).catch(function(){
+          status.textContent = 'Something went wrong. Please call (360) 644-4820.';
+          status.style.color = '#ef4444';
+          status.style.display = 'block';
+          btn.textContent = 'Send';
+          btn.disabled = false;
+        });
+      });
+    </script>
   </div>
 </section>
 
@@ -632,14 +680,13 @@
 
 <script>
 (function() {
-  // Live clock
+  // Live clock — only ticks while the dashboard is in the viewport (saves CPU + battery on mobile)
+  var clockTimer = null;
   function updateTime() {
     var now = new Date();
     var el = document.getElementById('liveTime');
     if (el) el.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + ' PST';
   }
-  setInterval(updateTime, 1000);
-  updateTime();
 
   // Uptime days
   var start = new Date('2024-06-15');
@@ -660,17 +707,43 @@
     }, 40);
   }
 
-  // Trigger counter animation when section is visible
+  // Master visibility gate: dashboard runs only when on screen + tab visible
+  var dashboardVisible = false;
   var observed = false;
+  var feedTimer = null, respTimer = null;
+
+  function startDashboard() {
+    if (clockTimer === null) { updateTime(); clockTimer = setInterval(updateTime, 1000); }
+    if (feedTimer === null && typeof addFeedLine === 'function') { feedTimer = setInterval(addFeedLine, 4000); }
+    if (respTimer === null && typeof tickResponse === 'function') { respTimer = setInterval(tickResponse, 5000); }
+  }
+  function stopDashboard() {
+    if (clockTimer !== null) { clearInterval(clockTimer); clockTimer = null; }
+    if (feedTimer !== null) { clearInterval(feedTimer); feedTimer = null; }
+    if (respTimer !== null) { clearInterval(respTimer); respTimer = null; }
+  }
+
   var observer = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting && !observed) {
-      observed = true;
-      animateCounter('threatsVal', 2847, '');
-      animateCounter('endpointsVal', 148, '');
+    dashboardVisible = entries[0].isIntersecting;
+    if (dashboardVisible) {
+      if (!observed) {
+        observed = true;
+        animateCounter('threatsVal', 2847, '');
+        animateCounter('endpointsVal', 148, '');
+      }
+      if (!document.hidden) startDashboard();
+    } else {
+      stopDashboard();
     }
-  }, { threshold: 0.3 });
+  }, { threshold: 0.1 });
   var demoSection = document.getElementById('demo');
   if (demoSection) observer.observe(demoSection);
+
+  // Pause when tab loses focus
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) stopDashboard();
+    else if (dashboardVisible) startDashboard();
+  });
 
   // Activity feed
   var activities = [
@@ -716,19 +789,20 @@
     while (feed.children.length > maxLines) { feed.removeChild(feed.lastChild); }
   }
 
-  // Add initial lines
+  // Add initial lines (so the section isn't empty before the user scrolls in)
   for (var i = 0; i < 5; i++) { addFeedLine(); }
-  // Add new line every 4 seconds
-  setInterval(addFeedLine, 4000);
 
-  // Randomly fluctuate response time
+  // Response-time tick — function is referenced by the visibility gate above
   var respEl = document.getElementById('responseVal');
-  setInterval(function() {
+  function tickResponse() {
     if (!respEl) return;
     var m = 7 + Math.floor(Math.random() * 4);
     var s = String(Math.floor(Math.random() * 60)).padStart(2, '0');
     respEl.textContent = m + 'm ' + s + 's';
-  }, 5000);
+  }
+  // Expose to outer scope so the visibility-gated startDashboard can find them
+  window._rmsAddFeedLine = addFeedLine;
+  window._rmsTickResponse = tickResponse;
 })();
 </script>
 
@@ -801,89 +875,6 @@
     <p style="text-align:center;margin-top:1.5rem;">
       <a href="tools/it-health-check.html" style="display:inline-block;background:#f0fdfa;color:var(--teal-700);padding:0.7rem 1.25rem;border-radius:999px;font-weight:600;font-size:0.9rem;text-decoration:none;border:1px solid var(--teal-500);">⚡ Free 5-min IT Health Check →</a>
     </p>
-    <div style="display:none;" class="services-grid">
-
-      <a href="services/managed-it.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-        </div>
-        <h3>Managed IT Support</h3>
-        <p>Proactive monitoring, help desk, and on-site support to keep your systems running smoothly around the clock.</p>
-      </a>
-
-      <a href="services/cloud-solutions.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        </div>
-        <h3>Cloud Solutions</h3>
-        <p>Migration, management, and optimization for Microsoft 365, Google Workspace, AWS, and Azure environments.</p>
-      </a>
-
-      <a href="services/cybersecurity.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
-        </div>
-        <h3>Cybersecurity</h3>
-        <p>Threat assessments, endpoint protection, employee training, and incident response to safeguard your data.</p>
-      </a>
-
-      <a href="services/network-infrastructure.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg>
-        </div>
-        <h3>Network Infrastructure</h3>
-        <p>Design, deployment, and maintenance of reliable wired and wireless networks built for performance.</p>
-      </a>
-
-      <a href="services/backup-recovery.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
-        </div>
-        <h3>Backup & Recovery</h3>
-        <p>Automated backups, disaster recovery planning, and tested restore procedures so you never lose critical data.</p>
-      </a>
-
-      <a href="services/it-consulting.html" class="service-card">
-        <div class="service-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
-        </div>
-        <h3>IT Consulting</h3>
-        <p>Strategic technology planning, vendor management, and digital transformation roadmaps aligned to your goals.</p>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-<section id="why">
-  <div class="container">
-    <div class="section-header">
-      <h2>Why River Mountain Systems</h2>
-      <p>We bring enterprise-grade IT to businesses that need reliability without the overhead.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-item">
-        <div class="why-number">&lt;15m</div>
-        <h3>Avg. Response Time</h3>
-        <p>Fast support when you need it most</p>
-      </div>
-      <div class="why-item">
-        <div class="why-number">24/7</div>
-        <h3>Monitoring</h3>
-        <p>Around-the-clock system oversight</p>
-      </div>
-      <div class="why-item">
-        <div class="why-number">99.9%</div>
-        <h3>Uptime SLA</h3>
-        <p>Reliability you can count on</p>
-      </div>
-      <div class="why-item">
-        <div class="why-number">100%</div>
-        <h3>Local & Personal</h3>
-        <p>Real people, not ticket queues</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -920,8 +911,44 @@
   </div>
 </section>
 
+<!-- CASE STUDIES + BLOG TEASER -->
+<section id="resources" style="background: var(--slate-50); padding: 4rem 1.5rem;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom: 2rem;">
+      <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Resources</p>
+      <h2>How we work, how you can use us</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:1000px;margin:0 auto;">
+      <a href="case-studies/managed-it-onboarding.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;">
+        <div style="font-size:0.7rem;font-weight:700;color:var(--teal-600);background:#ccfbf1;display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;">Case Study · IT</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">Managed IT onboarding: 30-day walkthrough</h3>
+        <p style="color:var(--slate-600);font-size:0.9rem;margin-bottom:0.75rem;">Discovery → stabilize → secure → roadmap. The exact playbook we run for new IT clients.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.85rem;">Read walkthrough →</span>
+      </a>
+      <a href="case-studies/wms-implementation.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;">
+        <div style="font-size:0.7rem;font-weight:700;color:#d97706;background:#fef3c7;display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;">Case Study · Logistics</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">WMS implementation: 12-week walkthrough</h3>
+        <p style="color:var(--slate-600);font-size:0.9rem;margin-bottom:0.75rem;">Why "WMS in 6 weeks" is a lie. Honest week-by-week breakdown of a real implementation.</p>
+        <span style="color:#d97706;font-weight:600;font-size:0.85rem;">Read walkthrough →</span>
+      </a>
+      <a href="tools/it-health-check.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--teal-500);border-radius:14px;padding:1.5rem;display:block;">
+        <div style="font-size:0.7rem;font-weight:700;color:var(--teal-600);background:#ccfbf1;display:inline-block;padding:0.25rem 0.6rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.6rem;">Free Tool</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.4rem;">IT Health Check — 5 min, no email required</h3>
+        <p style="color:var(--slate-600);font-size:0.9rem;margin-bottom:0.75rem;">12-question scorecard. Get an honest score and a personalized priority list of what to fix first.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.85rem;">Take the quiz →</span>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--slate-500);font-size:0.9rem;">
+      Recent posts: <a href="blog/wms-implementation-guide-smb.html" style="color:var(--teal-600);font-weight:600;">WMS guide</a> ·
+      <a href="blog/ga4-setup-for-smbs.html" style="color:var(--teal-600);font-weight:600;">GA4 setup</a> ·
+      <a href="blog/edi-for-retail-suppliers.html" style="color:var(--teal-600);font-weight:600;">EDI primer</a> ·
+      <a href="blog/event-tech-checklist.html" style="color:var(--teal-600);font-weight:600;">Event tech checklist</a>
+    </p>
+  </div>
+</section>
+
 <!-- REVIEWS PLACEHOLDER -->
-<section id="reviews" style="background: var(--slate-50); padding: 4rem 1.5rem;">
+<section id="reviews" style="background: #fff; padding: 4rem 1.5rem;">
   <div class="container">
     <div class="section-header" style="margin-bottom:2rem;">
       <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Reviews</p>
@@ -1179,30 +1206,8 @@
   </ul>
   <p style="color:var(--slate-500);font-size:0.8rem;margin-top:1rem;">Also: Data &amp; analytics · AI integration · Workflow automation · VoIP · Document management — ask about these on your consult.</p>
 
-  <!-- NEWSLETTER OPT-IN -->
-  <div style="max-width:420px;margin:2rem auto 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem;">
-    <p style="color:#fff;font-weight:600;font-size:0.95rem;margin-bottom:0.4rem;">📬 Monthly IT &amp; logistics field notes</p>
-    <p style="color:var(--slate-400);font-size:0.85rem;margin-bottom:0.85rem;">One short email per month with practical notes from active client work. Unsubscribe anytime.</p>
-    <form id="newsletterForm" style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-      <input type="email" id="newsletterEmail" placeholder="your@email.com" required style="flex:1;min-width:180px;padding:0.6rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.25);color:#fff;font-family:inherit;font-size:0.9rem;">
-      <button type="submit" style="padding:0.6rem 1.1rem;border-radius:6px;border:none;background:var(--teal-500);color:#fff;font-weight:600;cursor:pointer;font-size:0.9rem;">Subscribe</button>
-    </form>
-    <p id="newsletterStatus" style="color:var(--teal-400);font-size:0.8rem;margin-top:0.5rem;display:none;">Thanks — you're on the list.</p>
-  </div>
-  <script>
-    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var email = document.getElementById('newsletterEmail').value;
-      // TODO: replace with real newsletter integration (ConvertKit / Beehiiv / Mailchimp) — see SETUP.md
-      var fd = new FormData();
-      fd.append('newsletter_email', email);
-      fd.append('source', 'homepage_footer');
-      fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {method:'POST', mode:'no-cors', body: fd}).catch(function(){});
-      if (window.rmsTrack) rmsTrack('newsletter_signup', {source: 'footer'});
-      document.getElementById('newsletterStatus').style.display = 'block';
-      document.getElementById('newsletterEmail').value = '';
-    });
-  </script>
+  <!-- Newsletter opt-in removed until a real ESP (Beehiiv / ConvertKit) is wired up. See SETUP.md §10. -->
+  <p style="color:var(--slate-500);font-size:0.85rem;margin-top:1rem;">Want updates when we publish? <a href="mailto:joberg@rivermountainsystems.com?subject=Newsletter%20signup" style="color:var(--teal-400);">Email Justin</a> to be on the early list.</p>
 
   <p style="margin-top:1.5rem;">&copy; 2026 River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>

@@ -189,3 +189,30 @@ Per PLAN.md §9 Phase 3:
 - [ ] Check the Google Apps Script form endpoint is still valid
 - [ ] Run Lighthouse on at least homepage + 1 hub
 - [ ] Verify Google Business Profile is claimed
+
+---
+
+## AUDIT remediation (2026-04-27)
+
+The following audit findings have been remediated this round:
+
+### Done
+- ✅ All canonical URLs and `sitemap.xml` URLs migrated apex → `www.rivermountainsystems.com`
+- ✅ Hidden 6-card services-grid + obsolete "Why us" stats block deleted from homepage
+- ✅ Nav + footer updated across all pages: added Case Studies + Free Tool to nav (renamed "IT Operations" → "IT" to make room)
+- ✅ Newsletter form removed from footer (was sending to wrong endpoint, no real ESP wired)
+- ✅ 3-field quick-contact form added inside the homepage hero (drives form submissions without making the long form gate)
+- ✅ Live demo dashboard now pauses when scrolled out of view OR tab loses focus (saves CPU + battery on mobile)
+- ✅ Mobile hero phone CTA boosted to `width:100%` + `font-size:1.2rem` so it dominates the fold
+- ✅ Standalone `/contact.html` built (was previously only a homepage anchor)
+- ✅ Case-studies + Free Tool teaser section added to homepage
+- ✅ Six old service pages (managed-it, cybersecurity, cloud-solutions, network-infrastructure, backup-recovery, it-consulting) given `<meta http-equiv="refresh">` to the IT Operations hub + `<meta name="robots" content="noindex,follow">` + canonical pointing to hub. Anchor IDs added to corresponding feature cards on the hub. Removed from sitemap.
+- ✅ "Microsoft Partner ID: TODO" line removed from `/about.html` until you actually have one
+- ✅ 404 page rebuilt with nav + 6 popular-page links + click-to-call
+
+### User actions still required (these are accounts/IDs you control, not code)
+- [ ] **Replace pixel placeholders** — same as before (GA4 / Ads / Meta / LinkedIn / Clarity)
+- [ ] **Compress `og-image.png`** from 458 KB → <100 KB. Easiest: drag into [tinypng.com](https://tinypng.com), replace file in repo. Affects link-preview unfurl speed on Slack, LinkedIn, iMessage.
+- [ ] **Wire a real newsletter** if/when you commit to monthly content (Beehiiv / ConvertKit / Mailchimp). The mailto-fallback link in the footer is a stopgap.
+- [ ] **Verify Cal.com URL** — the link `cal.com/joberg/30min` is still a placeholder.
+- [ ] **GBP optimization** — same as before, highest-ROI digital activity.
