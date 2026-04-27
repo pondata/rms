@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free IT Health Check — Score Your Business in 5 Minutes | River Mountain Systems</title>
+  <meta name="description" content="Free 12-question IT health check. Score your business on security, backups, support, and infrastructure. Get a personalized priority list of what to fix first.">
+  <meta property="og:title" content="Free IT Health Check | River Mountain Systems">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://rivermountainsystems.com/tools/it-health-check.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;--green-500:#22c55e;--amber-500:#f59e0b;--red-500:#ef4444;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.65;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .hero{padding:9rem 1.5rem 3rem;background:linear-gradient(135deg,var(--slate-900) 0%,#162033 50%,#0c2d3e 100%);color:#fff;text-align:center;}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:1rem;}
+    .hero h1 span{color:var(--teal-500);}
+    .hero p{color:var(--slate-300);max-width:620px;margin:0 auto;font-size:1.05rem;}
+    .container{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+    section{padding:3rem 0 4rem;}
+    .quiz{background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;}
+    .progress-bar{height:6px;background:var(--slate-100);border-radius:999px;overflow:hidden;margin-bottom:1.5rem;}
+    .progress-bar-fill{height:100%;background:var(--teal-500);width:0%;transition:width 0.3s;}
+    .question{display:none;}
+    .question.active{display:block;}
+    .question-number{font-size:0.75rem;color:var(--slate-500);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;}
+    .question h2{font-size:1.3rem;margin-bottom:1.25rem;color:var(--slate-900);line-height:1.3;}
+    .question .helper{color:var(--slate-500);font-size:0.9rem;margin-bottom:1.5rem;}
+    .answers{display:grid;gap:0.75rem;}
+    .answer-btn{padding:1rem 1.25rem;background:#fff;border:1.5px solid var(--slate-200);border-radius:10px;text-align:left;cursor:pointer;font-family:inherit;font-size:0.95rem;color:var(--slate-700);transition:all 0.15s;}
+    .answer-btn:hover{border-color:var(--teal-500);background:#f0fdfa;}
+    .nav-buttons{display:flex;justify-content:space-between;margin-top:1.5rem;}
+    .btn-back{background:transparent;border:1px solid var(--slate-200);color:var(--slate-600);padding:0.6rem 1.25rem;border-radius:8px;font-weight:600;cursor:pointer;font-size:0.9rem;}
+    .btn-back:hover{border-color:var(--slate-400);}
+    .btn-back:disabled{opacity:0.4;cursor:not-allowed;}
+    .results{display:none;}
+    .results.show{display:block;}
+    .score-circle{width:160px;height:160px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:#fff;font-weight:700;}
+    .score-circle .num{font-size:3rem;line-height:1;}
+    .score-circle .label{font-size:0.85rem;text-transform:uppercase;letter-spacing:0.08em;margin-top:0.25rem;opacity:0.9;}
+    .score-circle.green{background:linear-gradient(135deg,#22c55e,#16a34a);}
+    .score-circle.amber{background:linear-gradient(135deg,#f59e0b,#d97706);}
+    .score-circle.red{background:linear-gradient(135deg,#ef4444,#dc2626);}
+    .results h2{text-align:center;font-size:1.5rem;margin-bottom:1rem;color:var(--slate-900);}
+    .results .summary{text-align:center;color:var(--slate-600);margin-bottom:2rem;}
+    .findings{background:var(--slate-50);border:1px solid var(--slate-200);border-radius:10px;padding:1.5rem;margin-bottom:1.5rem;}
+    .findings h3{font-size:1.05rem;margin-bottom:0.75rem;color:var(--slate-900);}
+    .findings ul{list-style:none;padding:0;}
+    .findings ul li{padding:0.5rem 0 0.5rem 1.75rem;position:relative;color:var(--slate-700);font-size:0.95rem;}
+    .findings ul li.warn::before{content:'⚠️';position:absolute;left:0;}
+    .findings ul li.ok::before{content:'✅';position:absolute;left:0;}
+    .findings ul li.danger::before{content:'🚨';position:absolute;left:0;}
+    .cta-box{background:linear-gradient(135deg,var(--slate-900),#162033);color:#fff;border-radius:14px;padding:2rem;text-align:center;margin-top:2rem;}
+    .cta-box h3{font-size:1.25rem;margin-bottom:0.5rem;}
+    .cta-box p{color:var(--slate-300);margin-bottom:1.5rem;}
+    .btn-primary{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;background:var(--teal-500);color:#fff;}
+    .btn-outline{background:transparent;color:#fff;border:1px solid var(--slate-600);padding:0.85rem 1.75rem;border-radius:8px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT Operations</a></li>
+      <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Free <span>IT Health Check</span></h1>
+  <p>12 questions. 5 minutes. You'll get an honest score and a personalized priority list of what to fix first. No email required to see results.</p>
+</section>
+
+<section>
+  <div class="container">
+    <div class="quiz" id="quiz">
+      <div class="progress-bar"><div class="progress-bar-fill" id="progressFill"></div></div>
+
+      <div class="question active" data-q="0">
+        <div class="question-number">Security · Question 1 of 12</div>
+        <h2>Is multi-factor authentication (MFA) required on every employee email account?</h2>
+        <p class="helper">MFA is the single biggest security improvement for SMBs. If even one account doesn't have it, an attacker can use it as a doorway.</p>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Yes, every account, no exceptions</button>
+          <button class="answer-btn" data-score="2">Yes, most accounts (some legacy/shared exempted)</button>
+          <button class="answer-btn" data-score="1">Some accounts have it, some don't</button>
+          <button class="answer-btn" data-score="0">No / I'm not sure</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="1">
+        <div class="question-number">Security · Question 2 of 12</div>
+        <h2>When was your last cybersecurity assessment?</h2>
+        <p class="helper">An assessment goes beyond "we have antivirus" — it actually reviews your firewall rules, email filtering, password policies, endpoint protection, and access controls.</p>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Within the last 12 months</button>
+          <button class="answer-btn" data-score="2">Within the last 2 years</button>
+          <button class="answer-btn" data-score="1">More than 2 years ago</button>
+          <button class="answer-btn" data-score="0">Never / I'm not sure</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="2">
+        <div class="question-number">Security · Question 3 of 12</div>
+        <h2>How are employees trained on phishing and social engineering?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Regular training + simulated phishing tests</button>
+          <button class="answer-btn" data-score="2">Annual training, no simulations</button>
+          <button class="answer-btn" data-score="1">Onboarding only / informal</button>
+          <button class="answer-btn" data-score="0">No training</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="3">
+        <div class="question-number">Backup &amp; Recovery · Question 4 of 12</div>
+        <h2>When was the last time you tested restoring from your backups?</h2>
+        <p class="helper">An untested backup is a hope, not a backup. Most "backups" don't actually restore.</p>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Within the last 90 days</button>
+          <button class="answer-btn" data-score="2">Within the last year</button>
+          <button class="answer-btn" data-score="1">More than a year ago</button>
+          <button class="answer-btn" data-score="0">Never / not sure</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="4">
+        <div class="question-number">Backup &amp; Recovery · Question 5 of 12</div>
+        <h2>Where are your backups stored?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Multiple locations including offsite/cloud</button>
+          <button class="answer-btn" data-score="2">External drive/NAS that's unplugged when not in use</button>
+          <button class="answer-btn" data-score="1">Connected external drive only</button>
+          <button class="answer-btn" data-score="0">No regular backups / not sure</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="5">
+        <div class="question-number">Patching &amp; Maintenance · Question 6 of 12</div>
+        <h2>How are operating system and software updates handled?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Automated, monitored, and reported</button>
+          <button class="answer-btn" data-score="2">Mostly automatic; we manually check critical systems</button>
+          <button class="answer-btn" data-score="1">Users update when prompted</button>
+          <button class="answer-btn" data-score="0">Updates are usually deferred or skipped</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="6">
+        <div class="question-number">Support &amp; Response · Question 7 of 12</div>
+        <h2>When something breaks, what does the response process look like?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Dedicated IT provider with known SLA, average response under 1 hour</button>
+          <button class="answer-btn" data-score="2">Break-fix shop we call when needed</button>
+          <button class="answer-btn" data-score="1">Whoever in the office knows tech tries to fix it</button>
+          <button class="answer-btn" data-score="0">We Google it / hope it goes away</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="7">
+        <div class="question-number">Identity &amp; Access · Question 8 of 12</div>
+        <h2>How are employee accounts handled when someone leaves?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Documented offboarding checklist; access removed within hours</button>
+          <button class="answer-btn" data-score="2">We disable accounts within a few days</button>
+          <button class="answer-btn" data-score="1">Eventually, when we remember</button>
+          <button class="answer-btn" data-score="0">Honestly, not consistently</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="8">
+        <div class="question-number">Infrastructure · Question 9 of 12</div>
+        <h2>How old are the workstations and servers your team uses every day?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Tracked, with replacement on a 3–5 year cycle</button>
+          <button class="answer-btn" data-score="2">Mostly under 5 years; we replace when they fail</button>
+          <button class="answer-btn" data-score="1">Some equipment is 5–8 years old</button>
+          <button class="answer-btn" data-score="0">We have hardware older than 8 years still in production</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="9">
+        <div class="question-number">Documentation · Question 10 of 12</div>
+        <h2>Do you have current documentation of your IT environment?</h2>
+        <p class="helper">Inventory of devices, network diagram, vendor list, admin credentials.</p>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Yes, current and accessible</button>
+          <button class="answer-btn" data-score="2">Some documentation exists, mostly current</button>
+          <button class="answer-btn" data-score="1">Outdated or scattered</button>
+          <button class="answer-btn" data-score="0">No documentation</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="10">
+        <div class="question-number">Compliance &amp; Insurance · Question 11 of 12</div>
+        <h2>Do you have cyber liability insurance, and have you reviewed the requirements recently?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Yes, and we've verified we meet the requirements</button>
+          <button class="answer-btn" data-score="2">Yes, but haven't reviewed requirements recently</button>
+          <button class="answer-btn" data-score="1">Considering it</button>
+          <button class="answer-btn" data-score="0">No</button>
+        </div>
+      </div>
+
+      <div class="question" data-q="11">
+        <div class="question-number">Risk Awareness · Question 12 of 12</div>
+        <h2>Has your business (or someone you know in your industry) been hit with ransomware, BEC, or a major breach?</h2>
+        <div class="answers">
+          <button class="answer-btn" data-score="3">Yes — and we've already taken serious action</button>
+          <button class="answer-btn" data-score="2">Yes, but haven't changed much</button>
+          <button class="answer-btn" data-score="1">Not us, but heard of others nearby</button>
+          <button class="answer-btn" data-score="0">No / not sure</button>
+        </div>
+      </div>
+
+      <div class="nav-buttons">
+        <button class="btn-back" id="backBtn" disabled>← Back</button>
+        <span style="color:var(--slate-400);font-size:0.85rem;align-self:center;" id="qCount">Question 1 of 12</span>
+      </div>
+    </div>
+
+    <div class="results" id="results">
+      <div class="score-circle" id="scoreCircle">
+        <div class="num" id="scoreNum">0</div>
+        <div class="label">out of 36</div>
+      </div>
+      <h2 id="scoreVerdict"></h2>
+      <p class="summary" id="scoreSummary"></p>
+      <div class="findings">
+        <h3>What this score means</h3>
+        <ul id="findingsList"></ul>
+      </div>
+      <div class="findings" style="background:#fff;">
+        <h3>What to fix first</h3>
+        <ul id="prioritiesList"></ul>
+      </div>
+      <div class="cta-box">
+        <h3>Want a real audit?</h3>
+        <p>This quiz is a quick check. Our $497 IT Health Check is a 2-hour onsite or remote audit with a written report covering security gaps, backup risk, hardware lifecycle, and prioritized fixes — yours to keep regardless of what happens next.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="tel:+13606444820" class="btn-primary" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'health_check_results'})">📞 Call (360) 644-4820</a>
+          <a href="/pricing.html" class="btn-outline">See Audit Details</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:1.5rem;"><button onclick="restartQuiz()" style="background:transparent;border:none;color:var(--teal-600);font-weight:600;cursor:pointer;">Take quiz again →</button></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links"><li><a href="/services/it-operations.html">IT Operations</a></li><li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/blog/">Blog</a></li></ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+
+<script>
+(function(){
+  var questions = document.querySelectorAll('.question');
+  var totalQuestions = questions.length;
+  var answers = new Array(totalQuestions).fill(null);
+  var current = 0;
+  var backBtn = document.getElementById('backBtn');
+  var progressFill = document.getElementById('progressFill');
+  var qCount = document.getElementById('qCount');
+
+  function show(i) {
+    questions.forEach(function(q,idx){q.classList.toggle('active', idx===i);});
+    backBtn.disabled = i === 0;
+    qCount.textContent = 'Question ' + (i+1) + ' of ' + totalQuestions;
+    progressFill.style.width = ((i)/totalQuestions*100) + '%';
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  document.querySelectorAll('.answer-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var score = parseInt(btn.dataset.score, 10);
+      answers[current] = score;
+      if (current < totalQuestions - 1) {
+        current++;
+        show(current);
+      } else {
+        showResults();
+      }
+    });
+  });
+
+  backBtn.addEventListener('click', function(){
+    if (current > 0) { current--; show(current); }
+  });
+
+  function showResults() {
+    var total = answers.reduce(function(a,b){return a + (b||0);}, 0);
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('results').classList.add('show');
+    document.getElementById('scoreNum').textContent = total;
+    progressFill.style.width = '100%';
+
+    var circle = document.getElementById('scoreCircle');
+    var verdict = document.getElementById('scoreVerdict');
+    var summary = document.getElementById('scoreSummary');
+    var findings = document.getElementById('findingsList');
+    var priorities = document.getElementById('prioritiesList');
+
+    if (total >= 28) {
+      circle.classList.add('green');
+      verdict.textContent = "Strong — you're in the top 15% of SMB IT posture";
+      summary.textContent = "You've put real work into your IT. Most SMBs aren't this prepared. Keep doing what you're doing — but don't get complacent.";
+    } else if (total >= 18) {
+      circle.classList.add('amber');
+      verdict.textContent = "Average with significant gaps";
+      summary.textContent = "You've got the basics in place but real risk areas remain. A targeted audit could cut the most dangerous exposures fast.";
+    } else {
+      circle.classList.add('red');
+      verdict.textContent = "High risk — significant exposure";
+      summary.textContent = "Your IT setup has serious vulnerabilities. The good news: most of these are fixable in 30–60 days with the right plan.";
+    }
+
+    // Generate per-question findings
+    var labels = ['MFA on email accounts', 'Cybersecurity assessment recency', 'Phishing training', 'Backup restore testing', 'Backup storage location', 'Patch management', 'Support response process', 'Employee offboarding', 'Hardware lifecycle', 'IT documentation', 'Cyber insurance posture', 'Risk awareness'];
+    var lowAreas = [];
+    answers.forEach(function(s, i){
+      var li = document.createElement('li');
+      if (s >= 2) {
+        li.className = 'ok';
+        li.textContent = labels[i] + ': good';
+      } else if (s === 1) {
+        li.className = 'warn';
+        li.textContent = labels[i] + ': needs attention';
+        lowAreas.push({label: labels[i], score: s, idx: i});
+      } else {
+        li.className = 'danger';
+        li.textContent = labels[i] + ': critical gap';
+        lowAreas.push({label: labels[i], score: s, idx: i});
+      }
+      findings.appendChild(li);
+    });
+
+    // Top 3 priorities
+    lowAreas.sort(function(a,b){return a.score - b.score;});
+    var top = lowAreas.slice(0, 3);
+    var fixes = {
+      0: 'Enforce MFA on every email account this week. Use Microsoft Authenticator or Google Authenticator. This single change prevents the majority of account-takeover attacks.',
+      1: 'Schedule a real cybersecurity assessment. Even a $497 IT Health Check will surface most of the urgent issues.',
+      2: 'Roll out phishing awareness training and run a simulated phishing test. KnowBe4, Hoxhunt, or even free tools work to start.',
+      3: 'Run a test restore from your backups this month. If they don\'t restore, you don\'t have backups.',
+      4: 'Move backups offsite immediately. Onsite-only backups are destroyed by the same fire/flood/ransomware that destroys the originals.',
+      5: 'Set up automated patch management. Most SMB breaches exploit known vulnerabilities that were patched months earlier.',
+      6: 'Establish a real support process — either internal SLA or a managed IT provider. Tech-savvy office staff is not a sustainable IT strategy.',
+      7: 'Build an offboarding checklist. Disable accounts within hours of an employee leaving, not weeks.',
+      8: 'Audit hardware ages. Anything over 5 years should be on a replacement plan. Equipment past 8 years is a security and reliability risk.',
+      9: 'Document your IT environment. Even a basic inventory is worth more than nothing. This becomes vital during an incident.',
+      10: 'Get a cyber liability quote. If you have one, verify you actually meet the policy requirements (most companies don\'t).',
+      11: 'Treat the proximity of cyber incidents as a leading indicator. If peers are getting hit, you\'re in the target population.'
+    };
+    if (top.length === 0) {
+      var li = document.createElement('li');
+      li.className = 'ok';
+      li.textContent = "No critical priorities — keep your current cadence and revisit annually.";
+      priorities.appendChild(li);
+    } else {
+      top.forEach(function(area){
+        var li = document.createElement('li');
+        li.className = 'danger';
+        li.textContent = fixes[area.idx];
+        priorities.appendChild(li);
+      });
+    }
+
+    if (window.rmsTrack) rmsTrack('health_check_complete', {score: total});
+  }
+
+  window.restartQuiz = function() {
+    current = 0;
+    answers = new Array(totalQuestions).fill(null);
+    document.getElementById('results').classList.remove('show');
+    document.getElementById('scoreCircle').className = 'score-circle';
+    document.getElementById('findingsList').innerHTML = '';
+    document.getElementById('prioritiesList').innerHTML = '';
+    document.getElementById('quiz').style.display = 'block';
+    show(0);
+  };
+})();
+</script>
+
+</body>
+</html>

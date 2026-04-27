@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Managed IT Onboarding: 30-Day Walkthrough | River Mountain Systems</title>
+  <meta name="description" content="How we onboard a new managed IT client over 30 days — week by week, decision by decision. From discovery call to fully managed environment.">
+  <meta property="og:title" content="Managed IT Onboarding: 30-Day Walkthrough">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://rivermountainsystems.com/case-studies/managed-it-onboarding.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .hero{padding:9rem 1.5rem 4rem;background:linear-gradient(135deg,var(--slate-900) 0%,#162033 50%,#0c2d3e 100%);color:#fff;}
+    .hero-inner{max-width:760px;margin:0 auto;}
+    .hero .crumb{color:var(--slate-400);font-size:0.85rem;margin-bottom:1rem;}
+    .hero .crumb a{color:var(--slate-400);text-decoration:none;}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:1rem;}
+    .hero p{color:var(--slate-300);font-size:1.05rem;}
+    .container{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+    section{padding:3rem 0;}
+    .body{background:#fff;}
+    .body h2{font-size:1.5rem;margin:2.5rem 0 1rem;color:var(--slate-900);padding-top:1rem;border-top:1px solid var(--slate-200);}
+    .body h2:first-child{border-top:none;padding-top:0;margin-top:0;}
+    .body h3{font-size:1.1rem;margin:1.25rem 0 0.5rem;color:var(--slate-900);}
+    .body p{color:var(--slate-700);margin-bottom:1rem;font-size:1rem;}
+    .body ul{padding-left:1.5rem;color:var(--slate-700);margin-bottom:1rem;}
+    .body ul li{margin-bottom:0.4rem;}
+    .body blockquote{border-left:3px solid var(--teal-500);padding-left:1.25rem;margin:1.5rem 0;color:var(--slate-700);font-style:italic;}
+    .week-card{background:var(--slate-50);border:1px solid var(--slate-200);border-radius:12px;padding:1.5rem;margin:1.25rem 0;}
+    .week-card h3{margin-top:0;color:var(--teal-600);font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;justify-content:center;}
+    .btn-primary{background:var(--teal-500);color:#fff;}
+    .btn-primary:hover{background:var(--teal-600);}
+    .btn-outline{background:transparent;color:#fff;border:1px solid var(--slate-600);}
+    .cta-section{background:linear-gradient(135deg,var(--slate-900),#162033);color:#fff;text-align:center;padding:5rem 1.5rem;}
+    .cta-section h2{font-size:1.85rem;font-weight:700;margin-bottom:1rem;}
+    .cta-section p{color:var(--slate-400);margin-bottom:1.5rem;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT Operations</a></li>
+      <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="crumb"><a href="/">Home</a> · <a href="/case-studies/">Case Studies</a> · Managed IT Onboarding</p>
+    <h1>Managed IT onboarding for a 25-person warehouse: 30-day walkthrough</h1>
+    <p>Most managed IT switches feel like a cliff. This is exactly how we make it feel like a relay handoff.</p>
+  </div>
+</section>
+
+<section class="body">
+  <div class="container">
+    <h2>The setup</h2>
+    <p>The pattern: an SMB owner with a real operational business — somewhere between 15 and 50 employees — has been on break-fix IT for years. Their "IT person" is whoever happens to be tech-friendly: usually the operations manager, sometimes the bookkeeper, occasionally the founder. Things mostly work, until they don't. Backups have not been tested in 18 months. There's a shared password spreadsheet.</p>
+    <p>They call us because (a) something broke and the break-fix shop took 4 days, or (b) a competitor or peer just got hit with ransomware, or (c) they're growing and the duct-taped stack is starting to creak.</p>
+    <p>The discovery call is 30 minutes. We agree on per-user pricing, sign a one-page MSA, and pick a start date 7–10 days out.</p>
+
+    <h2>Day 1–7: Discovery</h2>
+    <div class="week-card">
+      <h3>Week 1</h3>
+      <p>The first week is documentation. Most clients have never had a real IT inventory.</p>
+      <ul>
+        <li>Walk every workstation. Serial number, age, OS, RAM, disk, last patch date.</li>
+        <li>Inventory every server, every network device, every printer.</li>
+        <li>Pull every SaaS account: who uses it, who pays for it, who has admin.</li>
+        <li>Document every vendor: ISP, M365, antivirus, line-of-business apps.</li>
+        <li>Take over MFA / billing / admin on the most critical accounts (M365, ISP portal, domain registrar).</li>
+        <li>Run vulnerability scan and a backup verification test.</li>
+      </ul>
+      <p><strong>End of week 1 deliverable:</strong> a full IT inventory document. The client has likely never had this. It alone is worth more than the first month's bill.</p>
+    </div>
+
+    <h2>Day 8–14: Stabilize</h2>
+    <div class="week-card">
+      <h3>Week 2</h3>
+      <p>RMM (remote monitoring and management) goes on every endpoint. This is the foundation.</p>
+      <ul>
+        <li>Deploy RMM agent — runs in the background, almost invisible to users.</li>
+        <li>Set up monitoring thresholds: disk, memory, CPU, temperature, AV health.</li>
+        <li>Roll out unified endpoint antivirus / EDR (replaces whatever mismatched mess was there).</li>
+        <li>Establish patching baseline: Windows updates, third-party app updates, scheduled and tested.</li>
+        <li>Audit M365 / Workspace tenant: license waste, security gaps, shared mailboxes.</li>
+        <li>Verify backups actually restore. If they don't, this is the moment we tell the client and fix it.</li>
+      </ul>
+      <p><strong>End of week 2 deliverable:</strong> first health report. Includes findings from the vulnerability scan, the patch backlog, and any backup risk. This is where we tell the client what we found, in plain language, no jargon.</p>
+    </div>
+
+    <h2>Day 15–21: Secure</h2>
+    <div class="week-card">
+      <h3>Week 3</h3>
+      <p>This is the week where most of the long-tail security work happens. Boring, foundational, prevents 80% of bad things.</p>
+      <ul>
+        <li>Roll out MFA on every email account, every admin account, every banking and SaaS portal.</li>
+        <li>Tighten email security: SPF, DKIM, DMARC. Most SMBs are sending spoofable mail and don't know it.</li>
+        <li>Deploy advanced email filtering (catches the phishing the default filter doesn't).</li>
+        <li>Run a phishing simulation. See who clicks. Don't shame anyone, but use it as the basis for short awareness training.</li>
+        <li>Audit shared drives and SharePoint permissions. Lock down what should be private.</li>
+        <li>Replace the password spreadsheet with a real password manager (1Password, Bitwarden, Keeper).</li>
+      </ul>
+      <p><strong>End of week 3 deliverable:</strong> security posture report. Before/after on each major category. Owner now has something to show their insurance company at renewal — usually saves money.</p>
+    </div>
+
+    <h2>Day 22–30: Roadmap</h2>
+    <div class="week-card">
+      <h3>Week 4</h3>
+      <p>By now, the environment is stable and documented. Now we point forward.</p>
+      <ul>
+        <li>90-day roadmap: what's coming, what budget it needs, what risks remain.</li>
+        <li>Quarterly business review schedule set up — every 90 days, IT spend tied to actual outcomes.</li>
+        <li>Helpdesk fully active. Users know how to submit tickets and what to expect.</li>
+        <li>Client gets login to a dashboard showing live system health.</li>
+        <li>If there are obvious project candidates (network refresh, server consolidation, M365 migration), they're scoped as separate fixed-price projects — not snuck into the monthly retainer.</li>
+      </ul>
+      <p><strong>End of week 4 deliverable:</strong> the client has a real IT department's worth of artifacts — inventory, security posture, patch cadence, backup verification, roadmap, dashboard. All for the cost of a part-time hire, with none of the management overhead.</p>
+    </div>
+
+    <h2>What it costs</h2>
+    <p>Pricing is per-user, $99/$149/$199 per user/month depending on tier. A 25-person business at our middle tier ("Secure") is roughly $3,725/month. That replaces:</p>
+    <ul>
+      <li>Break-fix bills that previously averaged $1,500–$3,000/mo with high variance</li>
+      <li>The 5–10 hours/week the operations manager was burning on IT</li>
+      <li>Risk exposure from unpatched systems, untested backups, and missing MFA</li>
+      <li>Whatever the cyber insurance company would have refused to pay after an incident</li>
+    </ul>
+
+    <blockquote>The math almost always works out. The harder sale is convincing somebody that the system works — that proactive monitoring really does prevent the 11pm ransomware call.</blockquote>
+
+    <h2>What it does NOT include</h2>
+    <p>So you're not surprised on month two:</p>
+    <ul>
+      <li>Hardware purchases (passed through at our cost or yours)</li>
+      <li>Major project work (cloud migrations, network refreshes, ERP integrations) — quoted separately</li>
+      <li>HIPAA / SOC 2 / PCI audits — referred to specialized auditors</li>
+      <li>Custom software development</li>
+    </ul>
+
+    <h2>Want this for your business?</h2>
+    <p>The first step is the 30-min discovery call. We'll tell you straight whether managed IT makes sense for your situation, and roughly what tier and size you'd land in.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to start the 30-day clock?</h2>
+  <p>Call to schedule a discovery call, or send a message and we'll get back to you within one business day.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;">📞 Call (360) 644-4820</a>
+    <a href="/#contact" class="btn btn-outline">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links"><li><a href="/services/it-operations.html">IT Operations</a></li><li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/blog/">Blog</a></li></ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+</body>
+</html>

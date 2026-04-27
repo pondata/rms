@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDI for Retail Suppliers: 850, 856, 810 Without the Mystery | River Mountain Systems</title>
+  <meta name="description" content="If you're selling into Walmart, Target, Costco, or Amazon Vendor Central, you need EDI. Here's what it actually is, what the X12 documents mean, and how implementation works.">
+  <meta property="og:title" content="EDI for Retail Suppliers: 850, 856, 810 Without the Mystery">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-04-22">
+  <link rel="canonical" href="https://rivermountainsystems.com/blog/edi-for-retail-suppliers.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"EDI for Retail Suppliers","datePublished":"2026-04-22","author":{"@type":"Organization","name":"River Mountain Systems"},"publisher":{"@type":"Organization","name":"River Mountain Systems"},"mainEntityOfPage":"https://rivermountainsystems.com/blog/edi-for-retail-suppliers.html"}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;--amber-600:#d97706;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .article-header{padding:9rem 1.5rem 3rem;background:linear-gradient(135deg,var(--slate-900) 0%,#2a1f0c 50%,#3e2c0c 100%);color:#fff;}
+    .article-header-content{max-width:760px;margin:0 auto;text-align:center;}
+    .article-header h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:1rem;line-height:1.25;}
+    .article-meta{color:var(--slate-400);font-size:0.9rem;}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 1.5rem 4rem;}
+    .article-body h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--slate-900);}
+    .article-body h3{font-size:1.15rem;margin:1.5rem 0 0.5rem;color:var(--slate-900);}
+    .article-body p{color:var(--slate-700);margin-bottom:1rem;}
+    .article-body ul,.article-body ol{padding-left:1.5rem;color:var(--slate-700);margin-bottom:1rem;}
+    .article-body li{margin-bottom:0.4rem;}
+    .article-body a{color:var(--teal-600);font-weight:600;}
+    .article-body code{background:#f1f5f9;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85em;color:var(--slate-900);}
+    .article-body table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.95rem;}
+    .article-body th,.article-body td{text-align:left;padding:0.6rem 0.85rem;border:1px solid var(--slate-200);}
+    .article-body th{background:var(--slate-50);font-weight:700;}
+    .back-link{color:var(--teal-500);text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block;margin-bottom:1.5rem;}
+    .cta-box{background:#fff;border:1px solid var(--amber-500);border-radius:14px;padding:1.75rem;margin:2rem 0;text-align:center;}
+    .cta-box h3{margin-top:0!important;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;background:var(--amber-500);color:#fff!important;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../services/it-operations.html">IT Operations</a></li>
+      <li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-content">
+    <h1>EDI for Retail Suppliers: 850, 856, 810 Without the Mystery</h1>
+    <div class="article-meta">April 22, 2026 · 8 min read</div>
+  </div>
+</div>
+
+<article class="article-body">
+  <a href="./" class="back-link">← All Articles</a>
+
+  <p>Your buyer at Target, Walmart, Costco, or Amazon Vendor Central just told you "we'll need you to be EDI compliant." You said yes because you wanted the deal. Now you're trying to figure out what that means without sounding panicked.</p>
+
+  <p>Here's what EDI actually is, what the documents do, what implementation looks like, and what it costs.</p>
+
+  <h2>What EDI is (and isn't)</h2>
+  <p>EDI = Electronic Data Interchange. It's a standardized format for sending business documents between trading partners — purchase orders, shipping notices, invoices — without humans typing them in.</p>
+  <p>It's not a software product. It's a <em>standard</em> (X12 in North America, EDIFACT internationally) that defines exactly how each document is structured. Every trading partner reads and writes the same format, so a Target PO looks identical to a Walmart PO at the structural level.</p>
+  <p>What makes it hard isn't the standard. It's that every retailer has different <em>requirements within the standard</em>: which fields are mandatory, what values are allowed, how labels need to print, and what the SLA scorecard looks like.</p>
+
+  <h2>The four documents that matter for SMB suppliers</h2>
+  <table>
+    <thead><tr><th>Document</th><th>Direction</th><th>What it does</th></tr></thead>
+    <tbody>
+      <tr><td><strong>EDI 850</strong></td><td>Retailer → You</td><td>Purchase order. They want to buy.</td></tr>
+      <tr><td><strong>EDI 855</strong></td><td>You → Retailer</td><td>PO acknowledgment. Confirm what you'll ship.</td></tr>
+      <tr><td><strong>EDI 856</strong></td><td>You → Retailer</td><td>Advance Ship Notice (ASN). What's actually on the truck and when it'll arrive.</td></tr>
+      <tr><td><strong>EDI 810</strong></td><td>You → Retailer</td><td>Invoice. Bill them.</td></tr>
+    </tbody>
+  </table>
+  <p>Some retailers also require: 852 (product activity), 860 (PO change), 753/754 (routing), 944 (warehouse receipt). Walmart in particular has its own dialect (DEX/NEX, plus 940/945 for fulfillment).</p>
+
+  <h2>What "EDI compliant" actually means</h2>
+  <p>It's not enough to send the documents. They have to be:</p>
+  <ul>
+    <li>Sent through the <strong>right transmission method</strong> (AS2, sFTP, VAN — every retailer is different)</li>
+    <li>Sent within <strong>specific timing SLAs</strong> (often: ASN within 1 hour of shipment)</li>
+    <li>Containing <strong>retailer-specific required fields</strong> (UPC formats, carton labels, GS1-128 codes)</li>
+    <li>Accompanied by <strong>compliant physical labels</strong> on every carton (UCC-128 / GS1-128 with SSCC numbers)</li>
+    <li>Tested and certified <strong>before</strong> you can go live (typically 4–8 weeks of testing)</li>
+  </ul>
+  <p>Failing any of these triggers chargebacks. Walmart can charge $250+ per non-compliant ASN. Target's chargebacks are similar. These add up fast and eat margin.</p>
+
+  <h2>Three ways to do EDI as an SMB</h2>
+  <h3>1. EDI service provider (managed)</h3>
+  <p>Companies like <strong>SPS Commerce, TrueCommerce, B2BGateway, DiCentral, Cleo</strong> handle the EDI translation, transmission, and trading partner onboarding for you. You connect their portal or integration to your ERP/WMS.</p>
+  <p>Cost: ~$200–$1,000/mo per trading partner depending on volume. Setup: $1,500–$5,000 per partner. Best for: SMBs with 1–10 retail accounts.</p>
+
+  <h3>2. EDI software (in-house)</h3>
+  <p>You buy software (e.g., <strong>Boomi, MuleSoft, Cleo Integration Cloud</strong>) and run it yourself. Lower per-month cost but requires technical staff to maintain.</p>
+  <p>Cost: $500–$3,000/mo software + significant internal time. Best for: businesses with 10+ retail accounts and an internal IT team.</p>
+
+  <h3>3. Web-based portal entry (manual)</h3>
+  <p>Some retailers offer a web portal where you can manually enter PO acknowledgments and ASNs. Free or near-free, but doesn't scale and is error-prone.</p>
+  <p>Best for: 1–2 retail accounts with tiny order volume. Stop doing this once you're past 10 orders/week.</p>
+
+  <h2>What implementation actually looks like</h2>
+  <ol>
+    <li><strong>Week 1:</strong> Trading partner spec review. Each retailer publishes their EDI spec (often 100+ pages). Read it.</li>
+    <li><strong>Week 2:</strong> Choose your EDI provider/software. Sign contract.</li>
+    <li><strong>Weeks 3–4:</strong> Map your ERP/WMS data fields to EDI fields. Build cross-references for SKUs, locations, ship-to codes.</li>
+    <li><strong>Weeks 5–6:</strong> Send test transactions. Get rejected. Fix. Repeat.</li>
+    <li><strong>Weeks 7–8:</strong> Certification. Retailer signs off.</li>
+    <li><strong>Week 9:</strong> Go live. Production transactions start flowing.</li>
+    <li><strong>Weeks 10–12:</strong> Hypercare. Watch for chargebacks. Tune.</li>
+  </ol>
+  <p>Per trading partner. Yes, every new retailer is mostly a new project.</p>
+
+  <h2>What it costs end-to-end (one retailer)</h2>
+  <ul>
+    <li>EDI provider setup: <strong>$1,500–$5,000</strong></li>
+    <li>EDI provider monthly: <strong>$200–$1,000/mo</strong></li>
+    <li>Implementation services (consultant): <strong>$5,000–$15,000</strong></li>
+    <li>Internal time (ops + IT): <strong>40–80 hours</strong></li>
+    <li>Label printer + GS1-128 SSCC labels: <strong>$500–$2,000</strong></li>
+  </ul>
+  <p>Total first-year cost per trading partner: roughly <strong>$10,000–$30,000</strong>.</p>
+
+  <h2>Why suppliers fail at EDI</h2>
+  <h3>Underestimating timeline</h3>
+  <p>"We start shipping to Target in 6 weeks." If you don't have EDI live, you can't ship — and Target won't extend their go-live for you. Start the EDI project the day you sign the deal, not the month before launch.</p>
+
+  <h3>Treating it as IT-only</h3>
+  <p>EDI breaks at the warehouse, not at the server. The label printer not having toner causes more EDI compliance failures than any data mapping issue. Operations needs to be involved start to finish.</p>
+
+  <h3>No chargeback monitoring</h3>
+  <p>Once you're live, retailers post chargebacks to a portal you have to actively check. Most SMBs don't, and discover three months in that they've been bleeding $5K/mo in compliance fees.</p>
+
+  <div class="cta-box">
+    <h3>Need EDI for a new retail account?</h3>
+    <p>30-min call to scope your situation. We'll tell you which EDI approach fits your size, what realistic timeline looks like, and what to budget for the first trading partner. EDI setup starts at $7,500.</p>
+    <a href="tel:+13606444820" class="btn">📞 Call (360) 644-4820</a>
+  </div>
+</article>
+
+<footer>
+  <a href="../" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links"><li><a href="../services/it-operations.html">IT Operations</a></li><li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../about.html">About</a></li><li><a href="./">Blog</a></li></ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+</body>
+</html>

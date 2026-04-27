@@ -795,6 +795,12 @@
     <p style="text-align:center;color:var(--slate-500);font-size:0.95rem;max-width:680px;margin:0 auto;">
       <strong>Also:</strong> data &amp; analytics (GA4, GTM, Google Ads, Looker Studio), AI integration, automation (Zapier, Make, n8n), VoIP, and document management. Ask about these on your consult.
     </p>
+    <p style="text-align:center;color:var(--slate-500);font-size:0.9rem;max-width:680px;margin:1rem auto 0;">
+      Industry-specific: <a href="industries/warehousing.html" style="color:var(--teal-600);font-weight:600;">Warehousing</a> · <a href="industries/3pl-fulfillment.html" style="color:var(--teal-600);font-weight:600;">3PL Fulfillment</a> · <a href="industries/events-festivals.html" style="color:var(--teal-600);font-weight:600;">Events &amp; Festivals</a>
+    </p>
+    <p style="text-align:center;margin-top:1.5rem;">
+      <a href="tools/it-health-check.html" style="display:inline-block;background:#f0fdfa;color:var(--teal-700);padding:0.7rem 1.25rem;border-radius:999px;font-weight:600;font-size:0.9rem;text-decoration:none;border:1px solid var(--teal-500);">⚡ Free 5-min IT Health Check →</a>
+    </p>
     <div style="display:none;" class="services-grid">
 
       <a href="services/managed-it.html" class="service-card">
@@ -1172,6 +1178,32 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <p style="color:var(--slate-500);font-size:0.8rem;margin-top:1rem;">Also: Data &amp; analytics · AI integration · Workflow automation · VoIP · Document management — ask about these on your consult.</p>
+
+  <!-- NEWSLETTER OPT-IN -->
+  <div style="max-width:420px;margin:2rem auto 1rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:1.25rem;">
+    <p style="color:#fff;font-weight:600;font-size:0.95rem;margin-bottom:0.4rem;">📬 Monthly IT &amp; logistics field notes</p>
+    <p style="color:var(--slate-400);font-size:0.85rem;margin-bottom:0.85rem;">One short email per month with practical notes from active client work. Unsubscribe anytime.</p>
+    <form id="newsletterForm" style="display:flex;gap:0.5rem;flex-wrap:wrap;">
+      <input type="email" id="newsletterEmail" placeholder="your@email.com" required style="flex:1;min-width:180px;padding:0.6rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:rgba(0,0,0,0.25);color:#fff;font-family:inherit;font-size:0.9rem;">
+      <button type="submit" style="padding:0.6rem 1.1rem;border-radius:6px;border:none;background:var(--teal-500);color:#fff;font-weight:600;cursor:pointer;font-size:0.9rem;">Subscribe</button>
+    </form>
+    <p id="newsletterStatus" style="color:var(--teal-400);font-size:0.8rem;margin-top:0.5rem;display:none;">Thanks — you're on the list.</p>
+  </div>
+  <script>
+    document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var email = document.getElementById('newsletterEmail').value;
+      // TODO: replace with real newsletter integration (ConvertKit / Beehiiv / Mailchimp) — see SETUP.md
+      var fd = new FormData();
+      fd.append('newsletter_email', email);
+      fd.append('source', 'homepage_footer');
+      fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {method:'POST', mode:'no-cors', body: fd}).catch(function(){});
+      if (window.rmsTrack) rmsTrack('newsletter_signup', {source: 'footer'});
+      document.getElementById('newsletterStatus').style.display = 'block';
+      document.getElementById('newsletterEmail').value = '';
+    });
+  </script>
+
   <p style="margin-top:1.5rem;">&copy; 2026 River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>
 
@@ -1179,6 +1211,50 @@
 <div class="mobile-sticky-cta" style="display:none;">
   <a href="tel:+13606444820" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'mobile_sticky'})">📞 Call (360) 644-4820</a>
 </div>
+
+<!-- EXIT-INTENT MODAL -->
+<div id="exitModal" style="display:none;position:fixed;inset:0;background:rgba(15,23,42,0.85);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#fff;border-radius:16px;max-width:480px;width:100%;padding:2rem;position:relative;animation:slideIn 0.3s ease;">
+    <button onclick="closeExitModal()" aria-label="Close" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;color:#94a3b8;cursor:pointer;line-height:1;">×</button>
+    <div style="width:48px;height:48px;background:#ccfbf1;color:#0d9488;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:1.5rem;">⚡</div>
+    <h2 style="font-size:1.5rem;margin-bottom:0.5rem;color:#0f172a;">Before you go — score your IT in 5 minutes</h2>
+    <p style="color:#64748b;margin-bottom:1.25rem;font-size:0.95rem;">Free 12-question health check. You'll get an honest score and a personalized priority list of what to fix first. No email required to see results.</p>
+    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+      <a href="/tools/it-health-check.html" class="btn btn-primary" style="flex:1;min-width:200px;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('exit_modal_click',{action:'health_check'})">Take the IT Health Check →</a>
+    </div>
+    <p style="text-align:center;margin-top:1rem;"><button onclick="closeExitModal()" style="background:none;border:none;color:#94a3b8;cursor:pointer;font-size:0.85rem;">No thanks</button></p>
+  </div>
+</div>
+<style>
+  @keyframes slideIn { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  #exitModal.show { display: flex !important; }
+</style>
+<script>
+(function(){
+  var shown = sessionStorage.getItem('rms_exit_shown');
+  if (shown) return;
+  function showExit(e) {
+    if (e.clientY < 10 && !sessionStorage.getItem('rms_exit_shown')) {
+      sessionStorage.setItem('rms_exit_shown', '1');
+      document.getElementById('exitModal').classList.add('show');
+      if (window.rmsTrack) rmsTrack('exit_modal_shown');
+    }
+  }
+  window.closeExitModal = function() {
+    document.getElementById('exitModal').classList.remove('show');
+  };
+  // Only on desktop
+  if (window.innerWidth > 768) {
+    setTimeout(function(){
+      document.addEventListener('mouseout', showExit);
+    }, 5000);
+  }
+  // Also close on backdrop click
+  document.getElementById('exitModal').addEventListener('click', function(e){
+    if (e.target.id === 'exitModal') closeExitModal();
+  });
+})();
+</script>
 
 </body>
 </html>

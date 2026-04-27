@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WMS Implementation: 12-Week Walkthrough | River Mountain Systems</title>
+  <meta name="description" content="How a real WMS implementation unfolds week by week. Discovery, configuration, integration, scanner deployment, training, go-live, and the first 30 days after.">
+  <meta property="og:title" content="WMS Implementation: 12-Week Walkthrough">
+  <meta property="og:type" content="article">
+  <link rel="canonical" href="https://rivermountainsystems.com/case-studies/wms-implementation.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;--amber-600:#d97706;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .hero{padding:9rem 1.5rem 4rem;background:linear-gradient(135deg,var(--slate-900) 0%,#2a1f0c 50%,#3e2c0c 100%);color:#fff;}
+    .hero-inner{max-width:760px;margin:0 auto;}
+    .hero .crumb{color:var(--slate-400);font-size:0.85rem;margin-bottom:1rem;}
+    .hero .crumb a{color:var(--slate-400);text-decoration:none;}
+    .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;margin-bottom:1rem;}
+    .hero p{color:var(--slate-300);font-size:1.05rem;}
+    .container{max-width:760px;margin:0 auto;padding:0 1.5rem;}
+    section{padding:3rem 0;}
+    .body{background:#fff;}
+    .body h2{font-size:1.5rem;margin:2.5rem 0 1rem;color:var(--slate-900);padding-top:1rem;border-top:1px solid var(--slate-200);}
+    .body h2:first-child{border-top:none;padding-top:0;margin-top:0;}
+    .body h3{font-size:1.1rem;margin:1.25rem 0 0.5rem;color:var(--slate-900);}
+    .body p{color:var(--slate-700);margin-bottom:1rem;font-size:1rem;}
+    .body ul{padding-left:1.5rem;color:var(--slate-700);margin-bottom:1rem;}
+    .body ul li{margin-bottom:0.4rem;}
+    .body blockquote{border-left:3px solid var(--amber-500);padding-left:1.25rem;margin:1.5rem 0;color:var(--slate-700);font-style:italic;}
+    .phase-card{background:var(--slate-50);border:1px solid var(--slate-200);border-radius:12px;padding:1.5rem;margin:1.25rem 0;}
+    .phase-card h3{margin-top:0;color:var(--amber-600);font-size:1rem;text-transform:uppercase;letter-spacing:0.08em;}
+    .danger{background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:1rem 1.25rem;margin:1.25rem 0;color:#991b1b;font-size:0.95rem;}
+    .danger strong{color:#7f1d1d;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.85rem 1.75rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.2s;border:none;cursor:pointer;justify-content:center;}
+    .btn-primary{background:var(--amber-500);color:#fff;}
+    .btn-primary:hover{background:var(--amber-600);}
+    .btn-outline{background:transparent;color:#fff;border:1px solid var(--slate-600);}
+    .cta-section{background:linear-gradient(135deg,var(--slate-900),#2a1f0c);color:#fff;text-align:center;padding:5rem 1.5rem;}
+    .cta-section h2{font-size:1.85rem;font-weight:700;margin-bottom:1rem;}
+    .cta-section p{color:var(--slate-400);margin-bottom:1.5rem;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT Operations</a></li>
+      <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="crumb"><a href="/">Home</a> · <a href="/case-studies/">Case Studies</a> · WMS Implementation</p>
+    <h1>WMS implementation for a regional 3PL: 12-week walkthrough</h1>
+    <p>Most WMS projects fail because they're either over-promised or under-scoped. Here's what an honest 12-week implementation actually looks like, week by week — and where they break.</p>
+  </div>
+</section>
+
+<section class="body">
+  <div class="container">
+    <h2>Why "WMS in 6 weeks" is a lie</h2>
+    <p>If you've talked to a WMS vendor, you've heard "go-live in 4–6 weeks." That timeline assumes you have clean inventory data, well-trained staff, an ERP that already speaks the right language, no integration custom work, no labels to design, no hardware to source, and a warehouse that closes for a long weekend without losing customers. None of that is true for a real operating 3PL.</p>
+    <p>Honest timeline for a single-warehouse 3PL with 50–500 SKUs and an existing ERP: <strong>10–14 weeks</strong>. Multi-warehouse or complex retail-compliance integrations: 4–6 months. Anyone telling you faster is either selling you a starter kit (will not survive peak) or about to leave you holding the bag.</p>
+
+    <h2>Phase 1: Discovery (Weeks 1–2)</h2>
+    <div class="phase-card">
+      <h3>Weeks 1–2</h3>
+      <p>The first two weeks are about understanding how the warehouse <em>actually</em> works, not how the org chart says it works.</p>
+      <ul>
+        <li>Walk every zone with the floor lead. Pick paths, putaway logic, replenishment rules, returns flow.</li>
+        <li>Pull an SKU export from the existing system. Identify variants, kits, lot/serial-tracked items, expiration date items.</li>
+        <li>Map every integration point: ERP, shipping carriers, e-commerce platforms, marketplaces, EDI partners.</li>
+        <li>Audit current inventory accuracy. (It is almost always worse than the client thinks.)</li>
+        <li>Identify top 5 customer SLAs and how the WMS needs to support them.</li>
+      </ul>
+      <p><strong>Deliverable:</strong> a written current-state document and a recommended target-state. This is the most valuable artifact of the project — many clients realize at this point that their problem isn't the WMS, it's their inventory data.</p>
+    </div>
+
+    <div class="danger"><strong>Where projects break here:</strong> the client wants to skip discovery to "save time." Skipping discovery doesn't save time — it just moves the work to weeks 10–11, when it's 5x more expensive to fix.</div>
+
+    <h2>Phase 2: Configuration (Weeks 3–5)</h2>
+    <div class="phase-card">
+      <h3>Weeks 3–5</h3>
+      <p>System configuration in test environment. Nothing touches production yet.</p>
+      <ul>
+        <li>Set up zones, locations, bins, and movement rules.</li>
+        <li>Configure pick paths, wave logic, batch rules.</li>
+        <li>Build receiving, putaway, replenishment, cycle count workflows.</li>
+        <li>Configure label templates (carton, pallet, location).</li>
+        <li>Set up user roles and permissions.</li>
+        <li>Initial data import: SKU master, customer master, vendor master.</li>
+      </ul>
+      <p><strong>Deliverable:</strong> a working test system that mirrors the warehouse. Floor lead runs through 50+ test scenarios in the test system before we touch the real one.</p>
+    </div>
+
+    <h2>Phase 3: Integration (Weeks 6–8)</h2>
+    <div class="phase-card">
+      <h3>Weeks 6–8</h3>
+      <p>This is where most overrun happens. Each integration point is its own mini-project.</p>
+      <ul>
+        <li>ERP sync (NetSuite, SAP B1, Acumatica, QB Enterprise, etc.) — orders down, inventory up, financial postings.</li>
+        <li>Shipping carrier integration (FedEx, UPS, USPS, regional LTL) — labels, tracking, returns.</li>
+        <li>E-commerce + marketplace pull (Shopify, Amazon, Walmart, etc.) — order ingestion, status push.</li>
+        <li>EDI for retail customers if applicable — 850/856/810 mapping, partner certification.</li>
+        <li>Build out exception handling: what happens when something fails.</li>
+      </ul>
+    </div>
+
+    <div class="danger"><strong>Where projects break here:</strong> assuming the ERP can do "just one more thing." Every customization is technical debt. We push back hard on integrations that should be solved in process instead of code.</div>
+
+    <h2>Phase 4: Hardware &amp; Training (Weeks 9–10)</h2>
+    <div class="phase-card">
+      <h3>Weeks 9–10</h3>
+      <ul>
+        <li>Source and configure mobile scanners (Zebra, Honeywell, Datalogic) or mobile-OS scanner apps.</li>
+        <li>Deploy label printers — carton, pallet, location.</li>
+        <li>Mobile device management (MDM) for floor devices.</li>
+        <li>Train every floor user, twice. Once in classroom. Once on the floor doing real work in the test system.</li>
+        <li>Document standard operating procedures with screenshots and photos. Print laminated copies for each station.</li>
+      </ul>
+    </div>
+
+    <h2>Phase 5: Cutover &amp; Go-Live (Week 11)</h2>
+    <div class="phase-card">
+      <h3>Week 11</h3>
+      <p>The big bang weekend. We do this on a Friday after close → Sunday before Monday open. Three of us are physically on-site.</p>
+      <ul>
+        <li>Friday evening: final inventory snapshot from old system.</li>
+        <li>Saturday: physical inventory count — yes, all of it. Reconcile against system. Fix.</li>
+        <li>Saturday evening: import reconciled inventory into production WMS. Print every location label.</li>
+        <li>Sunday: run through 100% of receiving, picking, packing, shipping flows. Catch issues before Monday.</li>
+        <li>Sunday night: orders for Monday loaded and waved.</li>
+      </ul>
+      <p><strong>Monday morning:</strong> someone from our team is on-site at 6am, with the floor lead, watching the first pick wave. Anything that breaks gets fixed before the first truck leaves.</p>
+    </div>
+
+    <h2>Phase 6: Hypercare (Week 12+)</h2>
+    <div class="phase-card">
+      <h3>Week 12 onward</h3>
+      <ul>
+        <li>30 days of "hypercare" — dedicated response, on-site if needed, daily check-ins with floor lead.</li>
+        <li>Tune wave rules, pick paths, and exception handling based on real volume.</li>
+        <li>Track inventory accuracy weekly. Fix process issues that show up.</li>
+        <li>Hand off to managed support relationship.</li>
+      </ul>
+    </div>
+
+    <h2>Pricing reality</h2>
+    <p>For a 3PL of this size, the project cost is typically <strong>$25,000–$45,000</strong>. Hardware (scanners, printers, MDM licenses) is separate and passed through at cost. Software licensing for the WMS itself is whatever the vendor charges (usually per user or per transaction).</p>
+    <p>Our minimum is $25K because anything below that means we're not doing one of the phases above — and if we skip a phase, the project fails. We'd rather lose the deal than do a $10K WMS project we know won't survive your peak season.</p>
+
+    <blockquote>The cheapest WMS implementation is the one that succeeds the first time. The most expensive one is the one that has to be redone in 18 months.</blockquote>
+
+    <h2>Common questions</h2>
+    <h3>Can you do this for 50% off if we have less than 50 SKUs?</h3>
+    <p>Sometimes. If you're a true micro-3PL (under 100 SKUs, single carrier, no EDI), the discovery and integration phases shrink. Call to scope.</p>
+
+    <h3>What if our ERP is QuickBooks?</h3>
+    <p>QB Enterprise has WMS-friendly integrations (mostly through middleware like SOS Inventory, Cin7, or Acctivate). We've done this. It works for sub-$10M operations. Beyond that you need a real ERP.</p>
+
+    <h3>Can we phase this — start with receiving only?</h3>
+    <p>Yes. Phased rollouts (receive-only → put-away → pick → ship) take longer overall but reduce go-live risk. Tradeoff is more billable hours. Worth it for high-risk operations.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Considering a WMS project?</h2>
+  <p>30-min discovery call. We'll tell you whether your situation fits the pattern above, what realistic timeline looks like, and what to budget.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;">📞 Call (360) 644-4820</a>
+    <a href="/#contact" class="btn btn-outline">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links"><li><a href="/services/it-operations.html">IT Operations</a></li><li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/about.html">About</a></li><li><a href="/blog/">Blog</a></li></ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+</body>
+</html>

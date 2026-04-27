@@ -119,7 +119,10 @@ Once you have 5+ Google reviews, add to homepage LocalBusiness schema (in `index
 ```
 
 ### 10. Set up newsletter (Beehiiv or ConvertKit free tier)
-Currently no list-building capture. Add footer opt-in once you commit to at least monthly content.
+Footer opt-in is now wired up but currently submits to the same Google Apps Script as the contact form. Once you commit to monthly content:
+- Sign up for Beehiiv or ConvertKit (both have free tiers)
+- Replace the form action in `index.html` (search for `newsletter_email`) with the real subscribe endpoint
+- Set up the welcome email and monthly send schedule
 
 ---
 
@@ -136,13 +139,26 @@ Per PLAN.md §9 Phase 3:
 
 ## Files shipped this build
 
-### New
-- `index.html` — full rewrite (phone-first H1, 2 pillars, qualifying form, dashboard relabeled, expanded FAQ)
+### New (Phase 1)
+- `index.html` — full rewrite (phone-first H1, 2 pillars, qualifying form, dashboard relabeled, expanded FAQ, exit-intent modal, newsletter opt-in)
 - `pricing.html` — productized offers + 9 project starting prices + 3 retainer tiers + honest exclusions + 6 pricing FAQs
 - `about.html` — Justin's story + operating principles + capabilities
 - `services/it-operations.html` — IT Operations hub (~1,800 words, conversion-optimized)
 - `services/logistics-events.html` — Logistics &amp; Events hub (~1,800 words)
 - `SETUP.md` — this file
+
+### New (Phase 2)
+- `case-studies/index.html` — case studies hub
+- `case-studies/managed-it-onboarding.html` — 30-day onboarding walkthrough
+- `case-studies/wms-implementation.html` — 12-week WMS implementation walkthrough
+- `industries/warehousing.html` — warehousing industry page
+- `industries/3pl-fulfillment.html` — 3PL/fulfillment industry page
+- `industries/events-festivals.html` — events &amp; festivals industry page
+- `tools/it-health-check.html` — interactive 12-question IT health check scorecard (lead magnet)
+- `blog/wms-implementation-guide-smb.html` — WMS guide for SMBs
+- `blog/ga4-setup-for-smbs.html` — GA4 setup guide
+- `blog/event-tech-checklist.html` — event tech 30-item checklist
+- `blog/edi-for-retail-suppliers.html` — EDI 850/856/810 guide
 
 ### Updated
 - `sitemap.xml` — new pages + updated lastmod

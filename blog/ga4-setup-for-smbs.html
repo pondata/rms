@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA4 Setup for SMBs: What Most Businesses Get Wrong | River Mountain Systems</title>
+  <meta name="description" content="Most SMB GA4 installs are broken in ways the owner never notices. Here's how to set up GA4 properly, the conversions that actually matter, and how to verify your tracking is working.">
+  <meta property="og:title" content="GA4 Setup for SMBs: What Most Businesses Get Wrong">
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2026-04-22">
+  <link rel="canonical" href="https://rivermountainsystems.com/blog/ga4-setup-for-smbs.html">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GA4 Setup for SMBs","datePublished":"2026-04-22","author":{"@type":"Organization","name":"River Mountain Systems"},"publisher":{"@type":"Organization","name":"River Mountain Systems"},"mainEntityOfPage":"https://rivermountainsystems.com/blog/ga4-setup-for-smbs.html"}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .article-header{padding:9rem 1.5rem 3rem;background:linear-gradient(135deg,var(--slate-900) 0%,#162033 50%,#0c2d3e 100%);color:#fff;}
+    .article-header-content{max-width:760px;margin:0 auto;text-align:center;}
+    .article-header h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:1rem;line-height:1.25;}
+    .article-meta{color:var(--slate-400);font-size:0.9rem;}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 1.5rem 4rem;}
+    .article-body h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--slate-900);}
+    .article-body h3{font-size:1.15rem;margin:1.5rem 0 0.5rem;color:var(--slate-900);}
+    .article-body p{color:var(--slate-700);margin-bottom:1rem;}
+    .article-body ul,.article-body ol{padding-left:1.5rem;color:var(--slate-700);margin-bottom:1rem;}
+    .article-body li{margin-bottom:0.4rem;}
+    .article-body a{color:var(--teal-600);font-weight:600;}
+    .article-body code{background:#f1f5f9;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85em;color:var(--slate-900);}
+    .back-link{color:var(--teal-500);text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block;margin-bottom:1.5rem;}
+    .cta-box{background:#fff;border:1px solid var(--teal-500);border-radius:14px;padding:1.75rem;margin:2rem 0;text-align:center;}
+    .cta-box h3{margin-top:0!important;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;background:var(--teal-500);color:#fff!important;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../services/it-operations.html">IT Operations</a></li>
+      <li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-content">
+    <h1>GA4 Setup for SMBs: What Most Businesses Get Wrong</h1>
+    <div class="article-meta">April 22, 2026 · 7 min read</div>
+  </div>
+</div>
+
+<article class="article-body">
+  <a href="./" class="back-link">← All Articles</a>
+
+  <p>Universal Analytics shut down in 2023. Most SMBs migrated to GA4 — and their tracking has been broken ever since. The data shows up. The reports look fine. But the conversions are wrong, the attribution is wrong, and any decision based on the data is built on sand.</p>
+
+  <p>Here's what actually matters in a 2026 GA4 setup, what most SMBs get wrong, and how to verify your tracking before you spend another dollar on ads.</p>
+
+  <h2>The 5 things every SMB GA4 install needs</h2>
+  <h3>1. A real measurement plan, not just a tag</h3>
+  <p>Most installs start with "drop the GA4 snippet on every page and see what happens." That gets you pageviews and not much else. Before you install anything, write down: what are the 3–5 actions on your site that actually matter to your business? For most SMBs: phone clicks, form submissions, email link clicks, file downloads, scheduled appointments. Those become your <em>conversion events</em>. Everything else is supporting data.</p>
+
+  <h3>2. Conversion events configured properly</h3>
+  <p>In GA4, an "event" is anything that happens. A "conversion" is an event you marked as important. Most SMBs forget step 2.</p>
+  <p>Go to GA4 → Admin → Events → mark each of your business-critical events as a conversion. Without this, GA4 won't optimize against them, Google Ads won't bid on them, and you'll wonder why your spend isn't producing leads.</p>
+
+  <h3>3. Phone-click tracking that actually works</h3>
+  <p>For service businesses, phone calls are the #1 conversion. GA4 doesn't track them by default. You need a click event on every <code>tel:</code> link:</p>
+  <ul>
+    <li>Easiest: add an <code>onclick</code> handler that fires <code>gtag('event', 'phone_click', {location: 'header'})</code></li>
+    <li>Better: track via Google Tag Manager with a Click trigger on <code>tel:</code> links</li>
+    <li>Best: install a call-tracking service (CallRail, WhatConverts) that gives you the actual phone-source attribution</li>
+  </ul>
+
+  <h3>4. Cross-domain tracking if you use a separate booking tool</h3>
+  <p>If your booking flow goes from <code>yourbusiness.com</code> to <code>cal.com</code>, GA4 sees that as two separate visits — and your conversion attribution dies. Fix it in Admin → Data Streams → Configure Tag Settings → Configure Your Domains.</p>
+
+  <h3>5. Spam and bot filtering</h3>
+  <p>About 10–30% of GA4 traffic on small sites is bots and referral spam. Filter them in Admin → Data Filters. Otherwise your "conversion rate" looks 30% lower than reality.</p>
+
+  <h2>What most SMBs get wrong</h2>
+  <h3>Tracking the wrong "conversions"</h3>
+  <p>"Time on page" and "bounce rate" are not conversions. Neither is "scrolled to bottom of homepage." Marking these as conversions gives Google Ads garbage signals to optimize against, and your CPL goes up.</p>
+
+  <h3>Filtering internal traffic only by IP</h3>
+  <p>Your team is on mobile data half the time. IP-based exclusion misses 70% of internal traffic. Better: have your team install the GA Opt-out browser extension, or use a UTM-based exclusion tag on internal QR codes.</p>
+
+  <h3>Not connecting GA4 to Google Ads</h3>
+  <p>Without the link, Google Ads can't see GA4 conversions and optimize for them. Admin → Product Links → Google Ads. Takes 2 minutes. Most SMBs never do it.</p>
+
+  <h3>Not setting up reporting identity</h3>
+  <p>By default GA4 uses "Blended" reporting which combines user-ID and device-ID data. For most SMB sites, "Device-based" gives more accurate counts. Admin → Reporting Identity.</p>
+
+  <h2>How to verify your tracking is actually working</h2>
+  <p>Three free tools, in order of priority:</p>
+  <ol>
+    <li><strong>GA4 DebugView:</strong> Admin → DebugView. Open your site in a Chrome tab with the GA Debugger extension on. Watch events fire in real-time. If you click your phone link and nothing fires, your tracking is broken.</li>
+    <li><strong>Tag Assistant Companion:</strong> Free Chrome extension from Google. Tells you which tags fired on each page.</li>
+    <li><strong>The Real-Time report:</strong> GA4 → Reports → Realtime. Click around your site in another tab and watch the events appear.</li>
+  </ol>
+  <p>If you can't see your phone-click event in DebugView, it's not in your data. Period.</p>
+
+  <h2>The pixels you should also install while you're at it</h2>
+  <p>While you're configuring GA4, install the others. They're free, take 5 minutes each, and let you build retargeting audiences you'll thank yourself for later:</p>
+  <ul>
+    <li><strong>Google Ads conversion tag</strong> (separate from GA4)</li>
+    <li><strong>Meta Pixel</strong> — even if you don't run Facebook ads now, the audience builds passively</li>
+    <li><strong>LinkedIn Insight Tag</strong> — for B2B service businesses, your highest-intent audience</li>
+    <li><strong>Microsoft Clarity</strong> — free session replay. First 10 sessions you watch will reveal more than any A/B test.</li>
+  </ul>
+
+  <h2>What to do this week</h2>
+  <ol>
+    <li>Open GA4 → Admin → Events. Look at what's marked as a conversion. Is it actually meaningful?</li>
+    <li>Open DebugView. Click your phone link and your form submit. Do they fire?</li>
+    <li>Verify your Google Ads ↔ GA4 link is active.</li>
+    <li>Install the missing pixels above.</li>
+    <li>Watch 10 Clarity session replays. Note the friction points.</li>
+  </ol>
+
+  <div class="cta-box">
+    <h3>Want a real GA4 audit?</h3>
+    <p>Our $797 GA4 / GTM audit covers your full setup: events, conversions, attribution, ad platform connections, and a written priority list of what to fix. Often pays for itself the same week.</p>
+    <a href="../pricing.html" class="btn">See Audit Details</a>
+  </div>
+</article>
+
+<footer>
+  <a href="../" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links"><li><a href="../services/it-operations.html">IT Operations</a></li><li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="../pricing.html">Pricing</a></li><li><a href="../about.html">About</a></li><li><a href="./">Blog</a></li></ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+</body>
+</html>
