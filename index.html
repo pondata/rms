@@ -3,17 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>River Mountain Systems — IT Services & Solutions</title>
-  <meta name="description" content="River Mountain Systems provides reliable IT services, managed support, cloud solutions, and cybersecurity for small and mid-size businesses in Vancouver WA and the Portland metro area.">
-  <meta property="og:title" content="River Mountain Systems — IT Services & Solutions">
-  <meta property="og:description" content="Reliable IT services, managed support, cloud solutions, and cybersecurity for small and mid-size businesses in Vancouver WA and the Portland metro area.">
+  <title>Managed IT Services Vancouver WA | River Mountain Systems</title>
+  <meta name="description" content="Managed IT services in Vancouver, WA from $99/user/mo. Local, founder-led IT support, cloud, cybersecurity, and logistics tech for SMBs in the Portland metro area. Call (360) 644-4820.">
+  <meta property="og:title" content="Managed IT Services Vancouver WA | River Mountain Systems">
+  <meta property="og:description" content="Managed IT services in Vancouver, WA from $99/user/mo. Local, founder-led IT support for SMBs in the Portland metro area.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rivermountainsystems.com">
   <meta property="og:image" content="https://rivermountainsystems.com/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="River Mountain Systems — IT Services & Solutions">
-  <meta name="twitter:description" content="Reliable IT services, managed support, cloud solutions, and cybersecurity for small and mid-size businesses in Vancouver WA and the Portland metro area.">
+  <meta name="twitter:title" content="Managed IT Services Vancouver WA | River Mountain Systems">
+  <meta name="twitter:description" content="Managed IT services in Vancouver, WA from $99/user/mo. Local, founder-led IT support for SMBs in the Portland metro area.">
+  <link rel="canonical" href="https://rivermountainsystems.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- ANALYTICS PIXELS — REPLACE PLACEHOLDER IDs (see SETUP.md) -->
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'send_page_view': true });
+    // Conversion event helpers
+    window.rmsTrack = function(name, params) {
+      try { gtag('event', name, params || {}); } catch(e){}
+      try { if (window.fbq) fbq('trackCustom', name, params || {}); } catch(e){}
+      try { if (window.lintrk) lintrk('track', { conversion_id: 0 }); } catch(e){}
+    };
+  </script>
+  <!-- Google Ads Conversion Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXXX"></script>
+  <script>gtag('config', 'AW-XXXXXXXXXX');</script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <!-- LinkedIn Insight Tag -->
+  <script type="text/javascript">
+  _linkedin_partner_id = "XXXXXXX";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+  (function(l) { if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+  window.lintrk.q=[]} var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "XXXXXXXXXX");
+  </script>
+  <!-- /ANALYTICS PIXELS -->
 
   <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
@@ -37,7 +88,14 @@
       "latitude": 45.6387,
       "longitude": -122.6615
     },
-    "serviceType": ["Managed IT Support", "Cloud Solutions", "Cybersecurity", "Network Infrastructure", "Backup & Recovery", "IT Consulting"],
+    "priceRange": "$$",
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }],
+    "serviceType": ["Managed IT Support", "Cloud Solutions", "Cybersecurity", "Network Infrastructure", "Backup & Recovery", "IT Consulting", "WMS Implementation", "TMS Integration", "ERP Integration", "EDI Setup", "Event Operations Technology"],
     "areaServed": [
       {
         "@type": "City",
@@ -129,6 +187,46 @@
           "@type": "Answer",
           "text": "Yes. Many of our clients have an internal IT contact and use us for specialized projects, overflow support, or after-hours coverage. We integrate seamlessly with your existing team rather than replacing them."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do project engagements like cloud migrations or network deployments cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Most project work is fixed-scope and fixed-price. Microsoft 365 / Google Workspace migrations start at $3,000 plus per-seat fees. Network design and deployment starts at $5,000. WMS implementations typically start at $25,000. We give you a written fixed-price quote after a discovery call so there are no hourly billing surprises."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do warehouse management (WMS) or logistics integration work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — this is one of our anchor specialties. We implement and integrate WMS, TMS, and ERP platforms, build EDI workflows (X12 850/856/810), and connect e-commerce stores to fulfillment systems (ShipStation, ShipHero, Shopify, Amazon FBA). Our founder's background is in logistics and warehouse operations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you run technology for a one-time event or festival?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We deploy event operations technology including credentialing, check-in and registration tech, parking and traffic flow systems, on-site WiFi and connectivity, and two-way radio dispatch coordination. Single-event packages start at $5,000 and require advance booking."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer Google Analytics (GA4), GTM, or Google Ads help?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — we offer GA4 implementation, Google Tag Manager setup, conversion tracking, and Google Ads management. These are typically scoped during your consult call rather than listed as productized SKUs because every business has different tracking needs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do AI integration projects?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We help businesses integrate AI tools into their actual operations — workflow automation, document processing, customer-facing assistants, and internal knowledge systems. AI projects are scoped after a discovery call because outcomes depend heavily on your data and workflows."
+        }
       }
     ]
   }
@@ -195,6 +293,11 @@
       border-radius: 6px; font-weight: 600; transition: background 0.2s;
     }
     .nav-cta:hover { background: var(--teal-600); }
+    .nav-phone {
+      background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
+      border-radius: 6px; font-weight: 700; transition: background 0.2s; font-size: 0.95rem !important;
+    }
+    .nav-phone:hover { background: var(--teal-600); }
     .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
 
     /* HERO */
@@ -417,11 +520,12 @@
       River Mountain Systems
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="services/it-operations.html">IT Operations</a></li>
+      <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#contact" class="nav-cta">Get Started</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -432,12 +536,16 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>IT that works <span>so you can too.</span></h1>
-    <p>River Mountain Systems delivers managed IT services, cloud solutions, and cybersecurity to businesses in Vancouver, WA and the Portland metro area — so you can focus on running your business, not troubleshooting it.</p>
+    <h1>Managed IT Services in Vancouver, WA — <span>Without the Big-Company Price Tag</span></h1>
+    <p>Local, founder-led IT support, cybersecurity, cloud, and logistics tech for businesses in Vancouver, WA and the greater Portland metro area. Flat-rate from <strong style="color:#fff;">$99/user/mo</strong>. No surprise invoices.</p>
     <div class="hero-buttons">
-      <a href="#contact" class="btn btn-primary">Book a Free Consultation</a>
-      <a href="#services" class="btn btn-outline">Our Services</a>
+      <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
+      <a href="#contact" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'book_consult',location:'hero'})">Book a 30-min Consult</a>
+      <a href="pricing.html" class="btn btn-outline">See Pricing</a>
     </div>
+    <p style="margin-top:1.5rem;font-size:0.9rem;color:var(--slate-400);">
+      <span style="color:#22c55e;">●</span> Justin answers Mon–Fri 8a–6p PT
+    </p>
   </div>
 </section>
 
@@ -445,9 +553,9 @@
 <section id="demo" style="background: linear-gradient(180deg, #0c1929 0%, #0f172a 100%); padding: 4rem 1.5rem 5rem;">
   <div class="container">
     <div class="section-header" style="margin-bottom: 2rem;">
-      <p style="color: var(--teal-400); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Live System Monitor</p>
-      <h2 style="color: #fff;">This Is What We Do For You</h2>
-      <p style="color: var(--slate-400);">Real-time view of a managed client environment. This is what proactive IT looks like.</p>
+      <p style="color: var(--teal-400); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Sample Monitoring Dashboard</p>
+      <h2 style="color: #fff;">This Is What Your Dashboard Would Look Like</h2>
+      <p style="color: var(--slate-400);">A representative view of the visibility our managed clients receive. Live data, automated remediation, and human follow-through — that's what proactive IT looks like.</p>
     </div>
 
     <!-- Status Bar -->
@@ -624,14 +732,70 @@
 })();
 </script>
 
-<!-- SERVICES -->
+<!-- PICK YOUR STARTING POINT -->
+<section id="start" style="background: #fff; padding: 4rem 1.5rem;">
+  <div class="container">
+    <div class="section-header">
+      <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Pick your starting point</p>
+      <h2>Three ways to start working with us</h2>
+      <p>Pick the smallest commitment that gets you what you need. Upgrade later if it makes sense.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:980px;margin:0 auto;">
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;text-align:center;">
+        <div style="font-size:0.8rem;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Free</div>
+        <div style="font-size:2rem;font-weight:700;color:var(--slate-900);margin-bottom:0.25rem;">$0</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">30-min Consult</h3>
+        <p style="color:var(--slate-500);font-size:0.9rem;margin-bottom:1.5rem;">Tell us what's broken or what you want to build. We'll tell you straight whether we can help.</p>
+        <a href="#contact" class="btn btn-outline" style="color:var(--slate-800);border-color:var(--slate-300);width:100%;justify-content:center;">Book Call</a>
+      </div>
+      <div style="background:linear-gradient(180deg,#f0fdfa 0%,#fff 100%);border:2px solid var(--teal-500);border-radius:14px;padding:2rem;text-align:center;position:relative;">
+        <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal-500);color:#fff;font-size:0.7rem;font-weight:700;padding:0.25rem 0.75rem;border-radius:999px;letter-spacing:0.05em;">MOST POPULAR</div>
+        <div style="font-size:0.8rem;font-weight:700;color:var(--teal-600);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Productized</div>
+        <div style="font-size:2rem;font-weight:700;color:var(--slate-900);margin-bottom:0.25rem;">$497</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">IT Health Check</h3>
+        <p style="color:var(--slate-500);font-size:0.9rem;margin-bottom:1.5rem;">2-hour onsite or remote audit. Written report covering security gaps, backup risk, hardware lifecycle, and quick wins.</p>
+        <a href="pricing.html" class="btn btn-primary" style="width:100%;justify-content:center;">Buy Health Check</a>
+      </div>
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;text-align:center;">
+        <div style="font-size:0.8rem;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.5rem;">Recurring</div>
+        <div style="font-size:2rem;font-weight:700;color:var(--slate-900);margin-bottom:0.25rem;">$99<span style="font-size:1rem;font-weight:500;color:var(--slate-500);">/user/mo</span></div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.75rem;">Managed IT</h3>
+        <p style="color:var(--slate-500);font-size:0.9rem;margin-bottom:1.5rem;">10-user minimum. Everything: monitoring, helpdesk, patching, security, vendor coordination.</p>
+        <a href="pricing.html" class="btn btn-outline" style="color:var(--slate-800);border-color:var(--slate-300);width:100%;justify-content:center;">See Plans</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — TWO PILLARS -->
 <section id="services">
   <div class="container">
     <div class="section-header">
-      <h2>What We Do</h2>
-      <p>End-to-end IT services tailored for small and mid-size businesses.</p>
+      <h2>What we do best</h2>
+      <p>Two anchor pillars. Real depth, not generalist breadth.</p>
     </div>
-    <div class="services-grid">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:900px;margin:0 auto 3rem;">
+      <a href="services/it-operations.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2.25rem;display:block;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;">
+        <div style="width:48px;height:48px;background:var(--teal-50,#ccfbf1);color:var(--teal-600);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3 style="font-size:1.35rem;margin-bottom:0.5rem;">IT That Works</h3>
+        <p style="color:var(--slate-500);font-size:0.95rem;margin-bottom:1rem;">Managed IT support, cloud (M365, Google Workspace, Azure, AWS), cybersecurity, networks, backup, and disaster recovery — all under one flat-rate plan.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.9rem;">Explore IT Operations →</span>
+      </a>
+      <a href="services/logistics-events.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2.25rem;display:block;transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;">
+        <div style="width:48px;height:48px;background:#fef3c7;color:#d97706;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"/></svg>
+        </div>
+        <h3 style="font-size:1.35rem;margin-bottom:0.5rem;">Logistics &amp; Event Systems That Scale</h3>
+        <p style="color:var(--slate-500);font-size:0.95rem;margin-bottom:1rem;">WMS, TMS, ERP, EDI, ShipStation/Shopify integrations — plus event ops tech: credentialing, check-in, parking flow, on-site connectivity, radio dispatch.</p>
+        <span style="color:#d97706;font-weight:600;font-size:0.9rem;">Explore Logistics &amp; Events →</span>
+      </a>
+    </div>
+    <p style="text-align:center;color:var(--slate-500);font-size:0.95rem;max-width:680px;margin:0 auto;">
+      <strong>Also:</strong> data &amp; analytics (GA4, GTM, Google Ads, Looker Studio), AI integration, automation (Zapier, Make, n8n), VoIP, and document management. Ask about these on your consult.
+    </p>
+    <div style="display:none;" class="services-grid">
 
       <a href="services/managed-it.html" class="service-card">
         <div class="service-icon">
@@ -717,38 +881,50 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials" style="background: #fff;">
+<!-- OUR PROCESS -->
+<section id="process" style="background: #fff;">
   <div class="container">
     <div class="section-header">
-      <h2>What Our Clients Say</h2>
-      <p>Hear from businesses we've helped stay productive and secure.</p>
+      <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">How we work</p>
+      <h2>Our process — what happens after you call</h2>
+      <p>No mystery, no surprise invoices. Here's exactly how a new engagement runs.</p>
     </div>
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">"We used to lose hours every week to IT problems. Since switching to River Mountain Systems, I can't remember the last time something went down. They handle everything quietly in the background and our team just works."</p>
-        <div class="testimonial-author">
-          <strong>Sarah M.</strong>
-          <span>Operations Director, Manufacturing Company</span>
-        </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;">
+      <div style="background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.75rem;">
+        <div style="width:36px;height:36px;background:var(--teal-500);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:1rem;">1</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">30-min discovery call</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;">Tell us what you're using, what's broken, and what you want it to look like in 12 months. We tell you straight whether we can help — and what it would cost.</p>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">"After a ransomware scare at a competitor, we called River Mountain to audit our security. They found gaps we didn't know existed and had everything locked down within two weeks. The peace of mind is worth every penny."</p>
-        <div class="testimonial-author">
-          <strong>David L.</strong>
-          <span>Owner, Regional Accounting Firm</span>
-        </div>
+      <div style="background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.75rem;">
+        <div style="width:36px;height:36px;background:var(--teal-500);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:1rem;">2</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">Written assessment</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;">Onsite or remote review of your stack: hardware, software, security posture, backups, vendors. You get a written report with prioritized findings — yours to keep regardless of what happens next.</p>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">"They migrated our entire office to Microsoft 365 over a weekend with zero data loss and almost no disruption. Monday morning, everything just worked. That's the kind of IT partner every small business needs."</p>
-        <div class="testimonial-author">
-          <strong>Rachel K.</strong>
-          <span>Office Manager, Legal Practice</span>
-        </div>
+      <div style="background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.75rem;">
+        <div style="width:36px;height:36px;background:var(--teal-500);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:1rem;">3</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">Fixed-scope proposal</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;">If it's a project, you get a fixed price and timeline. If it's managed IT, you get per-user pricing with a clear list of what's included. No "we'll bill hourly and see."</p>
       </div>
+      <div style="background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.75rem;">
+        <div style="width:36px;height:36px;background:var(--teal-500);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:1rem;">4</div>
+        <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">Onboarding &amp; ongoing</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;">We deploy monitoring, document your environment, train your team, and stay reachable. You get a dashboard like the one above and a real human who picks up the phone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS PLACEHOLDER -->
+<section id="reviews" style="background: var(--slate-50); padding: 4rem 1.5rem;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:2rem;">
+      <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Reviews</p>
+      <h2>What clients say on Google</h2>
+    </div>
+    <!-- TODO: Replace with live Google Reviews widget once GBP is verified (see SETUP.md) -->
+    <div style="max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;text-align:center;">
+      <p style="color:var(--slate-600);margin-bottom:1.25rem;">We're a new business actively building our review base. Reviews from clients will appear here as they come in. Want to be one of the first?</p>
+      <a href="tel:+13606444820" class="btn btn-primary" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'reviews'})">📞 Call (360) 644-4820</a>
     </div>
   </div>
 </section>
@@ -770,9 +946,12 @@
 
 <!-- CTA -->
 <section class="cta-section">
-  <h2>Ready to simplify your IT?</h2>
-  <p>Let's talk about how River Mountain Systems can keep your technology running — and your team productive.</p>
-  <a href="#contact" class="btn btn-primary">Get Your Free Assessment</a>
+  <h2>Ready to stop firefighting?</h2>
+  <p>Two minutes on the phone tells you whether we're a fit. Free, no pitch.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'cta_section'})">📞 Call (360) 644-4820</a>
+    <a href="#contact" class="btn btn-outline">Send a Message</a>
+  </div>
 </section>
 
 <!-- FAQ -->
@@ -811,6 +990,30 @@
         <summary>Can you work with our existing IT person or internal team?</summary>
         <p>Yes. Many of our clients have an internal IT contact and use us for specialized projects, overflow support, or after-hours coverage. We integrate seamlessly with your existing team rather than replacing them.</p>
       </details>
+      <details class="faq-item">
+        <summary>How much do project engagements like cloud migrations or network deployments cost?</summary>
+        <p>Most project work is fixed-scope and fixed-price. Microsoft 365 / Google Workspace migrations start at $3,000 plus per-seat fees. Network design and deployment starts at $5,000. WMS implementations typically start at $25,000. We give you a written fixed-price quote after a discovery call so there are no hourly billing surprises. <a href="pricing.html">See full pricing →</a></p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you do warehouse management (WMS) or logistics integration work?</summary>
+        <p>Yes — this is one of our anchor specialties. We implement and integrate WMS, TMS, and ERP platforms, build EDI workflows (X12 850/856/810), and connect e-commerce stores to fulfillment systems (ShipStation, ShipHero, Shopify, Amazon FBA). Our founder's background is in logistics and warehouse operations. <a href="services/logistics-events.html">Learn more →</a></p>
+      </details>
+      <details class="faq-item">
+        <summary>Can you run technology for a one-time event or festival?</summary>
+        <p>Yes. We deploy event operations technology including credentialing, check-in and registration tech, parking and traffic flow systems, on-site WiFi and connectivity, and two-way radio dispatch coordination. Single-event packages start at $5,000 and require advance booking — typically 60+ days out for proper planning.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you offer Google Analytics (GA4), GTM, or Google Ads help?</summary>
+        <p>Yes — we offer GA4 implementation, Google Tag Manager setup, conversion tracking, and Google Ads management. These are typically scoped during your consult call rather than listed as productized SKUs because every business has different tracking needs. Ask on your discovery call.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you do AI integration projects?</summary>
+        <p>Yes. We help businesses integrate AI tools into their actual operations — workflow automation, document processing, customer-facing assistants, and internal knowledge systems. AI projects are scoped after a discovery call because outcomes depend heavily on your data and existing workflows.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Where are you located and what areas do you serve?</summary>
+        <p>We're based in Vancouver, Washington and serve businesses throughout Clark County, Southwest Washington, and the greater Portland metro area — including Camas, Battle Ground, Ridgefield, Beaverton, Hillsboro, Tigard, Lake Oswego, and Portland proper. Most managed IT work is done remotely with onsite visits as needed.</p>
+      </details>
     </div>
   </div>
 </section>
@@ -819,35 +1022,85 @@
 <section id="contact">
   <div class="container">
     <div class="section-header">
-      <h2>Get In Touch</h2>
-      <p>Tell us about your needs and we'll get back to you within one business day.</p>
+      <h2>Get in touch</h2>
+      <p>Three ways to reach us. Pick whichever fits your style.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>Let's start a conversation.</h3>
-        <p>Whether you need full managed IT or help with a single project, we'd love to learn about your business and see how we can help.</p>
-        <div class="contact-detail">
-          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-          joberg@rivermountainsystems.com
-        </div>
+        <h3>The fastest way: call.</h3>
+        <p>Justin answers Mon–Fri 8a–6p PT. If you get voicemail, you'll get a callback within 2 hours during business hours.</p>
         <div class="contact-detail">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          <a href="tel:+13606444820" style="color: inherit; text-decoration: none;">(360) 644-4820</a>
+          <a href="tel:+13606444820" style="color: inherit; text-decoration: none; font-weight: 700; font-size: 1.1rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'contact_section'})">(360) 644-4820</a>
+        </div>
+        <div class="contact-detail">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <a href="mailto:joberg@rivermountainsystems.com" style="color: inherit; text-decoration: none;" onclick="if(window.rmsTrack)rmsTrack('email_click',{location:'contact_section'})">joberg@rivermountainsystems.com</a>
         </div>
         <div class="contact-detail">
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          Serving Vancouver, WA and the greater Portland metro area
+          Serving Vancouver, WA &amp; the greater Portland metro area
+        </div>
+        <div style="margin-top:2rem;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:12px;padding:1.25rem;">
+          <p style="font-weight:700;color:var(--slate-900);margin-bottom:0.5rem;font-size:0.95rem;">Prefer to schedule?</p>
+          <p style="color:var(--slate-600);font-size:0.9rem;margin-bottom:1rem;">Pick a 30-min slot — we'll do a quick discovery call.</p>
+          <!-- Cal.com placeholder — replace with embed once account is set up (see SETUP.md) -->
+          <a href="https://cal.com/joberg/30min" target="_blank" rel="noopener" class="btn btn-outline" style="color:var(--slate-800);border-color:var(--slate-300);width:100%;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'contact_section'})">📅 Book a 30-min Consult</a>
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.5rem;">Or send us details — Justin reads every form before any call. The more you share, the better we can help.</p>
         <div class="form-row">
-          <input type="text" name="name" id="formName" placeholder="Your Name" required>
-          <input type="email" name="email" id="formEmail" placeholder="Email Address" required>
+          <input type="text" name="name" id="formName" placeholder="Your Name *" required>
+          <input type="email" name="email" id="formEmail" placeholder="Email Address *" required>
         </div>
-        <input type="text" name="company" id="formCompany" placeholder="Company Name">
-        <textarea name="message" id="formMessage" placeholder="How can we help?" required></textarea>
-        <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send Message</button>
+        <div class="form-row">
+          <input type="text" name="company" id="formCompany" placeholder="Company Name">
+          <input type="tel" name="phone" id="formPhone" placeholder="Phone (optional)">
+        </div>
+        <select name="size" id="formSize" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Company size *</option>
+          <option>Just me / 1–5 employees</option>
+          <option>6–25 employees</option>
+          <option>26–50 employees</option>
+          <option>51–100 employees</option>
+          <option>100+ employees</option>
+        </select>
+        <select name="need" id="formNeed" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">What do you need? *</option>
+          <option>Managed IT support (recurring)</option>
+          <option>One-time project (cloud migration, network, etc.)</option>
+          <option>Cybersecurity audit or remediation</option>
+          <option>Backup &amp; disaster recovery</option>
+          <option>WMS / TMS / ERP / EDI integration</option>
+          <option>Event operations technology</option>
+          <option>GA4 / GTM / Google Ads / analytics</option>
+          <option>AI integration / automation</option>
+          <option>Not sure — want to talk it through</option>
+        </select>
+        <select name="budget" id="formBudget" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Approximate budget *</option>
+          <option>Under $1,000 (one-time)</option>
+          <option>$1,000–$5,000 (one-time)</option>
+          <option>$5,000–$25,000 (one-time)</option>
+          <option>$25,000+ (one-time)</option>
+          <option>Under $1,000/month (recurring)</option>
+          <option>$1,000–$5,000/month (recurring)</option>
+          <option>$5,000+/month (recurring)</option>
+          <option>Not sure yet</option>
+        </select>
+        <select name="timeline" id="formTimeline" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Timeline *</option>
+          <option>Emergency — need help now</option>
+          <option>This week</option>
+          <option>Within 30 days</option>
+          <option>1–3 months out</option>
+          <option>Just exploring</option>
+        </select>
+        <textarea name="message" id="formMessage" placeholder="Briefly describe what's going on or what you want to build *" required rows="4"></textarea>
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send &amp; Get a Callback</button>
         <p id="formStatus" style="margin-top: 0.5rem; font-size: 0.9rem; display: none;"></p>
+        <p style="font-size:0.8rem;color:var(--slate-500);margin-top:0.5rem;">We respond within 1 business day. For emergencies, call (360) 644-4820.</p>
       </form>
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
@@ -861,23 +1114,33 @@
           formData.append('name', document.getElementById('formName').value);
           formData.append('email', document.getElementById('formEmail').value);
           formData.append('company', document.getElementById('formCompany').value);
+          formData.append('phone', document.getElementById('formPhone').value);
+          formData.append('size', document.getElementById('formSize').value);
+          formData.append('need', document.getElementById('formNeed').value);
+          formData.append('budget', document.getElementById('formBudget').value);
+          formData.append('timeline', document.getElementById('formTimeline').value);
           formData.append('message', document.getElementById('formMessage').value);
           fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {
             method: 'POST',
             mode: 'no-cors',
             body: formData
           }).then(function() {
-            status.textContent = 'Message sent! We\'ll be in touch shortly.';
+            if (window.rmsTrack) rmsTrack('form_submit', {
+              need: document.getElementById('formNeed').value,
+              budget: document.getElementById('formBudget').value,
+              timeline: document.getElementById('formTimeline').value
+            });
+            status.textContent = 'Got it — Justin will reach out within 1 business day. For urgent issues, call (360) 644-4820.';
             status.style.color = '#14b8a6';
             status.style.display = 'block';
             document.getElementById('contactForm').reset();
-            btn.textContent = 'Send Message';
+            btn.textContent = 'Send &amp; Get a Callback';
             btn.disabled = false;
           }).catch(function() {
-            status.textContent = 'Something went wrong. Please email us directly.';
+            status.textContent = 'Something went wrong. Please call (360) 644-4820 or email joberg@rivermountainsystems.com.';
             status.style.color = '#ef4444';
             status.style.display = 'block';
-            btn.textContent = 'Send Message';
+            btn.textContent = 'Send &amp; Get a Callback';
             btn.disabled = false;
           });
         });
@@ -896,18 +1159,25 @@
     </svg>
     River Mountain Systems
   </a>
+  <p style="margin:1rem 0;color:var(--slate-400);font-size:0.95rem;">
+    <a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> &nbsp;·&nbsp;
+    <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a>
+  </p>
   <ul class="footer-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#why">Why Us</a></li>
+    <li><a href="services/it-operations.html">IT Operations</a></li>
+    <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="blog/">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <p>&copy; 2026 River Mountain Systems. All rights reserved.</p>
+  <p style="color:var(--slate-500);font-size:0.8rem;margin-top:1rem;">Also: Data &amp; analytics · AI integration · Workflow automation · VoIP · Document management — ask about these on your consult.</p>
+  <p style="margin-top:1.5rem;">&copy; 2026 River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>
 
-<!-- STICKY MOBILE CTA -->
-<div class="mobile-sticky-cta">
-  <a href="#contact" class="btn btn-primary">Get Started</a>
+<!-- STICKY MOBILE CTA — phone-first -->
+<div class="mobile-sticky-cta" style="display:none;">
+  <a href="tel:+13606444820" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'mobile_sticky'})">📞 Call (360) 644-4820</a>
 </div>
 
 </body>

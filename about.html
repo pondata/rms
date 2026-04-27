@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Justin Oberg &amp; River Mountain Systems | Vancouver WA IT</title>
+  <meta name="description" content="Founder-led IT services in Vancouver, WA. Justin Oberg's background in warehousing, logistics, and systems engineering — and why River Mountain Systems exists.">
+  <meta property="og:title" content="About | River Mountain Systems">
+  <meta property="og:description" content="Founder-led IT services in Vancouver, WA. Background in warehousing, logistics, systems engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivermountainsystems.com/about.html">
+  <link rel="canonical" href="https://rivermountainsystems.com/about.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ANALYTICS PIXELS -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    window.rmsTrack = function(name, params) {
+      try { gtag('event', name, params || {}); } catch(e){}
+    };
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Justin Oberg",
+    "jobTitle": "Founder &amp; Systems Engineer",
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "River Mountain Systems",
+      "url": "https://rivermountainsystems.com"
+    },
+    "url": "https://rivermountainsystems.com/about.html",
+    "telephone": "+13606444820",
+    "email": "joberg@rivermountainsystems.com"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+      --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569;
+      --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+      --teal-500: #14b8a6; --teal-600: #0d9488;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--slate-800); background: var(--slate-50); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 64px; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem; }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--slate-400); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: #fff; }
+    .nav-phone { background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 700; }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    .hero { padding: 9rem 1.5rem 4rem; background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%); color: #fff; text-align: center; }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--teal-500); }
+    .hero p { color: var(--slate-300); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+    .container { max-width: 800px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .container.wide { max-width: 1100px; }
+
+    .story h2 { font-size: 1.6rem; margin: 2.5rem 0 1rem; color: var(--slate-900); }
+    .story p { color: var(--slate-700); margin-bottom: 1rem; font-size: 1rem; }
+    .story p.lede { font-size: 1.15rem; color: var(--slate-800); }
+    .story blockquote { border-left: 3px solid var(--teal-500); padding-left: 1.25rem; margin: 1.5rem 0; color: var(--slate-700); font-style: italic; }
+
+    .principles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .principle { background: #fff; border: 1px solid var(--slate-200); border-radius: 12px; padding: 1.5rem; }
+    .principle h3 { font-size: 1rem; margin-bottom: 0.5rem; color: var(--slate-900); }
+    .principle p { color: var(--slate-600); font-size: 0.92rem; }
+
+    .creds { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; padding: 2rem; }
+    .creds h3 { font-size: 1.05rem; margin-bottom: 1rem; color: var(--slate-900); }
+    .creds ul { list-style: none; padding: 0; }
+    .creds ul li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; color: var(--slate-700); font-size: 0.95rem; }
+    .creds ul li::before { content: '✓'; position: absolute; left: 0; color: var(--teal-500); font-weight: 700; }
+
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; justify-content: center; }
+    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary:hover { background: var(--teal-600); }
+    .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
+
+    .cta-section { background: linear-gradient(135deg, var(--slate-900), #162033); color: #fff; text-align: center; padding: 5rem 1.5rem; }
+    .cta-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1rem; }
+    .cta-section p { color: var(--slate-400); margin-bottom: 1.5rem; }
+
+    footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--slate-900); padding: 1.5rem; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT Operations</a></li>
+      <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>The person who'll <span>actually pick up.</span></h1>
+  <p>River Mountain Systems is founder-led. When you call (360) 644-4820, you talk to Justin — not a call center, not a queue, not a chatbot.</p>
+</section>
+
+<section style="background:#fff;">
+  <div class="container">
+    <div class="story">
+      <p class="lede">River Mountain Systems exists because most small businesses are stuck choosing between expensive, impersonal IT firms — and break-fix shops that show up after something breaks. That's not a real choice.</p>
+
+      <p>I'm Justin Oberg. I started River Mountain Systems in Vancouver, Washington to give small and mid-size businesses around Southwest Washington and the Portland metro area the kind of IT support that big companies take for granted, without the big-company price tag or the 90-minute hold queue.</p>
+
+      <h2>The background</h2>
+
+      <p>Before I started running IT for businesses, I came up through warehousing and logistics operations — picking, shipping, scanning, dispatching, and watching what happens when systems fail in the middle of a peak Friday. That experience shaped how I think about technology: the system doesn't matter if it doesn't work the way the floor works.</p>
+
+      <p>From there I moved into systems engineering — building, integrating, and maintaining the software that runs operations: WMS, TMS, ERP, EDI, networks, cloud infrastructure, security. Every company I worked at, I ended up being the person leadership called when something complicated broke or when a new system had to ship under a deadline.</p>
+
+      <p>River Mountain Systems is what happens when that role gets pointed at the small businesses around me — the ones running real operations on duct-taped IT, who can't afford to hire a full-time CTO but need somebody who can think like one.</p>
+
+      <h2>What I actually do</h2>
+
+      <p>Two anchor practices:</p>
+
+      <ul style="padding-left:1.5rem;color:var(--slate-700);margin-bottom:1.5rem;">
+        <li><strong>IT Operations</strong> — managed IT, cybersecurity, cloud, networks, backup. Recurring monthly support for businesses that want to stop firefighting.</li>
+        <li><strong>Logistics &amp; Event Systems</strong> — WMS, TMS, ERP, EDI, e-commerce integrations, plus event operations technology (credentialing, check-in, on-site networks). One-time projects for operators with specific challenges.</li>
+      </ul>
+
+      <p>Beyond those two, I also do digital marketing tech (GA4, GTM, Google Ads), AI integration, and workflow automation when it makes sense. Those aren't on the homepage because I'd rather scope them on a call than oversell them on a billboard.</p>
+
+      <h2>How I work</h2>
+
+      <blockquote>If we can't fix it well, we'll tell you who can. The world is full of IT people who'll take your money for a job they can't deliver. I'd rather lose the deal than be one of them.</blockquote>
+
+      <p>The pricing on this site is the actual pricing. The phone number is my actual phone number. The promise to return calls within two hours is the actual promise — and if we ever stop being able to keep it, we'll change the website before we change the promise.</p>
+
+      <h2>Why "River Mountain"</h2>
+
+      <p>Because we're in the Pacific Northwest, and because both rivers and mountains are systems. Rivers carry things from where they are to where they need to be. Mountains hold up under pressure. Both metaphors are honest about what good IT is supposed to do.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--slate-50);">
+  <div class="container">
+    <h2 style="font-size:1.5rem;margin-bottom:1.5rem;color:var(--slate-900);">Operating principles</h2>
+    <div class="principles-grid">
+      <div class="principle"><h3>📞 Pick up the phone</h3><p>The fastest call back wins. Justin answers Mon–Fri 8a–6p PT, callback within 2 hours otherwise.</p></div>
+      <div class="principle"><h3>💰 Flat rates, fixed scope</h3><p>No hourly billing surprises. You know what something costs before we start.</p></div>
+      <div class="principle"><h3>🔧 Refer when we should</h3><p>HIPAA / SOC 2 / PCI audits go to specialists. We'd rather refer than oversell.</p></div>
+      <div class="principle"><h3>📜 Documentation is real work</h3><p>Every client environment is fully documented. If you ever leave us, you leave with everything.</p></div>
+      <div class="principle"><h3>🚫 No long-term lock-in</h3><p>Month-to-month with 30 days notice. We earn your business every month.</p></div>
+      <div class="principle"><h3>🏔️ Local, on-site, real time zone</h3><p>Vancouver, WA. Same time zone, same language, can be onsite in 30 minutes.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background: #fff;">
+  <div class="container">
+    <h2 style="font-size:1.5rem;margin-bottom:1.5rem;color:var(--slate-900);">Capabilities &amp; certifications</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;">
+      <div class="creds">
+        <h3>Microsoft &amp; Cloud</h3>
+        <ul>
+          <li>Microsoft 365 administration &amp; migration</li>
+          <li>Azure infrastructure</li>
+          <li>Google Workspace administration</li>
+          <li>AWS infrastructure</li>
+        </ul>
+      </div>
+      <div class="creds">
+        <h3>Networking &amp; Security</h3>
+        <ul>
+          <li>Firewall configuration (Sophos, SonicWall, pfSense, MikroTik)</li>
+          <li>Wi-Fi design &amp; deployment (Ubiquiti, Meraki)</li>
+          <li>Endpoint protection &amp; EDR</li>
+          <li>MFA, SSO, identity management</li>
+        </ul>
+      </div>
+      <div class="creds">
+        <h3>Logistics &amp; Operations</h3>
+        <ul>
+          <li>WMS implementations (multiple platforms)</li>
+          <li>TMS &amp; carrier integrations</li>
+          <li>ERP integration (NetSuite, SAP B1, Acumatica, QuickBooks)</li>
+          <li>EDI X12 (850, 856, 810, 852, 855)</li>
+        </ul>
+      </div>
+      <div class="creds">
+        <h3>Data &amp; Analytics</h3>
+        <ul>
+          <li>GA4 implementation &amp; migration</li>
+          <li>Google Tag Manager</li>
+          <li>Google Ads management</li>
+          <li>Looker Studio dashboards</li>
+        </ul>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--slate-500);font-size:0.85rem;">
+      Microsoft Partner ID: <span style="color:var(--slate-400);">[TODO — add when registered]</span> · Pacific Northwest based
+    </p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Want to work together?</h2>
+  <p>The fastest way to find out if we're a fit: 30 minutes on the phone.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'about_cta'})">📞 Call (360) 644-4820</a>
+    <a href="/#contact" class="btn btn-outline">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> · <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a></p>
+  <ul class="footer-links">
+    <li><a href="/services/it-operations.html">IT Operations</a></li>
+    <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+</footer>
+
+</body>
+</html>

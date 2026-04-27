@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — Managed IT, Projects & Event Tech | River Mountain Systems</title>
+  <meta name="description" content="Transparent pricing for managed IT (from $99/user/mo), one-time projects (cloud migrations, networks, WMS), and event tech packages. Fixed-scope quotes, no hourly billing surprises. Vancouver, WA.">
+  <meta property="og:title" content="Pricing | River Mountain Systems">
+  <meta property="og:description" content="Transparent pricing for managed IT, projects, and event tech. Fixed-scope quotes, no surprise invoices.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rivermountainsystems.com/pricing.html">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://rivermountainsystems.com/pricing.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ANALYTICS PIXELS — see SETUP.md -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    window.rmsTrack = function(name, params) {
+      try { gtag('event', name, params || {}); } catch(e){}
+      try { if (window.fbq) fbq('trackCustom', name, params || {}); } catch(e){}
+    };
+  </script>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX'); fbq('track', 'PageView');
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Pricing — River Mountain Systems",
+    "description": "Pricing for managed IT, projects, and event tech.",
+    "url": "https://rivermountainsystems.com/pricing.html"
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+      --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569;
+      --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
+      --teal-400: #2dd4bf; --teal-500: #14b8a6; --teal-600: #0d9488;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--slate-800); background: var(--slate-50);
+      line-height: 1.6; -webkit-font-smoothing: antialiased;
+    }
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 1.5rem; height: 64px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 0.6rem;
+      text-decoration: none; color: #fff; font-weight: 700; font-size: 1.1rem;
+    }
+    .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+    .nav-links a { color: var(--slate-400); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+    .nav-links a:hover { color: #fff; }
+    .nav-phone { background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem; border-radius: 6px; font-weight: 700; }
+    .nav-phone:hover { background: var(--teal-600); }
+    .mobile-toggle { display: none; background: none; border: none; color: #fff; cursor: pointer; }
+
+    .hero {
+      padding: 9rem 1.5rem 3rem;
+      background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
+      color: #fff; text-align: center;
+    }
+    .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 700; margin-bottom: 1rem; }
+    .hero h1 span { color: var(--teal-400); }
+    .hero p { color: var(--slate-400); max-width: 640px; margin: 0 auto; font-size: 1.05rem; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 4rem 0; }
+    .section-header { text-align: center; max-width: 640px; margin: 0 auto 2.5rem; padding: 0 1.5rem; }
+    .section-header h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--slate-900); }
+    .section-header .eyebrow { color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .section-header p { color: var(--slate-500); font-size: 1.02rem; }
+
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+    .price-card {
+      background: #fff; border: 1px solid var(--slate-200);
+      border-radius: 14px; padding: 2rem; display: flex; flex-direction: column;
+    }
+    .price-card.featured { border: 2px solid var(--teal-500); background: linear-gradient(180deg, #f0fdfa 0%, #fff 100%); position: relative; }
+    .price-card .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal-500); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 999px; letter-spacing: 0.05em; }
+    .price-card .tag { font-size: 0.75rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+    .price-card .amount { font-size: 2.4rem; font-weight: 700; color: var(--slate-900); line-height: 1.1; margin-bottom: 0.25rem; }
+    .price-card .amount small { font-size: 1rem; font-weight: 500; color: var(--slate-500); }
+    .price-card .amount-sub { color: var(--slate-500); font-size: 0.85rem; margin-bottom: 1.25rem; }
+    .price-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .price-card p.desc { color: var(--slate-600); font-size: 0.92rem; margin-bottom: 1.25rem; }
+    .price-card ul { list-style: none; margin-bottom: 1.5rem; padding: 0; flex-grow: 1; }
+    .price-card ul li { padding: 0.4rem 0 0.4rem 1.5rem; position: relative; color: var(--slate-700); font-size: 0.92rem; }
+    .price-card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--teal-500); font-weight: 700; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;
+      font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; justify-content: center;
+    }
+    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary:hover { background: var(--teal-600); }
+    .btn-outline { background: transparent; color: var(--slate-800); border: 1px solid var(--slate-300); }
+    .btn-outline:hover { border-color: var(--slate-500); }
+
+    .project-table { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; overflow: hidden; }
+    .project-table .row { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--slate-100); align-items: center; }
+    .project-table .row:last-child { border-bottom: none; }
+    .project-table .row strong { color: var(--slate-900); font-size: 0.98rem; }
+    .project-table .row .desc { color: var(--slate-500); font-size: 0.85rem; display: block; margin-top: 0.15rem; }
+    .project-table .price { color: var(--teal-600); font-weight: 700; font-size: 1.05rem; white-space: nowrap; }
+    .project-table .row .quote-btn { font-size: 0.85rem; padding: 0.5rem 1rem; }
+
+    .faq-item { background: #fff; border: 1px solid var(--slate-200); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; }
+    .faq-item summary { font-weight: 600; cursor: pointer; color: var(--slate-900); }
+    .faq-item p { margin-top: 0.75rem; color: var(--slate-600); font-size: 0.95rem; }
+
+    .cta-section { background: linear-gradient(135deg, var(--slate-900), #162033); color: #fff; text-align: center; padding: 5rem 1.5rem; }
+    .cta-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1rem; }
+    .cta-section p { color: var(--slate-400); margin-bottom: 1.5rem; }
+
+    footer { background: var(--slate-900); color: var(--slate-400); padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem; }
+    footer .logo { justify-content: center; margin-bottom: 1.5rem; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: var(--slate-400); text-decoration: none; }
+    .footer-links a:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: block; }
+      .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--slate-900); padding: 1.5rem; gap: 1rem; }
+      .project-table .row { grid-template-columns: 1fr; }
+      .project-table .price { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+        <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+      </svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="services/it-operations.html">IT Operations</a></li>
+      <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Honest pricing. <span>No hourly surprises.</span></h1>
+  <p>Productized fixed-price offers, transparent project starting prices, and per-user managed IT plans. Pick what fits and we'll quote anything custom in writing within one business day.</p>
+</section>
+
+<!-- PRODUCTIZED OFFERS -->
+<section style="background: #fff;">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Start small</p>
+      <h2>Productized offers — fixed price, fixed scope</h2>
+      <p>The smallest possible commitment to find out if we can help.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="tag">No-cost</span>
+        <div class="amount">$0</div>
+        <div class="amount-sub">30-min discovery call</div>
+        <h3>Free Consult</h3>
+        <p class="desc">Tell us what's broken or what you want to build. We'll tell you straight whether we can help and roughly what it would cost.</p>
+        <ul>
+          <li>30 minutes, phone or video</li>
+          <li>No pitch, no pressure</li>
+          <li>Written follow-up summary</li>
+        </ul>
+        <a href="tel:+13606444820" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'pricing_consult'})">📞 Call to Schedule</a>
+      </div>
+      <div class="price-card featured">
+        <span class="badge">MOST POPULAR</span>
+        <span class="tag">Productized</span>
+        <div class="amount">$497</div>
+        <div class="amount-sub">flat, one-time</div>
+        <h3>IT Health Check</h3>
+        <p class="desc">2-hour onsite or remote audit. You walk away with a written report covering security gaps, backup risk, hardware lifecycle, software licensing, and quick wins.</p>
+        <ul>
+          <li>Up to 25 endpoints reviewed</li>
+          <li>Vulnerability scan + patch report</li>
+          <li>Backup verification</li>
+          <li>Written prioritized findings</li>
+          <li>Yours to keep — no obligation</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Buy Health Check</a>
+      </div>
+      <div class="price-card">
+        <span class="tag">Productized</span>
+        <div class="amount">$797</div>
+        <div class="amount-sub">flat, one-time</div>
+        <h3>Network Assessment</h3>
+        <p class="desc">Full review of your wired and wireless network: speed tests, coverage map, security posture, equipment lifecycle, and a roadmap for what to fix first.</p>
+        <ul>
+          <li>Onsite network discovery</li>
+          <li>Wi-Fi heatmap (single floor)</li>
+          <li>Switch/router config review</li>
+          <li>Written roadmap with priorities</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Buy Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT STARTING PRICES -->
+<section style="background: var(--slate-50);">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">One-time projects</p>
+      <h2>Project starting prices</h2>
+      <p>So you can self-qualify before booking a call. Final price is fixed-scope and quoted in writing.</p>
+    </div>
+    <div class="project-table">
+      <div class="row">
+        <div>
+          <strong>Microsoft 365 / Google Workspace migration</strong>
+          <span class="desc">Email, files, security baseline, user training</span>
+        </div>
+        <div class="price">from $3,000 + per-seat</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Network design + deployment</strong>
+          <span class="desc">Switching, Wi-Fi, firewall, VLANs, monitoring</span>
+        </div>
+        <div class="price">from $5,000</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Cybersecurity remediation sprint</strong>
+          <span class="desc">MFA, endpoint protection, email security, training</span>
+        </div>
+        <div class="price">from $4,500</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Backup + disaster recovery setup</strong>
+          <span class="desc">Onsite + offsite, tested restores, DR plan</span>
+        </div>
+        <div class="price">from $2,500</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>WMS implementation / integration</strong>
+          <span class="desc">Warehouse management software, scanners, ERP sync</span>
+        </div>
+        <div class="price">from $25,000</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>EDI setup (X12 850/856/810)</strong>
+          <span class="desc">Trading partner onboarding, mapping, testing</span>
+        </div>
+        <div class="price">from $7,500</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>Event tech package (single event)</strong>
+          <span class="desc">Credentialing, check-in, parking flow, on-site WiFi</span>
+        </div>
+        <div class="price">from $5,000</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>GA4 / GTM / Google Ads setup</strong>
+          <span class="desc">Tracking, conversions, dashboards, campaign launch</span>
+        </div>
+        <div class="price">from $2,500</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+      <div class="row">
+        <div>
+          <strong>AI integration / workflow automation</strong>
+          <span class="desc">Custom — depends on data sources and outcomes</span>
+        </div>
+        <div class="price">Contact for scope</div>
+        <a href="#contact" class="btn btn-outline quote-btn">Get Quote</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:2rem;color:var(--slate-500);font-size:0.9rem;">
+      Don't see what you need? <a href="tel:+13606444820" style="color:var(--teal-600);font-weight:600;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'pricing_no_match'})">Call (360) 644-4820</a> — we probably do it.
+    </p>
+  </div>
+</section>
+
+<!-- MANAGED IT TIERS -->
+<section style="background: #fff;">
+  <div class="container">
+    <div class="section-header">
+      <p class="eyebrow">Recurring</p>
+      <h2>Managed IT — flat per-user pricing</h2>
+      <p>10-user minimum. Everything included. Cancel any time with 30 days' notice.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="tag">Tier 1</span>
+        <div class="amount">$99<small>/user/mo</small></div>
+        <div class="amount-sub">~$990/mo for 10 users</div>
+        <h3>Essentials</h3>
+        <p class="desc">Everything most SMBs need. Proactive monitoring, helpdesk, patching, vendor coordination.</p>
+        <ul>
+          <li>Business-hours helpdesk (8a–6p PT)</li>
+          <li>24/7 endpoint monitoring</li>
+          <li>Automated patching (OS + apps)</li>
+          <li>Endpoint antivirus + EDR</li>
+          <li>M365 / Google Workspace admin</li>
+          <li>Vendor coordination (ISP, SaaS)</li>
+          <li>Quarterly business review</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+      </div>
+      <div class="price-card featured">
+        <span class="badge">RECOMMENDED</span>
+        <span class="tag">Tier 2</span>
+        <div class="amount">$149<small>/user/mo</small></div>
+        <div class="amount-sub">~$1,490/mo for 10 users</div>
+        <h3>Secure</h3>
+        <p class="desc">Everything in Essentials plus advanced cybersecurity and faster response. The right tier for most businesses with sensitive data.</p>
+        <ul>
+          <li>Everything in Essentials</li>
+          <li>24/7 critical incident response</li>
+          <li>Advanced email security + DKIM/DMARC</li>
+          <li>MFA enforcement + identity protection</li>
+          <li>Phishing simulation + user training</li>
+          <li>Daily backups + monthly restore tests</li>
+          <li>Security awareness program</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="price-card">
+        <span class="tag">Tier 3</span>
+        <div class="amount">$199<small>/user/mo</small></div>
+        <div class="amount-sub">~$1,990/mo for 10 users</div>
+        <h3>Operations</h3>
+        <p class="desc">For businesses where downtime stops the line. 24/7 coverage, rapid response, and dedicated time for projects.</p>
+        <ul>
+          <li>Everything in Secure</li>
+          <li>24/7 helpdesk + after-hours pager</li>
+          <li>Sub-15-min response on critical issues</li>
+          <li>Dedicated account engineer</li>
+          <li>4 hours/mo of project time included</li>
+          <li>Onsite visits as needed (within 30 mi)</li>
+          <li>Strategic IT roadmap + budget planning</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Get Started</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:1.5rem;color:var(--slate-500);font-size:0.9rem;">
+      Add-ons available: server management ($75/server/mo), advanced backup ($25/endpoint/mo), compliance support (custom). Server-heavy environments may use device-based pricing instead — ask.
+    </p>
+  </div>
+</section>
+
+<!-- WHAT'S NOT INCLUDED -->
+<section style="background: var(--slate-50);">
+  <div class="container" style="max-width: 800px;">
+    <div class="section-header">
+      <p class="eyebrow">Honest exclusions</p>
+      <h2>What's not included</h2>
+      <p>So you're not surprised. We'd rather lose the deal than oversell.</p>
+    </div>
+    <ul style="background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;list-style:none;">
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> Hardware purchases — passed through at our cost or yours, your choice</li>
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> Third-party software licenses (M365, antivirus, backup storage) — billed at vendor rates</li>
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> Major migrations or new deployments — quoted as separate fixed-price projects</li>
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> HIPAA / SOC 2 / PCI audits or attestations — we refer these to specialized auditors</li>
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> Custom software development or full-stack web app builds</li>
+      <li style="padding:0.5rem 0 0.5rem 1.5rem;position:relative;"><span style="position:absolute;left:0;color:#ef4444;">×</span> Onsite emergency response outside the 30-mile Vancouver / Portland metro radius</li>
+    </ul>
+  </div>
+</section>
+
+<!-- PRICING FAQ -->
+<section style="background: #fff;">
+  <div class="container" style="max-width: 800px;">
+    <div class="section-header">
+      <h2>Pricing questions</h2>
+    </div>
+    <details class="faq-item">
+      <summary>Why per-user instead of per-device?</summary>
+      <p>Most SMB users have 2–3 devices (laptop, phone, maybe a desktop). Per-user pricing keeps the math simple and means we don't penalize you for issuing a second monitor or upgrading a workstation. If you're server-heavy or device-light, ask about per-device pricing instead.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Is there a contract or lock-in?</summary>
+      <p>No long-term contract. Managed IT runs month-to-month with 30 days' notice to cancel. We'd rather earn your business every month than trap you. Project work is fixed-scope and one-time.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Why is your $25K WMS minimum so high?</summary>
+      <p>WMS implementations are typically 200+ hour engagements involving inventory data migration, scanner deployment, ERP/shipping integration, user training, and weeks of go-live support. Anyone offering you "WMS in a week for $5K" is either selling a starter kit or about to deliver something that won't survive contact with your warehouse.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can you bill hourly?</summary>
+      <p>Generally no — we prefer fixed-scope quotes because they remove the perverse incentive to take longer. For one-off tasks under 4 hours that don't fit a productized SKU, hourly is $175/hr with a 1-hour minimum.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Do you require a deposit?</summary>
+      <p>For projects over $5,000, yes — typically 50% upfront, 50% on completion. Smaller productized SKUs are paid in full upfront. Managed IT bills monthly in advance.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I get a discount for annual prepay?</summary>
+      <p>Yes. Annual prepay on managed IT plans gets you 1 month free (effectively ~8% discount).</p>
+    </details>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h2>Not sure what you need?</h2>
+  <p>Free 30-min call. We'll tell you straight whether we're the right fit — and refer you to someone better if we're not.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="tel:+13606444820" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'pricing_cta'})">📞 Call (360) 644-4820</a>
+    <a href="/#contact" class="btn btn-outline" style="border-color:var(--slate-600);color:#fff;">Send a Message</a>
+  </div>
+</section>
+
+<footer>
+  <a href="/" class="logo">
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
+      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
+    </svg>
+    River Mountain Systems
+  </a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> · <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a></p>
+  <ul class="footer-links">
+    <li><a href="services/it-operations.html">IT Operations</a></li>
+    <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog/">Blog</a></li>
+  </ul>
+  <p>&copy; 2026 River Mountain Systems. Vancouver, WA · Serving the Portland metro area.</p>
+</footer>
+
+</body>
+</html>
