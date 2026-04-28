@@ -1,2 +1,12 @@
 .DS_Store
 *.swp
+
+# Swarm local artifacts (never commit secrets / live claim state)
+.swarm/claims.jsonl
+.swarm/secrets.local.md
+.swarm/proof-targets.md
+.swarm/insurance-intake.md
+.swarm/phone-routing-live.md
+.swarm/legal/
+.swarm/lh-*.json
+.swarm/uptime-monitor-setup.md

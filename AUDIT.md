@@ -1,3 +1,5 @@
+> **DEPRECATED — superseded by `AUDIT_2026-04-28.md` (2026-04-28).** Do not follow this doc; it is retained for history only.
+
 # Live-Site UX Audit & Redesign Plan
 **rivermountainsystems.com — audited 2026-04-27**
 
