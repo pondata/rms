@@ -1,3 +1,5 @@
+> **DEPRECATED — superseded by `AUDIT_2026-04-28.md` (2026-04-28).** Do not follow this doc; it is retained for history only.
+
 # River Mountain Systems — Site 2.0 Revenue Plan (v3)
 
 **Date:** 2026-04-22

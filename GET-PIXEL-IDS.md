@@ -1,3 +1,5 @@
+> **DEPRECATED — superseded by `AUDIT_2026-04-28.md` (2026-04-28).** Do not follow this doc; it is retained for history only.
+
 # Get Your 5 Pixel IDs — Exact Steps
 **Time: ~25 minutes total. Do these in order.**
 

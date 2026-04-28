@@ -23,11 +23,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-L25PDRR5GL');
-    window.rmsTrack = function(name, params) {
-      try { gtag('event', name, params || {}); } catch(e){}
-      try { if (window.fbq) fbq('trackCustom', name, params || {}); } catch(e){}
-    };
+    // rmsTrack helper extracted to /assets/rms-track.js (loaded below).
   </script>
+  <script src="/assets/rms-track.js" defer></script>
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;

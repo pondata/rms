@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');window.rmsTrack=function(n,p){try{gtag('event',n,p||{});}catch(e){}};</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');</script>
+  <script src="/assets/rms-track.js" defer></script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;}
@@ -100,10 +101,11 @@
 
         <div class="info-cal">
           <p><strong>Prefer a scheduled call?</strong></p>
-          <a href="https://cal.com/joberg/30min" target="_blank" rel="noopener" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'contact_page'})">📅 Book 30 minutes</a>
+          <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'contact_page'})">📅 Book 30 minutes</a>
         </div>
       </div>
     </div>
+    <!-- WU:CONTACT-FORM:START -->
     <form id="contactForm">
       <p class="intro">The more detail you share, the better we can help. Justin reads every submission before reaching out.</p>
       <div class="row">
@@ -185,6 +187,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
   });
 });
 </script>
+<!-- WU:CONTACT-FORM:END -->
 
 <footer>
   <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>

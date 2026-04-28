@@ -24,13 +24,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-L25PDRR5GL', { 'send_page_view': true });
-    // Conversion event helpers
-    window.rmsTrack = function(name, params) {
-      try { gtag('event', name, params || {}); } catch(e){}
-      try { if (window.fbq) fbq('trackCustom', name, params || {}); } catch(e){}
-      try { if (window.lintrk) lintrk('track', { conversion_id: 0 }); } catch(e){}
-    };
+    // rmsTrack helper extracted to /assets/rms-track.js (loaded below).
   </script>
+  <script src="/assets/rms-track.js" defer></script>
   <!-- Google Ads Conversion Tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5N5RMZ7Z"></script>
   <script>gtag('config', 'GT-5N5RMZ7Z');</script>
@@ -541,6 +537,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+    <!-- WU:HERO-COPY:START -->
     <h1>Managed IT Services in Vancouver, WA — <span>Without the Big-Company Price Tag</span></h1>
     <p>Local, founder-led IT support, cybersecurity, cloud, and logistics tech for businesses in Vancouver, WA and the greater Portland metro area. Flat-rate from <strong style="color:#fff;">$99/user/mo</strong>. No surprise invoices.</p>
     <div class="hero-buttons" style="margin-bottom:0.75rem;">
@@ -550,7 +547,10 @@
     <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--slate-400);">
       <span style="color:#22c55e;">●</span> Justin answers Mon–Fri 8a–6p PT
     </p>
+    <!-- WU:HERO-COPY:END -->
+    <!-- WU:HERO-FOUNDER:START --><!-- WU:HERO-FOUNDER:END -->
 
+    <!-- WU:HERO-QUICKFORM:START -->
     <!-- Quick 3-field contact form -->
     <form id="quickForm" style="max-width:520px;margin:2rem auto 0;text-align:left;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;">
       <p style="color:#fff;font-weight:700;font-size:0.95rem;margin-bottom:0.85rem;text-align:center;">…or send us a quick note</p>
@@ -594,6 +594,8 @@
         });
       });
     </script>
+    <!-- WU:HERO-QUICKFORM:END -->
+    <!-- WU:HERO-EMBED:START --><!-- WU:HERO-EMBED:END -->
   </div>
 </section>
 
@@ -947,6 +949,7 @@
   </div>
 </section>
 
+<!-- WU:REVIEWS:START -->
 <!-- REVIEWS PLACEHOLDER -->
 <section id="reviews" style="background: #fff; padding: 4rem 1.5rem;">
   <div class="container">
@@ -961,6 +964,7 @@
     </div>
   </div>
 </section>
+<!-- WU:REVIEWS:END -->
 
 <!-- TRUST BADGES -->
 <section class="trust-badges-section">
@@ -1074,13 +1078,15 @@
           <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Serving Vancouver, WA &amp; the greater Portland metro area
         </div>
+        <!-- WU:CAL-CTA:START -->
         <div style="margin-top:2rem;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:12px;padding:1.25rem;">
           <p style="font-weight:700;color:var(--slate-900);margin-bottom:0.5rem;font-size:0.95rem;">Prefer to schedule?</p>
           <p style="color:var(--slate-600);font-size:0.9rem;margin-bottom:1rem;">Pick a 30-min slot — we'll do a quick discovery call.</p>
-          <!-- Cal.com placeholder — replace with embed once account is set up (see SETUP.md) -->
-          <a href="https://cal.com/joberg/30min" target="_blank" rel="noopener" class="btn btn-outline" style="color:var(--slate-800);border-color:var(--slate-300);width:100%;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'contact_section'})">📅 Book a 30-min Consult</a>
+          <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-outline" style="color:var(--slate-800);border-color:var(--slate-300);width:100%;justify-content:center;" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'contact_section'})">📅 Book a 30-min Consult</a>
         </div>
+        <!-- WU:CAL-CTA:END -->
       </div>
+      <!-- WU:CONTACT-FORM:START -->
       <form class="contact-form" id="contactForm">
         <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.5rem;">Or send us details — Justin reads every form before any call. The more you share, the better we can help.</p>
         <div class="form-row">
@@ -1178,10 +1184,12 @@
           });
         });
       </script>
+      <!-- WU:CONTACT-FORM:END -->
     </div>
   </div>
 </section>
 
+<!-- WU:FOOTER:START -->
 <!-- FOOTER -->
 <footer>
   <a href="#" class="logo">
@@ -1211,6 +1219,7 @@
 
   <p style="margin-top:1.5rem;">&copy; 2026 River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>
+<!-- WU:FOOTER:END -->
 
 <!-- STICKY MOBILE CTA — phone-first -->
 <div class="mobile-sticky-cta" style="display:none;">

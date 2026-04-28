@@ -17,11 +17,9 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-L25PDRR5GL', { 'send_page_view': true });
-    window.rmsTrack = function(name, params) {
-      try { gtag('event', name, params || {}); } catch(e){}
-      try { if (window.fbq) fbq('trackCustom', name, params || {}); } catch(e){}
-    };
+    // rmsTrack helper extracted to /assets/rms-track.js (loaded below).
   </script>
+  <script src="/assets/rms-track.js" defer></script>
   <script>
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -312,9 +310,11 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.44 2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.07-1.07a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         Call Justin now
       </a>
-      <a href="https://cal.com/joberg/30min" target="_blank" rel="noopener" class="btn btn-outline" onclick="if(window.rmsTrack) rmsTrack('cta_click', {loc:'demo_hero', label:'book'});">
+      <!-- WU:CAL-CTA:START -->
+      <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-outline" onclick="if(window.rmsTrack) rmsTrack('cta_click', {loc:'demo_hero', label:'book'});">
         Book a 30-min consult
       </a>
+      <!-- WU:CAL-CTA:END -->
     </div>
     <p class="availability"><span>●</span> Available Mon–Fri 8a–6p PT &nbsp;·&nbsp; (360) 644-4820</p>
   </div>
@@ -398,6 +398,7 @@
     <h2>Let's talk</h2>
     <p>Send a quick note and Justin will follow up within one business day. Or just call.</p>
 
+    <!-- WU:DEMO-FORM:START -->
     <form class="quick-form" id="demoForm">
       <div class="form-row">
         <input type="text" name="name" id="demoName" placeholder="Your name" required>
@@ -413,6 +414,7 @@
       </button>
       <p id="demoFormStatus"></p>
     </form>
+    <!-- WU:DEMO-FORM:END -->
 
     <div class="or-divider">or call directly</div>
 
