@@ -1,3 +1,5 @@
-## Orchestrator Log
+# Swarm Orchestrator Log
 
-- 2026-04-28 — WU-SEO-04 — Prepared `directory-submissions.md`: 8 directories (Chamber, Clark County trio, BBB, Clutch, Expertise, GBP, Bing, Apple) with NAP cheat-sheet, ≤500-char description, status table, $0 in Y1 path. Submissions pending Justin (5+ within 14 days = acceptance).
+Append-only log of WU completions. One line per WU.
+
+- WU-LEGAL-02: MSA + SOW templates created at .swarm/legal/{MSA,SOW}_template.md (gitignored). Attorney review pending.
