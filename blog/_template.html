@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--
+  Blog post template — River Mountain Systems
+  Replace tokens before publishing:
+    __TITLE__        — H1 + <title> (do NOT include the " | River Mountain Systems" suffix; it's appended below)
+    __DESCRIPTION__  — meta description (140–160 chars)
+    __CANONICAL__    — full URL, e.g. https://www.rivermountainsystems.com/blog/my-slug.html
+    __SLUG__         — file slug (used in JSON-LD mainEntityOfPage; must match filename minus .html)
+    __DATE__         — ISO-8601 date, YYYY-MM-DD
+    __BODY__         — article body HTML (h2/h3/p/ul/table allowed)
+  Tracking IDs are cloned verbatim from index.html — do not modify.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>__TITLE__ | River Mountain Systems</title>
+  <meta name="description" content="__DESCRIPTION__">
+  <meta property="og:title" content="__TITLE__ | River Mountain Systems">
+  <meta property="og:description" content="__DESCRIPTION__">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="__CANONICAL__">
+  <meta property="og:image" content="https://www.rivermountainsystems.com/og-image.png">
+  <meta property="article:published_time" content="__DATE__">
+  <meta property="article:author" content="River Mountain Systems">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="__TITLE__ | River Mountain Systems">
+  <meta name="twitter:description" content="__DESCRIPTION__">
+  <link rel="canonical" href="__CANONICAL__">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ANALYTICS PIXELS — cloned verbatim from index.html. Do not modify IDs. -->
+  <!-- Google tag (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-L25PDRR5GL', { 'send_page_view': true });
+  </script>
+  <script src="/assets/rms-track.js" defer></script>
+  <!-- Google Ads Conversion Tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-5N5RMZ7Z"></script>
+  <script>gtag('config', 'GT-5N5RMZ7Z');</script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'XXXXXXXXXXXXXXX');
+  fbq('track', 'PageView');
+  </script>
+  <!-- LinkedIn Insight Tag -->
+  <script type="text/javascript">
+  _linkedin_partner_id = "9256716";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+  (function(l) { if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+  window.lintrk.q=[]} var s = document.getElementsByTagName("script")[0];
+  var b = document.createElement("script"); b.type = "text/javascript"; b.async = true;
+  b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+  s.parentNode.insertBefore(b, s);})(window.lintrk);
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "wigv6g8n69");
+  </script>
+  <!-- /ANALYTICS PIXELS -->
+
+  <!-- Schema.org BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "__TITLE__",
+    "description": "__DESCRIPTION__",
+    "datePublished": "__DATE__",
+    "dateModified": "__DATE__",
+    "author": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "url": "https://www.rivermountainsystems.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "River Mountain Systems",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.rivermountainsystems.com/og-image.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.rivermountainsystems.com/blog/__SLUG__.html"
+    },
+    "url": "__CANONICAL__",
+    "image": "https://www.rivermountainsystems.com/og-image.png"
+  }
+  </script>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-400:#2dd4bf;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;--amber-600:#d97706;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
+    .nav-links{display:flex;gap:1.5rem;list-style:none;align-items:center;}
+    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
+    .nav-links a:hover{color:#fff;}
+    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
+    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+    .article-header{padding:9rem 1.5rem 3rem;background:linear-gradient(135deg,var(--slate-900) 0%,#1e293b 50%,#0f172a 100%);color:#fff;}
+    .article-header-content{max-width:760px;margin:0 auto;text-align:center;}
+    .article-header h1{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:700;margin-bottom:1rem;line-height:1.25;}
+    .article-meta{color:var(--slate-400);font-size:0.9rem;}
+    .article-body{max-width:720px;margin:0 auto;padding:3rem 1.5rem 4rem;}
+    .article-body h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--slate-900);}
+    .article-body h3{font-size:1.15rem;margin:1.5rem 0 0.5rem;color:var(--slate-900);}
+    .article-body p{color:var(--slate-700);margin-bottom:1rem;}
+    .article-body ul,.article-body ol{padding-left:1.5rem;color:var(--slate-700);margin-bottom:1rem;}
+    .article-body li{margin-bottom:0.4rem;}
+    .article-body a{color:var(--teal-600);font-weight:600;}
+    .article-body code{background:#f1f5f9;padding:0.15rem 0.4rem;border-radius:4px;font-size:0.85em;color:var(--slate-900);}
+    .article-body table{width:100%;border-collapse:collapse;margin:1.25rem 0;font-size:0.95rem;}
+    .article-body th,.article-body td{text-align:left;padding:0.6rem 0.85rem;border:1px solid var(--slate-200);}
+    .article-body th{background:var(--slate-50);font-weight:700;}
+    .back-link{color:var(--teal-500);text-decoration:none;font-weight:600;font-size:0.9rem;display:inline-block;margin-bottom:1.5rem;}
+    .cta-box{background:#fff;border:1px solid var(--amber-500);border-radius:14px;padding:1.75rem;margin:2rem 0;text-align:center;}
+    .cta-box h3{margin-top:0!important;}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;border-radius:8px;font-weight:600;font-size:0.95rem;text-decoration:none;background:var(--amber-500);color:#fff!important;}
+    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
+    footer .logo{justify-content:center;margin-bottom:1.5rem;}
+    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
+    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    .footer-disclosure{color:var(--slate-500);font-size:0.78rem;margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.5;}
+    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../services/it-operations.html">IT</a></li>
+      <li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="../pricing.html">Pricing</a></li>
+      <li><a href="../case-studies/">Case Studies</a></li>
+      <li><a href="../tools/it-health-check.html">Free Tool</a></li>
+      <li><a href="./">Blog</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-content">
+    <h1>__TITLE__</h1>
+    <div class="article-meta">__DATE__ · River Mountain Systems</div>
+  </div>
+</div>
+
+<article class="article-body">
+  <a href="./" class="back-link">← All Articles</a>
+
+  __BODY__
+
+  <div class="cta-box">
+    <h3>Construction IT in Clark County, WA</h3>
+    <p>Same-day response, business hours. We work with general contractors and subs across Vancouver, WA and the Portland metro area on jobsite Wi-Fi, Procore/Sage support, M365, and ransomware-resilient backups.</p>
+    <a href="tel:+13606444820" class="btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'blog_cta',slug:'__SLUG__'})">📞 Call (360) 644-4820</a>
+    <p style="margin-top:1rem;font-size:0.9rem;"><a href="../industries/construction-vancouver-wa.html">See our construction IT services →</a></p>
+  </div>
+</article>
+
+<footer>
+  <a href="../" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
+  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a></p>
+  <ul class="footer-links">
+    <li><a href="../services/it-operations.html">IT Operations</a></li>
+    <li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li>
+    <li><a href="../pricing.html">Pricing</a></li>
+    <li><a href="../case-studies/">Case Studies</a></li>
+    <li><a href="../tools/it-health-check.html">Free Tool</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="./">Blog</a></li>
+    <li><a href="../privacy.html">Privacy</a></li>
+  </ul>
+  <p class="footer-disclosure">This site uses Microsoft Clarity to record anonymized session interactions (clicks, scrolls, page paths) for usability research. No keystrokes, form input, or personal data are captured. See <a href="../privacy.html" style="color:var(--slate-400);">Privacy</a> for details and opt-out.</p>
+  <p style="margin-top:1rem;">&copy; 2026 River Mountain Systems. Vancouver, WA · Serving the Portland metro area.</p>
+</footer>
+</body>
+</html>

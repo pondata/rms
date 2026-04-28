@@ -16,6 +16,12 @@
   <link rel="canonical" href="https://www.rivermountainsystems.com/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+  <!-- Perf: preconnect to third-party tracking origins (WU-PERF-01) -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.clarity.ms" crossorigin>
+  <link rel="preconnect" href="https://snap.licdn.com" crossorigin>
+  <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+
   <!-- ANALYTICS PIXELS — REPLACE PLACEHOLDER IDs (see SETUP.md) -->
   <!-- Google tag (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
@@ -505,6 +511,37 @@
       body { padding-bottom: 70px; }
     }
   </style>
+  <!-- WU-VERTICAL-03: query-param hero variant swap (?v=construction|cpa). Default hero unaffected. -->
+  <script>
+  (function(){
+    var v = new URLSearchParams(location.search).get('v');
+    if (!v) return;
+    var variants = {
+      construction: {
+        h1: 'Managed IT for Vancouver-area contractors &mdash; <span>posted price, signed SLA, 30-day paid pilot.</span>',
+        body: '<strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. Built for jobsite-to-office workflows. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot &mdash; exit at day 30 with no renewal obligation.</strong>'
+      },
+      cpa: {
+        h1: 'Managed IT for Vancouver CPA &amp; wealth firms &mdash; <span>posted price, signed SLA, 30-day paid pilot.</span>',
+        body: '<strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. Audit logs + secure portal stack. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot &mdash; exit at day 30 with no renewal obligation.</strong>'
+      }
+    };
+    if (!variants[v]) return;
+    document.documentElement.dataset.heroVariant = v;
+    function swap(){
+      var h1 = document.querySelector('[data-hero-h1]');
+      if (h1) h1.innerHTML = variants[v].h1;
+      var p = document.querySelector('[data-hero-body]');
+      if (p) p.innerHTML = variants[v].body;
+      if (window.rmsTrack) window.rmsTrack('hero_variant_view', { variant: v });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', swap);
+    } else {
+      swap();
+    }
+  })();
+  </script>
 </head>
 <body>
 
@@ -538,8 +575,8 @@
 <section class="hero">
   <div class="hero-content">
     <!-- WU:HERO-COPY:START -->
-    <h1>Managed IT for Vancouver-area contractors — <span>posted price, signed SLA, 30-day paid pilot.</span></h1>
-    <p><strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. Posted right here. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot — exit at day 30 with no renewal obligation.</strong></p>
+    <h1 data-hero-h1>Managed IT for Vancouver-area contractors — <span>posted price, signed SLA, 30-day paid pilot.</span></h1>
+    <p data-hero-body><strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. Posted right here. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot — exit at day 30 with no renewal obligation.</strong></p>
     <div class="hero-buttons" style="margin-bottom:0.75rem;">
       <a href="tel:+13606444820" class="btn btn-primary hero-phone-btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
       <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'hero'})">📅 Book a Free Consult</a>
