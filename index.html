@@ -322,10 +322,13 @@
     .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }
     .hero h1 span { color: var(--teal-400); }
     .hero p { font-size: 1.15rem; color: var(--slate-400); max-width: 560px; margin: 0 auto 2.5rem; }
-    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .hero-buttons { display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; }
     .hero-phone-btn { font-size: 1.15rem; padding: 1.05rem 2.25rem; box-shadow: 0 4px 20px rgba(20, 184, 166, 0.35); }
     @media (max-width: 768px) {
-      .hero-phone-btn { width: 100%; font-size: 1.2rem; padding: 1.1rem 1.5rem; }
+      /* Mobile: stack hero buttons full-width so they share the same edge alignment */
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .hero-buttons .btn { width: 100%; justify-content: center; }
+      .hero-phone-btn { font-size: 1.2rem; padding: 1.1rem 1.5rem; }
     }
     .btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -420,7 +423,7 @@
       padding: 3rem 1.5rem 2rem; text-align: center; font-size: 0.85rem;
     }
     footer .logo { justify-content: center; margin-bottom: 1.5rem; }
-    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1.5rem; list-style: none; flex-wrap: wrap; row-gap: 0.6rem; padding: 0 1rem; }
     .footer-links a { color: var(--slate-400); text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #fff; }
 
