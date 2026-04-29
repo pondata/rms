@@ -412,6 +412,41 @@ fi
 echo
 
 # ---------------------------------------------------------------------------
+# 7d. Dead fragment links — DEPLOY GATE
+#     Catch href="#some-id" where #some-id has no matching id/name on the same page.
+#     This caused the "Buy Health Check" button on pricing.html to do nothing —
+#     it linked to #contact but pricing.html had no <section id="contact">.
+# ---------------------------------------------------------------------------
+echo "==> checking for dead fragment links (deploy gate)…"
+dead_fragments=$(python3 - <<'PY'
+import re, pathlib, sys
+out = []
+for p in pathlib.Path('.').rglob('*.html'):
+    if '/node_modules/' in str(p): continue
+    if str(p).startswith('./.swarm/'): continue
+    if str(p).startswith('.swarm/'): continue
+    s = p.read_text()
+    for m in re.finditer(r'href="#([^"]+)"', s):
+        frag = m.group(1)
+        if frag == '': continue
+        if re.search(r'\bid="' + re.escape(frag) + r'"', s) or re.search(r'\bname="' + re.escape(frag) + r'"', s):
+            continue
+        out.append(f"{p}: #{frag}")
+for line in out:
+    print(line)
+PY
+)
+dead_fragment_count=0
+if [[ -n "$dead_fragments" ]]; then
+  dead_fragment_count=$(printf '%s\n' "$dead_fragments" | wc -l | tr -d ' ')
+  echo "  FOUND $dead_fragment_count dead fragment link(s):"
+  printf '%s\n' "$dead_fragments" | sed 's/^/    /'
+else
+  echo "  none"
+fi
+echo
+
+# ---------------------------------------------------------------------------
 # 8. SLA-leak grep — warning only
 # ---------------------------------------------------------------------------
 echo "==> checking for 15-min SLA leaks (warning only)…"
@@ -442,6 +477,7 @@ printf "  orphan pages          : %s\n" "$orphan_count"
 printf "  forbidden phrases     : %s  (DEPLOY GATE)\n" "$forbidden_count"
 printf "  CSS problems          : %s  (DEPLOY GATE)\n" "$css_problems"
 printf "  components missing    : %s  (DEPLOY GATE)\n" "$component_problems"
+printf "  dead fragment links   : %s  (DEPLOY GATE)\n" "$dead_fragment_count"
 printf "  SLA-leak warnings     : %s  (non-blocking)\n" "$sla_count"
 echo "==================================================="
 
@@ -450,6 +486,7 @@ if [[ "$broken_links_count" -gt 0 ]] \
    || [[ "$mailto_bad" -gt 0 ]] \
    || [[ "$css_problems" -gt 0 ]] \
    || [[ "$component_problems" -gt 0 ]] \
+   || [[ "$dead_fragment_count" -gt 0 ]] \
    || [[ "$tel_bad" -gt 0 ]] \
    || [[ "$forbidden_count" -gt 0 ]]; then
   EXIT_CODE=1
