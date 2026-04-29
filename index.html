@@ -562,7 +562,7 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">
+    <a href="/" class="logo">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
         <rect width="32" height="32" rx="8" fill="#14b8a6"/>
         <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
@@ -572,11 +572,14 @@
     </a>
     <ul class="nav-links" id="navLinks">
       <li><a href="services/it-operations.html">IT</a></li>
-      <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="services/logistics-events.html">Logistics</a></li>
+      <li><a href="industries/">Industries</a></li>
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="case-studies/">How we work</a></li>
-      <li><a href="tools/it-health-check.html">Free Tool</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
       <li><a href="blog/">Blog</a></li>
+      <li><a href="tools/it-health-check.html" class="nav-tool" style="background:rgba(20,184,166,0.12);color:var(--teal-400)!important;border:1px solid rgba(20,184,166,0.3);padding:0.35rem 0.85rem;border-radius:6px;font-weight:600;">Free IT Check</a></li>
       <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
@@ -589,17 +592,27 @@
 <section class="hero">
   <div class="hero-content">
     <!-- WU:HERO-COPY:START -->
-    <h1 data-hero-h1>Managed IT for Vancouver-area contractors — <span>posted price, signed SLA, 30-day paid pilot.</span></h1>
-    <p data-hero-body><strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot — exit at day 30 with no renewal obligation.</strong></p>
+    <h1 data-hero-h1>Managed IT for Clark County contractors.</h1>
+    <p data-hero-body style="font-size:1.15rem;">Procore, Sage, jobsite Wi-Fi, ransomware defense — <strong style="color:#fff;">flat $99/user/month</strong>, signed SLA, 30-day paid pilot.</p>
+    <ul style="list-style:none;padding:0;margin:0 auto 1.75rem;display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap;font-size:0.92rem;color:var(--slate-300);max-width:680px;">
+      <li>✓ Posted price (10-user min)</li>
+      <li>✓ Same-day response, business hours</li>
+      <li>✓ Exit any time after day 30</li>
+    </ul>
     <div class="hero-buttons" style="margin-bottom:0.75rem;">
-      <a href="tel:+13606444820" class="btn btn-primary hero-phone-btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
-      <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'hero'})">📅 Book a Free Consult</a>
+      <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.05rem;padding:0.95rem 2rem;" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'hero'})">📅 Book a Free 30-Min Consult</a>
+      <a href="tel:+13606444820" class="btn btn-outline hero-phone-btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
     </div>
     <p style="margin-top:0.5rem;font-size:0.9rem;color:var(--slate-400);">
       <span style="color:#22c55e;">●</span> Justin answers Mon–Fri 8a–6p PT
     </p>
-    <a href="pricing.html" style="font-size:0.85rem; color:var(--slate-400); text-decoration:underline; margin-top:0.5rem; display:inline-block;">See full pricing →</a>
-    <p style="margin-top:0.25rem;"><a href="/industries/construction-vancouver-wa.html" style="font-size:0.85rem; color:var(--slate-400); text-decoration:underline;">For construction firms →</a></p>
+    <p style="margin-top:0.75rem;font-size:0.85rem;color:var(--slate-400);">
+      <a href="/industries/construction-vancouver-wa.html" style="color:var(--teal-400);text-decoration:underline;">See the construction-specific page →</a>
+      &nbsp;·&nbsp;
+      <a href="pricing.html" style="color:var(--slate-400);text-decoration:underline;">Full pricing</a>
+      &nbsp;·&nbsp;
+      <a href="services/it-operations.html" style="color:var(--slate-400);text-decoration:underline;">Not a contractor? Click here</a>
+    </p>
     <!-- WU:HERO-COPY:END -->
     <!-- WU:HERO-FOUNDER:START -->
     <!-- TODO: justin headshot at /screenshots/justin-headshot.jpg -->
@@ -1009,34 +1022,72 @@
 </section>
 
 <!-- WU:REVIEWS:START -->
-<!-- REVIEWS PLACEHOLDER -->
-<section id="reviews" style="background: #fff; padding: 4rem 1.5rem;">
+<!-- HOW WE EARN TRUST (replaces empty Reviews block until ≥3 reviews exist) -->
+<section id="trust" style="background:#fff;padding:4.5rem 1.5rem;">
   <div class="container">
-    <div class="section-header" style="margin-bottom:2rem;">
-      <p style="color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;">Reviews</p>
-      <h2>What clients say on Google</h2>
+    <div class="section-header" style="margin-bottom:2.25rem;">
+      <p style="color:var(--teal-600);font-weight:700;font-size:0.85rem;text-transform:uppercase;letter-spacing:0.1em;">How we earn trust before reviews exist</p>
+      <h2>Concrete proof, not testimonials we don't have yet</h2>
+      <p style="color:var(--slate-600);max-width:640px;margin:0.5rem auto 0;">We're a new firm. Instead of claiming reviews we haven't earned, here's the actual paperwork and policies you'd sign — in advance, in public.</p>
     </div>
-    <!-- TODO: Replace with live Google Reviews widget once GBP is verified (see SETUP.md) -->
-    <div style="max-width:680px;margin:0 auto;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:2rem;text-align:center;">
-      <p style="color:var(--slate-600);margin-bottom:1.25rem;">We're a new business actively building our review base. Reviews from clients will appear here as they come in. Want to be one of the first?</p>
-      <a href="tel:+13606444820" class="btn btn-primary" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'reviews'})">📞 Call (360) 644-4820</a>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;max-width:1000px;margin:0 auto;">
+      <a href="/pilot-terms.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--teal-500)'" onmouseout="this.style.borderColor='var(--slate-200)'">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📄</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">30-day pilot terms</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">Public exit clause, fixed scope, non-refundable onboarding fee — read it before you sign.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">Read terms →</span>
+      </a>
+      <a href="/sla.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--teal-500)'" onmouseout="this.style.borderColor='var(--slate-200)'">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">⏱</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">Response-time SLA matrix</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">P1 / P2 / P3 response targets, business-hours definitions, what counts as a P1.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">See the matrix →</span>
+      </a>
+      <a href="/about.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--teal-500)'" onmouseout="this.style.borderColor='var(--slate-200)'">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">Founder, named, with a phone</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">12+ years in warehouse operations and IT. Direct mobile, not a queue. Mon–Fri, 8a–6p PT.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">Read the founder bio →</span>
+      </a>
+      <div style="background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">🛡</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">$1M Professional Liability bound</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">Hiscox E&amp;O, $1M each claim / $1M aggregate. COI available on request to any prospect.</p>
+        <span style="color:var(--slate-500);font-size:0.85rem;">Email <a href="mailto:joberg@rivermountainsystems.com?subject=COI%20request" style="color:var(--teal-600);text-decoration:none;font-weight:600;">joberg@rivermountainsystems.com</a></span>
+      </div>
+      <a href="/tools/it-health-check.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--teal-500);border-radius:14px;padding:1.5rem;display:block;">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">🩺</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">Free 5-min IT Health Check</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">12 questions, no email required, instant scorecard + priority list. Try us before you talk to us.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">Take the check →</span>
+      </a>
+      <a href="/case-studies/" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--teal-500)'" onmouseout="this.style.borderColor='var(--slate-200)'">
+        <div style="font-size:1.5rem;margin-bottom:0.5rem;">📋</div>
+        <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">How we run an engagement</h3>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">Step-by-step playbooks for managed IT and WMS engagements — same process every time.</p>
+        <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">Read the playbook →</span>
+      </a>
     </div>
+    <p style="text-align:center;color:var(--slate-500);font-size:0.85rem;margin-top:1.75rem;">Real Google reviews will replace this section once we have at least three.</p>
   </div>
 </section>
 <!-- WU:REVIEWS:END -->
 
-<!-- TRUST BADGES -->
+<!-- TOOLS WE DEPLOY -->
 <section class="trust-badges-section">
   <div class="container">
-    <p class="trust-label">Technology Partnerships & Certifications</p>
+    <p class="trust-label">Tools we deploy</p>
     <div class="trust-badges">
-      <span class="trust-badge">Microsoft Partner</span>
-      <span class="trust-badge">Google Cloud</span>
-      <span class="trust-badge">CompTIA</span>
-      <span class="trust-badge">Cisco</span>
-      <span class="trust-badge">Dell Technologies</span>
+      <span class="trust-badge">Microsoft 365</span>
+      <span class="trust-badge">Google Workspace</span>
       <span class="trust-badge">Datto</span>
+      <span class="trust-badge">SonicWall</span>
+      <span class="trust-badge">Sophos</span>
+      <span class="trust-badge">Ubiquiti</span>
+      <span class="trust-badge">Meraki</span>
+      <span class="trust-badge">Atera / NinjaOne</span>
     </div>
+    <p style="text-align:center;color:var(--slate-500);font-size:0.85rem;margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;">These are the platforms we install, configure, and support. Vendor partnerships are pursued as our client base grows; we'd rather show you the work than the badges.</p>
   </div>
 </section>
 
@@ -1146,26 +1197,38 @@
         <!-- WU:CAL-CTA:END -->
       </div>
       <!-- WU:CONTACT-FORM:START -->
+      <!-- 1-FIELD CALLBACK MINI-FORM (above the long form) -->
+      <form id="callbackForm" style="background:var(--teal-50,#f0fdfa);border:1px solid var(--teal-500);border-radius:12px;padding:1.25rem;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+        <p style="font-weight:700;color:var(--slate-900);font-size:0.98rem;margin:0;">Just have Justin call you?</p>
+        <p style="color:var(--slate-600);font-size:0.88rem;margin:0;">Name + phone, that's it. He'll call within one business day.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
+          <input type="text" name="name" id="cbName" placeholder="Your name *" required aria-label="Your name">
+          <input type="tel" name="phone" id="cbPhone" placeholder="Phone *" required aria-label="Phone number">
+        </div>
+        <button type="submit" id="cbSubmit" class="btn btn-primary" style="align-self:flex-start;">Request a call</button>
+        <p id="cbStatus" style="margin:0;font-size:0.88rem;display:none;"></p>
+      </form>
+
       <form class="contact-form" id="contactForm">
-        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.5rem;">Or send us details — Justin reads every form before any call. The more you share, the better we can help.</p>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.5rem;">Or send a longer note — only name, email, and message are required. Everything else is optional and helps Justin prep before the call.</p>
         <div class="form-row">
-          <input type="text" name="name" id="formName" placeholder="Your Name *" required>
-          <input type="email" name="email" id="formEmail" placeholder="Email Address *" required>
+          <input type="text" name="name" id="formName" placeholder="Your name *" required>
+          <input type="email" name="email" id="formEmail" placeholder="Email *" required>
         </div>
         <div class="form-row">
-          <input type="text" name="company" id="formCompany" placeholder="Company Name">
+          <input type="text" name="company" id="formCompany" placeholder="Company (optional)">
           <input type="tel" name="phone" id="formPhone" placeholder="Phone (optional)">
         </div>
-        <select name="size" id="formSize" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
-          <option value="">Company size *</option>
+        <select name="size" id="formSize" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Company size (optional)</option>
           <option>Just me / 1–5 employees</option>
           <option>6–25 employees</option>
           <option>26–50 employees</option>
           <option>51–100 employees</option>
           <option>100+ employees</option>
         </select>
-        <select name="need" id="formNeed" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
-          <option value="">What do you need? *</option>
+        <select name="need" id="formNeed" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">What do you need? (optional)</option>
           <option>Managed IT support (recurring)</option>
           <option>One-time project (cloud migration, network, etc.)</option>
           <option>Cybersecurity audit or remediation</option>
@@ -1176,8 +1239,8 @@
           <option>AI integration / automation</option>
           <option>Not sure — want to talk it through</option>
         </select>
-        <select name="budget" id="formBudget" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
-          <option value="">Approximate budget *</option>
+        <select name="budget" id="formBudget" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Approximate budget (optional)</option>
           <option>Under $1,000 (one-time)</option>
           <option>$1,000–$5,000 (one-time)</option>
           <option>$5,000–$25,000 (one-time)</option>
@@ -1187,8 +1250,8 @@
           <option>$5,000+/month (recurring)</option>
           <option>Not sure yet</option>
         </select>
-        <select name="timeline" id="formTimeline" required style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
-          <option value="">Timeline *</option>
+        <select name="timeline" id="formTimeline" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
+          <option value="">Timeline (optional)</option>
           <option>Emergency — need help now</option>
           <option>This week</option>
           <option>Within 30 days</option>
@@ -1198,8 +1261,34 @@
         <textarea name="message" id="formMessage" placeholder="Briefly describe what's going on or what you want to build *" required rows="4"></textarea>
         <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send &amp; Get a Callback</button>
         <p id="formStatus" style="margin-top: 0.5rem; font-size: 0.9rem; display: none;"></p>
-        <p style="font-size:0.8rem;color:var(--slate-500);margin-top:0.5rem;">We respond within 1 business day. For emergencies, call (360) 644-4820.</p>
+        <p style="font-size:0.8rem;color:var(--slate-500);margin-top:0.5rem;">We respond within 1 business day. For emergencies, call <a href="tel:+13606444820">(360) 644-4820</a>.</p>
       </form>
+      <script>
+        // Mini callback form — POSTs to same Apps Script endpoint with source=callback_mini
+        document.getElementById('callbackForm').addEventListener('submit', function(e){
+          e.preventDefault();
+          var btn = document.getElementById('cbSubmit');
+          var status = document.getElementById('cbStatus');
+          btn.textContent = 'Sending…'; btn.disabled = true;
+          var fd = new FormData();
+          fd.append('name', document.getElementById('cbName').value);
+          fd.append('phone', document.getElementById('cbPhone').value);
+          fd.append('source', 'callback_mini');
+          fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {method:'POST', mode:'no-cors', body: fd}).then(function(){
+            if (window.rmsTrack) rmsTrack('form_submit', {form:'callback_mini'});
+            status.textContent = '✓ Got it — Justin will call within 1 business day.';
+            status.style.color = '#0d9488';
+            status.style.display = 'block';
+            document.getElementById('callbackForm').reset();
+            btn.textContent = 'Request a call'; btn.disabled = false;
+          }).catch(function(){
+            status.textContent = 'Something went wrong. Please call (360) 644-4820.';
+            status.style.color = '#ef4444';
+            status.style.display = 'block';
+            btn.textContent = 'Request a call'; btn.disabled = false;
+          });
+        });
+      </script>
       <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
           e.preventDefault();
@@ -1251,7 +1340,7 @@
 <!-- WU:FOOTER:START -->
 <!-- FOOTER -->
 <footer>
-  <a href="#" class="logo">
+  <a href="/" class="logo">
     <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
       <rect width="32" height="32" rx="8" fill="#14b8a6"/>
       <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
