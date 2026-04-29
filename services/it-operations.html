@@ -111,103 +111,21 @@
   </script>
 
   <link rel="stylesheet" href="/assets/rms-nav.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
+  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }:root {
       --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
       --slate-400: #94a3b8; --slate-500: #64748b; --slate-600: #475569;
       --slate-700: #334155; --slate-800: #1e293b; --slate-900: #0f172a;
       --teal-400: #2dd4bf; --teal-500: #14b8a6; --teal-600: #0d9488;
-    }
-    html, body { max-width: 100%; overflow-x: hidden; }
+    }html, body { max-width: 100%; overflow-x: hidden; }html { scroll-behavior: smooth; }/* Form input overflow guard */
 
-    html { scroll-behavior: smooth; }
-
-    /* Form input overflow guard */
-
-    input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
-
-    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }
-    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--slate-800); background: var(--slate-50); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-
-    .hero { padding: 9rem 1.5rem 4rem; background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%); color: #fff; }
-    .hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
-    .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }
-    .hero h1 span { color: var(--teal-400); }
-    .hero p { color: var(--slate-300); font-size: 1.1rem; max-width: 720px; margin: 0 auto 2rem; }
-    .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; justify-content: center; }
-    .btn-primary { background: var(--teal-500); color: #0f172a; }
-    .btn-primary:hover { background: var(--teal-600); }
-    .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
-    .btn-outline:hover { border-color: var(--slate-400); }
-    .btn-outline-light { background: transparent; color: var(--slate-800); border: 1px solid var(--slate-300); }
-
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-    section { padding: 4rem 0; }
-    .section-header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }
-    .section-header h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--slate-900); }
-    .section-header .eyebrow { color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .section-header p { color: var(--slate-500); font-size: 1.02rem; }
-
-    .quick-cta { background: #fff; border: 1px solid var(--teal-500); border-radius: 14px; padding: 1.5rem 2rem; max-width: 720px; margin: 2rem auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: space-between; }
-    .quick-cta p { color: var(--slate-700); margin: 0; flex: 1; min-width: 240px; }
-    .quick-cta strong { color: var(--slate-900); }
-
-    .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-    .feature-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; padding: 1.75rem; }
-    .feature-card .icon { width: 44px; height: 44px; background: #ccfbf1; color: var(--teal-600); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-    .feature-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
-    .feature-card p { color: var(--slate-600); font-size: 0.95rem; }
-    .feature-card ul { margin-top: 0.75rem; padding-left: 1.25rem; color: var(--slate-600); font-size: 0.9rem; }
-    .feature-card ul li { padding: 0.2rem 0; }
-
-    .compare-table { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; overflow: hidden; margin: 0 auto; max-width: 800px; }
-    .compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 1rem 1.25rem; border-bottom: 1px solid var(--slate-100); align-items: center; }
-    .compare-row.head { background: var(--slate-50); font-weight: 700; color: var(--slate-900); font-size: 0.9rem; }
-    .compare-row:last-child { border-bottom: none; }
-    .compare-row .label { color: var(--slate-700); font-size: 0.95rem; }
-    .compare-yes { color: var(--teal-600); font-weight: 700; }
-    .compare-no { color: var(--slate-400); }
-
-    .faq-item { background: #fff; border: 1px solid var(--slate-200); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; }
-    .faq-item summary { font-weight: 600; cursor: pointer; color: var(--slate-900); }
-    .faq-item p { margin-top: 0.75rem; color: var(--slate-600); font-size: 0.95rem; }
-
-    .cta-section { background: linear-gradient(135deg, var(--slate-900), #162033); color: #fff; text-align: center; padding: 5rem 1.5rem; }
-    .cta-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1rem; }
-    .cta-section p { color: var(--slate-400); margin-bottom: 1.5rem; }
-
-    @media (max-width: 768px) {
+    input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--slate-800); background: var(--slate-50); line-height: 1.65; -webkit-font-smoothing: antialiased; }.hero { padding: 9rem 1.5rem 4rem; background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%); color: #fff; }.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.2; margin-bottom: 1.2rem; }.hero h1 span { color: var(--teal-400); }.hero p { color: var(--slate-300); font-size: 1.1rem; max-width: 720px; margin: 0 auto 2rem; }.hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 8px; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; justify-content: center; }.btn-primary { background: var(--teal-500); color: #0f172a; }.btn-primary:hover { background: var(--teal-600); }.btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }.btn-outline:hover { border-color: var(--slate-400); }.btn-outline-light { background: transparent; color: var(--slate-800); border: 1px solid var(--slate-300); }.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }section { padding: 4rem 0; }.section-header { text-align: center; max-width: 720px; margin: 0 auto 2.5rem; }.section-header h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--slate-900); }.section-header .eyebrow { color: var(--teal-500); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }.section-header p { color: var(--slate-500); font-size: 1.02rem; }.quick-cta { background: #fff; border: 1px solid var(--teal-500); border-radius: 14px; padding: 1.5rem 2rem; max-width: 720px; margin: 2rem auto; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; justify-content: space-between; }.quick-cta p { color: var(--slate-700); margin: 0; flex: 1; min-width: 240px; }.quick-cta strong { color: var(--slate-900); }.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }.feature-card { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; padding: 1.75rem; }.feature-card .icon { width: 44px; height: 44px; background: #ccfbf1; color: var(--teal-600); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }.feature-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }.feature-card p { color: var(--slate-600); font-size: 0.95rem; }.feature-card ul { margin-top: 0.75rem; padding-left: 1.25rem; color: var(--slate-600); font-size: 0.9rem; }.feature-card ul li { padding: 0.2rem 0; }.compare-table { background: #fff; border: 1px solid var(--slate-200); border-radius: 14px; overflow: hidden; margin: 0 auto; max-width: 800px; }.compare-row { display: grid; grid-template-columns: 1fr 1fr 1fr; padding: 1rem 1.25rem; border-bottom: 1px solid var(--slate-100); align-items: center; }.compare-row.head { background: var(--slate-50); font-weight: 700; color: var(--slate-900); font-size: 0.9rem; }.compare-row:last-child { border-bottom: none; }.compare-row .label { color: var(--slate-700); font-size: 0.95rem; }.compare-yes { color: var(--teal-600); font-weight: 700; }.compare-no { color: var(--slate-400); }.faq-item { background: #fff; border: 1px solid var(--slate-200); border-radius: 8px; padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; }.faq-item summary { font-weight: 600; cursor: pointer; color: var(--slate-900); }.faq-item p { margin-top: 0.75rem; color: var(--slate-600); font-size: 0.95rem; }.cta-section { background: linear-gradient(135deg, var(--slate-900), #162033); color: #fff; text-align: center; padding: 5rem 1.5rem; }.cta-section h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1rem; }.cta-section p { color: var(--slate-400); margin-bottom: 1.5rem; }@media (max-width: 768px) {
 
       .compare-row { grid-template-columns: 1fr; gap: 0.5rem; }
     }</style>
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      River Mountain Systems
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/services/it-operations.html">IT</a></li>
-      <li><a href="/services/logistics-events.html">Logistics</a></li>
-      <li><a href="/industries/">Industries</a></li>
-      <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/case-studies/">How we work</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
-      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
+<rms-nav></rms-nav>
 
 <section class="hero">
   <div class="hero-inner">
@@ -465,27 +383,8 @@
   </div>
 </section>
 
-<footer>
-  <a href="/" class="logo">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
-      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    </svg>
-    River Mountain Systems
-  </a>
-  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> · <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a></p>
-  <ul class="footer-links">
-    <li><a href="/services/it-operations.html">IT</a></li>
-    <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
-    <li><a href="/pricing.html">Pricing</a></li>
-    <li><a href="/case-studies/">How we work</a></li>
-    <li><a href="/tools/it-health-check.html">Free Tool</a></li>
-    <li><a href="/about.html">About</a></li>
-    <li><a href="/blog/">Blog</a></li>
-  </ul>
-  <p>&copy; <span class="ry">2026</span> River Mountain Systems. Vancouver, WA · Serving the Portland metro area.</p>
-</footer>
+<rms-footer></rms-footer>
 
-<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+<script src="/assets/rms-components.js" defer></script>
 </body>
 </html>

@@ -390,6 +390,28 @@ fi
 echo
 
 # ---------------------------------------------------------------------------
+# 7c. Components presence — DEPLOY GATE
+#     Every navigable page must have <rms-nav> + <rms-footer> + rms-components.js.
+# ---------------------------------------------------------------------------
+echo "==> checking <rms-nav> / <rms-footer> / rms-components.js presence (deploy gate)…"
+component_problems=0
+while IFS= read -r f; do
+  if grep -q 'http-equiv="refresh"' "$f" 2>/dev/null; then continue; fi
+  if [[ "$f" == "./blog/_template.html" ]]; then continue; fi
+  nav_count=$(grep -c '<rms-nav>' "$f" 2>/dev/null || echo 0)
+  footer_count=$(grep -c '<rms-footer>' "$f" 2>/dev/null || echo 0)
+  script_count=$(grep -c 'rms-components\.js' "$f" 2>/dev/null || echo 0)
+  if [[ "$nav_count" -lt 1 ]] || [[ "$footer_count" -lt 1 ]] || [[ "$script_count" -lt 1 ]]; then
+    echo "  COMPONENT_MISSING $f: nav=$nav_count footer=$footer_count script=$script_count"
+    component_problems=$((component_problems+1))
+  fi
+done < <(find . -maxdepth 4 -name "*.html" -not -path "./node_modules/*" 2>/dev/null)
+if [[ "$component_problems" -eq 0 ]]; then
+  echo "  none"
+fi
+echo
+
+# ---------------------------------------------------------------------------
 # 8. SLA-leak grep — warning only
 # ---------------------------------------------------------------------------
 echo "==> checking for 15-min SLA leaks (warning only)…"
@@ -419,6 +441,7 @@ printf "  bad tel:              : %s\n" "$tel_bad"
 printf "  orphan pages          : %s\n" "$orphan_count"
 printf "  forbidden phrases     : %s  (DEPLOY GATE)\n" "$forbidden_count"
 printf "  CSS problems          : %s  (DEPLOY GATE)\n" "$css_problems"
+printf "  components missing    : %s  (DEPLOY GATE)\n" "$component_problems"
 printf "  SLA-leak warnings     : %s  (non-blocking)\n" "$sla_count"
 echo "==================================================="
 
@@ -426,6 +449,7 @@ if [[ "$broken_links_count" -gt 0 ]] \
    || [[ "$empty_href_count" -gt 0 ]] \
    || [[ "$mailto_bad" -gt 0 ]] \
    || [[ "$css_problems" -gt 0 ]] \
+   || [[ "$component_problems" -gt 0 ]] \
    || [[ "$tel_bad" -gt 0 ]] \
    || [[ "$forbidden_count" -gt 0 ]]; then
   EXIT_CODE=1
