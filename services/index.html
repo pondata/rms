@@ -80,7 +80,17 @@
       --teal-500: #14b8a6;
       --teal-600: #0d9488;
     }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
     html { scroll-behavior: smooth; }
+
+    
+
+    /* Form input overflow guard */
+
+    input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--slate-800);

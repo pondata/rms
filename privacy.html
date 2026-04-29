@@ -67,6 +67,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+    /* Form input overflow guard */
+    input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }
     :root {
       --slate-50: #f8fafc;
       --slate-100: #f1f5f9;

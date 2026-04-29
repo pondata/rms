@@ -64,7 +64,17 @@
       --teal-500: #14b8a6; --teal-600: #0d9488;
       --amber-500: #f59e0b; --amber-600: #d97706;
     }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
     html { scroll-behavior: smooth; }
+
+    
+
+    /* Form input overflow guard */
+
+    input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
+
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--slate-800); background: var(--slate-50); line-height: 1.65; -webkit-font-smoothing: antialiased; }
     nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); }
     .nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 64px; }
