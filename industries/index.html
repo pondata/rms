@@ -23,20 +23,14 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');</script>
   <script src="/assets/rms-track.js" defer></script>
+  <link rel="stylesheet" href="/assets/rms-nav.css">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html, body { max-width: 100%; overflow-x: hidden; }
     input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
     :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-400:#2dd4bf;--teal-500:#14b8a6;--teal-600:#0d9488;}
     body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.65;-webkit-font-smoothing:antialiased;}
-    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.06);}
-    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
-    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.1rem;}
-    .nav-links{display:flex;gap:1.25rem;list-style:none;align-items:center;}
-    .nav-links a{color:var(--slate-400);text-decoration:none;font-size:0.9rem;font-weight:500;}
-    .nav-links a:hover{color:#fff;}
-    .nav-phone{background:var(--teal-500);color:#fff!important;padding:0.45rem 1.1rem;border-radius:6px;font-weight:700;}
-    .mobile-toggle{display:none;background:none;border:none;color:#fff;cursor:pointer;}
+
     .hero{padding:9rem 1.5rem 4rem;background:linear-gradient(135deg,var(--slate-900) 0%,#162033 50%,#0c2d3e 100%);color:#fff;text-align:center;}
     .hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:1rem;}
     .hero h1 span{color:var(--teal-400);}
@@ -50,18 +44,17 @@
     .card p{color:var(--slate-600);font-size:0.93rem;margin-bottom:0.75rem;}
     .card .arrow{color:var(--teal-600);font-weight:600;font-size:0.88rem;}
     .tag{display:inline-block;font-size:0.7rem;font-weight:700;color:var(--teal-600);background:#ccfbf1;padding:0.25rem 0.6rem;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.6rem;}
-    @media(max-width:768px){.nav-links{display:none;}.mobile-toggle{display:block;}.nav-links.open{display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:var(--slate-900);padding:1.5rem;gap:1rem;}}
-    footer{background:var(--slate-900);color:var(--slate-400);padding:3rem 1.5rem 2rem;text-align:center;font-size:0.85rem;}
-    footer .logo{justify-content:center;margin-bottom:1.5rem;}
-    .footer-links{display:flex;gap:1.5rem;justify-content:center;margin-bottom:1rem;list-style:none;flex-wrap:wrap;}
-    .footer-links a{color:var(--slate-400);text-decoration:none;}
+    @media(max-width:768px){}
+    
+    footer 
+
   </style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
     <a href="/" class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
       River Mountain Systems
     </a>
     <ul class="nav-links" id="navLinks">
@@ -73,10 +66,12 @@
       <li><a href="/about.html">About</a></li>
       <li><a href="/contact.html">Contact</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="/tools/it-health-check.html" class="nav-tool" style="background:rgba(20,184,166,0.12);color:var(--teal-400)!important;border:1px solid rgba(20,184,166,0.3);padding:0.35rem 0.85rem;border-radius:6px;font-weight:600;">Free IT Check</a></li>
-      <li><a href="tel:+13606444820" class="nav-phone">📞 (360) 644-4820</a></li>
+      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
     </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
   </div>
 </nav>
 

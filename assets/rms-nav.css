@@ -1,0 +1,207 @@
+/* rms-nav.css — single source of truth for nav, footer, and shared CTA styles.
+   Loaded by every page. Page-specific <style> blocks should NOT redefine
+   .nav-*, .footer-*, .nav-tool, or .ry styles below. */
+
+/* ---------- color tokens (canonical fallbacks) ---------- */
+/* Pages that already define these in :root will override; this just guarantees
+   the nav renders sensibly on pages that don't (or that load this CSS first). */
+
+/* ---------- NAV ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 64px;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+.logo svg {
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #94a3b8;        /* slate-400 */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 0.25rem;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.nav-links .nav-tool {
+  background: rgba(20, 184, 166, 0.12);
+  color: #2dd4bf !important;     /* teal-400 */
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  font-weight: 600;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.nav-links .nav-tool:hover {
+  background: rgba(20, 184, 166, 0.2);
+  color: #fff !important;
+}
+
+.nav-links .nav-phone {
+  background: #14b8a6;           /* teal-500 */
+  color: #fff !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  min-height: 44px;
+  box-sizing: border-box;
+}
+
+.nav-links .nav-phone:hover {
+  background: #0d9488;           /* teal-600 */
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.25rem 1.5rem;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    align-items: stretch;
+  }
+  .nav-links.open a {
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+  }
+  .nav-links.open .nav-tool,
+  .nav-links.open .nav-phone {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 3rem 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+footer .logo {
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  row-gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+  list-style: none;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fff;
+}
+
+.footer-disclosure {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 1rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-disclosure a {
+  color: #94a3b8;
+}
+
+/* ---------- shared utility ---------- */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}

@@ -15,14 +15,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/rms-nav.css">
   <style>
     html, body { max-width: 100%; overflow-x: hidden; }
     input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
     *{box-sizing:border-box;margin:0;padding:0;}
     body{font-family:'Inter',system-ui,sans-serif;background:#0f172a;color:#fff;min-height:100vh;display:flex;flex-direction:column;}
-    nav{padding:1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);}
-    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
-    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;font-size:1.05rem;}
+
     main{flex:1;display:flex;align-items:center;justify-content:center;padding:3rem 1.5rem;}
     .card{max-width:680px;text-align:center;width:100%;}
     h1{font-size:5rem;font-weight:700;color:#14b8a6;margin-bottom:0.25rem;line-height:1;}
@@ -42,14 +41,28 @@
 </head>
 <body>
   <nav>
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-        River Mountain Systems
-      </a>
-      <a href="tel:+13606444820" class="btn btn-primary" style="padding:0.5rem 1rem;font-size:0.9rem;">📞 (360) 644-4820</a>
-    </div>
-  </nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT</a></li>
+      <li><a href="/services/logistics-events.html">Logistics</a></li>
+      <li><a href="/industries/">Industries</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/case-studies/">How we work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
 
   <main>
     <div class="card">
