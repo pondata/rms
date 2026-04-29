@@ -268,8 +268,9 @@
     /* a11y utility — visually hide content, keep it announced by screen readers */
     
     /* WCAG 2.5.5 — minimum touch target 44×44 for primary tappables (buttons + branded CTAs).
-       Inline body links opt out via .inline-link to keep prose readable. */
-    a.btn, button.btn, .nav-phone, 
+       Inline body links opt out via .inline-link to keep prose readable.
+       Note: .nav-phone / .nav-tool min-height now lives in /assets/rms-nav.css */
+    a.btn, button.btn { min-height: 44px; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -403,8 +404,6 @@
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
     /* FOOTER */
-    
-    footer 
 
     /* SERVICE CARD AS LINK */
     a.service-card {
