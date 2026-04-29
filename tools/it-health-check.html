@@ -224,7 +224,20 @@
     backBtn.disabled = i === 0;
     qCount.textContent = 'Question ' + (i+1) + ' of ' + totalQuestions;
     progressFill.style.width = ((i)/totalQuestions*100) + '%';
-    window.scrollTo({top:0,behavior:'smooth'});
+    // Only scroll if the new question isn't already in view. The previous
+    // unconditional scrollTo(top:0) caused an annoying jump after every click,
+    // even when the next question was already on screen.
+    // 64px top buffer accounts for the fixed nav; 80px bottom buffer for the
+    // mobile sticky CTA.
+    var q = questions[i];
+    if (q) {
+      var rect = q.getBoundingClientRect();
+      var topOK = rect.top >= 64;
+      var bottomOK = rect.bottom <= (window.innerHeight - 80);
+      if (!topOK || !bottomOK) {
+        q.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    }
   }
 
   document.querySelectorAll('.answer-btn').forEach(function(btn){
