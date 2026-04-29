@@ -574,7 +574,7 @@
       <li><a href="services/it-operations.html">IT</a></li>
       <li><a href="services/logistics-events.html">Logistics &amp; Events</a></li>
       <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="case-studies/">Case Studies</a></li>
+      <li><a href="case-studies/">How we work</a></li>
       <li><a href="tools/it-health-check.html">Free Tool</a></li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
@@ -590,7 +590,7 @@
   <div class="hero-content">
     <!-- WU:HERO-COPY:START -->
     <h1 data-hero-h1>Managed IT for Vancouver-area contractors — <span>posted price, signed SLA, 30-day paid pilot.</span></h1>
-    <p data-hero-body><strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. Posted right here. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot — exit at day 30 with no renewal obligation.</strong></p>
+    <p data-hero-body><strong style="color:#fff;">$99/user/month.</strong> 10-user minimum. <strong>Same-day response, business hours.</strong> <strong>30-day fixed-scope paid pilot — exit at day 30 with no renewal obligation.</strong></p>
     <div class="hero-buttons" style="margin-bottom:0.75rem;">
       <a href="tel:+13606444820" class="btn btn-primary hero-phone-btn" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'hero'})">📞 Call (360) 644-4820</a>
       <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="btn btn-outline" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'cal_book',location:'hero'})">📅 Book a Free Consult</a>
@@ -662,9 +662,9 @@
 <section id="demo" style="background: linear-gradient(180deg, #0c1929 0%, #0f172a 100%); padding: 4rem 1.5rem 5rem;">
   <div class="container">
     <div class="section-header" style="margin-bottom: 2rem;">
-      <p style="color: var(--teal-400); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;">Sample Monitoring Dashboard</p>
-      <h2 style="color: #fff;">This Is What Your Dashboard Would Look Like</h2>
-      <p style="color: var(--slate-400);">A representative view of the visibility our managed clients receive. Live data, automated remediation, and human follow-through — that's what proactive IT looks like.</p>
+      <p style="color: var(--amber-500, #f59e0b); font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.5rem;">Illustrative — not live data</p>
+      <h2 style="color: #fff;">The shape of the visibility you'd get</h2>
+      <p style="color: var(--slate-400);">An illustration of the kind of monitoring our managed clients receive — alerts, patches, backups, and human follow-through, summarized in one place. Real client dashboards use Datto/Atera/Ninja and show your actual environment, not these synthetic events.</p>
     </div>
 
     <!-- Status Bar -->
@@ -808,7 +808,7 @@
 
   // Activity feed
   var activities = [
-    { icon: '&#9679;', color: '#22c55e', text: 'Backup completed — Acme Corp file server (0 errors)' },
+    { icon: '&#9679;', color: '#22c55e', text: 'Backup completed — primary file server (0 errors)' },
     { icon: '&#9679;', color: '#22c55e', text: 'Security patch applied — 12 endpoints updated to latest build' },
     { icon: '&#9679;', color: '#f59e0b', text: 'Phishing email blocked — spoofed invoice attachment quarantined' },
     { icon: '&#9679;', color: '#22c55e', text: 'SSL certificate renewed — portal.client-domain.com' },
@@ -1276,7 +1276,7 @@
   <!-- Newsletter opt-in removed until a real ESP (Beehiiv / ConvertKit) is wired up. See SETUP.md §10. -->
   <p style="color:var(--slate-500);font-size:0.85rem;margin-top:1rem;">Want updates when we publish? <a href="mailto:joberg@rivermountainsystems.com?subject=Newsletter%20signup" style="color:var(--teal-400);">Email Justin</a> to be on the early list.</p>
 
-  <p style="margin-top:1.5rem;">&copy; 2026 River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
+  <p style="margin-top:1.5rem;">&copy; <span class="ry">2026</span> River Mountain Systems. All rights reserved. · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>
 <!-- WU:FOOTER:END -->
 
@@ -1329,5 +1329,6 @@
 })();
 </script>
 
+<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
 </body>
 </html>
