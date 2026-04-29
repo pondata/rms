@@ -323,6 +323,73 @@ fi
 echo
 
 # ---------------------------------------------------------------------------
+# 7b. CSS sanity — DEPLOY GATE
+#     Catches the round-3 regression class: a strip script removes a rule body
+#     and leaves the selector list dangling, breaking everything downstream
+#     in the <style> block. Two checks:
+#       a) Inline <style> brace balance (open count == close count)
+#       b) No selector lists ending in `,` immediately followed by a non-selector
+#          line (a comment or another rule), which would imply an orphan.
+# ---------------------------------------------------------------------------
+echo "==> checking inline <style> brace balance and orphan selectors (deploy gate)…"
+css_problems=0
+css_problem_files=()
+while IFS= read -r f; do
+  inline=$(perl -0777 -ne 'while (/<style[^>]*>(.*?)<\/style>/gs) { print "$1\n"; }' "$f")
+  if [[ -z "$inline" ]]; then continue; fi
+  open=$(printf '%s' "$inline" | tr -cd '{' | wc -c | tr -d ' ')
+  close=$(printf '%s' "$inline" | tr -cd '}' | wc -c | tr -d ' ')
+  if [[ "$open" != "$close" ]]; then
+    echo "  BRACE_MISMATCH $f: { $open } $close"
+    css_problems=$((css_problems+1))
+    css_problem_files+=("$f")
+    continue
+  fi
+  # Check for orphan selector lists: line ending in `,` whose buffered group never reaches a `{`
+  # before hitting `}` or end of style block. Use python for precision.
+  if python3 - "$f" <<'PY'
+import sys, re, pathlib
+s = pathlib.Path(sys.argv[1]).read_text()
+problem = False
+for m in re.finditer(r'<style[^>]*>(.*?)</style>', s, re.DOTALL):
+    css = m.group(1)
+    # Walk depth-zero: collect selector buffer; require a `{` before next `}` or end.
+    depth = 0; buf = ''; i = 0; n = len(css)
+    while i < n:
+        c = css[i]
+        if c == '/' and i+1 < n and css[i+1] == '*':
+            e = css.find('*/', i+2); i = (e+2) if e!=-1 else n; continue
+        if depth == 0 and c == '{':
+            buf = ''; depth = 1; i += 1; continue
+        if depth > 0:
+            if c == '{': depth += 1
+            elif c == '}': depth -= 1
+            i += 1; continue
+        # depth 0
+        if c == '}':
+            # Got `}` at depth 0 — buffered selector had no opening brace
+            if buf.strip():
+                problem = True; break
+            buf = ''; i += 1; continue
+        buf += c; i += 1
+    if buf.strip() and not problem:
+        # End of style with an orphan selector
+        problem = True
+        break
+sys.exit(1 if problem else 0)
+PY
+  then : ; else
+    echo "  ORPHAN_SELECTOR $f"
+    css_problems=$((css_problems+1))
+    css_problem_files+=("$f")
+  fi
+done < <(find . -maxdepth 4 -name "*.html" -not -path "./node_modules/*" 2>/dev/null)
+if [[ "$css_problems" -eq 0 ]]; then
+  echo "  none"
+fi
+echo
+
+# ---------------------------------------------------------------------------
 # 8. SLA-leak grep — warning only
 # ---------------------------------------------------------------------------
 echo "==> checking for 15-min SLA leaks (warning only)…"
@@ -351,12 +418,14 @@ printf "  bad mailto:           : %s\n" "$mailto_bad"
 printf "  bad tel:              : %s\n" "$tel_bad"
 printf "  orphan pages          : %s\n" "$orphan_count"
 printf "  forbidden phrases     : %s  (DEPLOY GATE)\n" "$forbidden_count"
+printf "  CSS problems          : %s  (DEPLOY GATE)\n" "$css_problems"
 printf "  SLA-leak warnings     : %s  (non-blocking)\n" "$sla_count"
 echo "==================================================="
 
 if [[ "$broken_links_count" -gt 0 ]] \
    || [[ "$empty_href_count" -gt 0 ]] \
    || [[ "$mailto_bad" -gt 0 ]] \
+   || [[ "$css_problems" -gt 0 ]] \
    || [[ "$tel_bad" -gt 0 ]] \
    || [[ "$forbidden_count" -gt 0 ]]; then
   EXIT_CODE=1
