@@ -73,7 +73,7 @@
       <li><a href="/services/it-operations.html">IT</a></li>
       <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
       <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/case-studies/">How we work</a></li>
       <li><a href="/tools/it-health-check.html">Free Tool</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
@@ -171,7 +171,7 @@
       <textarea name="message" id="formMessage" placeholder="Briefly describe what's going on or what you want to build *" required rows="5"></textarea>
       <button type="submit" id="submitBtn">Send &amp; Get a Callback</button>
       <p id="formStatus" style="margin-top:0.5rem;font-size:0.9rem;display:none;"></p>
-      <p class="small">We respond within 1 business day. For emergencies, call (360) 644-4820.</p>
+      <p class="small">We respond within 1 business day. For emergencies, call <a href="tel:+13606444820">(360) 644-4820</a>.</p>
     </form>
   </div>
 </div>
@@ -206,10 +206,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e){
 <footer>
   <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
   <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> · <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a></p>
-  <ul class="footer-links"><li><a href="/services/it-operations.html">IT</a></li><li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/case-studies/">Case Studies</a></li><li><a href="/tools/it-health-check.html">Free Tool</a></li><li><a href="/about.html">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy.html">Privacy</a></li></ul>
-  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+  <ul class="footer-links"><li><a href="/services/it-operations.html">IT</a></li><li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li><li><a href="/pricing.html">Pricing</a></li><li><a href="/case-studies/">How we work</a></li><li><a href="/tools/it-health-check.html">Free Tool</a></li><li><a href="/about.html">About</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy.html">Privacy</a></li></ul>
+  <p>&copy; <span class="ry">2026</span> River Mountain Systems. Vancouver, WA.</p>
   <p style="font-size:0.75rem;color:var(--slate-400);margin-top:0.5rem;">This site uses Microsoft Clarity to record sessions and Google Analytics for traffic measurement. See <a href="/privacy.html">privacy</a>.</p>
 </footer>
 <!-- WU:FOOTER:END -->
+<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
 </body>
 </html>

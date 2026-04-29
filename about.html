@@ -141,7 +141,7 @@
       <li><a href="/services/it-operations.html">IT</a></li>
       <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
       <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/case-studies/">Case Studies</a></li>
+      <li><a href="/case-studies/">How we work</a></li>
       <li><a href="/tools/it-health-check.html">Free Tool</a></li>
       <li><a href="/blog/">Blog</a></li>
       <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
@@ -154,7 +154,7 @@
 
 <section class="hero">
   <h1>The person who'll <span>actually pick up.</span></h1>
-  <p>River Mountain Systems is founder-led. When you call (360) 644-4820, you talk to Justin — not a call center, not a queue, not a chatbot.</p>
+  <p>River Mountain Systems is founder-led. When you call <a href="tel:+13606444820" style="color:var(--teal-600);font-weight:600;text-decoration:none;">(360) 644-4820</a>, you talk to Justin — not a call center, not a queue, not a chatbot.</p>
 </section>
 
 <section style="background:#fff;">
@@ -162,15 +162,15 @@
     <div class="story">
       <p class="lede">River Mountain Systems exists because most small businesses are stuck choosing between expensive, impersonal IT firms — and break-fix shops that show up after something breaks. That's not a real choice.</p>
 
-      <p>I'm Justin Oberg. I started River Mountain Systems in Vancouver, Washington to give small and mid-size businesses around Southwest Washington and the Portland metro area the kind of IT support that big companies take for granted, without the big-company price tag or the 90-minute hold queue.</p>
-
       <!-- WU:HERO-FOUNDER:START -->
       <!-- TODO: justin headshot at /screenshots/justin-headshot.jpg -->
-      <div class="founder-block" style="display:flex;gap:1.25rem;align-items:center;max-width:640px;margin:1.75rem auto;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.25rem;flex-wrap:wrap;justify-content:center;">
-        <img src="screenshots/justin-headshot.jpg" alt="Justin Oberg, founder of River Mountain Systems" loading="lazy" width="120" height="120" style="width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--slate-200);background:var(--slate-100);" onerror="this.style.display='none'">
-        <p style="color:var(--slate-700);font-size:0.95rem;line-height:1.55;margin:0;flex:1 1 280px;min-width:240px;">I'm Justin Oberg. I run River Mountain Systems out of Vancouver, WA. I spent 12+ years inside warehouse operations and IT — fixing systems mid-shift, then engineering the systems that prevented the next outage. RMS is one technician, one phone number, posted prices, and a written SLA. If you call, I answer. If something breaks, I'm on it.</p>
+      <div class="founder-block" style="display:flex;gap:1.25rem;align-items:center;max-width:640px;margin:0 auto 1.75rem;background:var(--slate-50);border:1px solid var(--slate-200);border-radius:14px;padding:1.25rem;flex-wrap:wrap;justify-content:center;">
+        <img src="/screenshots/justin-headshot.jpg" alt="Justin Oberg, founder of River Mountain Systems" loading="lazy" width="120" height="120" style="width:120px;height:120px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid var(--slate-200);background:var(--slate-100);" onerror="this.style.display='none'">
+        <p style="color:var(--slate-700);font-size:0.95rem;line-height:1.55;margin:0;flex:1 1 280px;min-width:240px;"><strong>Justin Oberg</strong> — founder, Vancouver, WA. 12+ years across warehouse operations and IT — fixing systems mid-shift, then engineering the systems that prevented the next outage. RMS is one technician, one phone number, posted prices, and a written SLA.</p>
       </div>
       <!-- WU:HERO-FOUNDER:END -->
+
+      <p>I started River Mountain Systems in Vancouver, Washington to give small and mid-size businesses around Southwest Washington and the Portland metro area the kind of IT support that big companies take for granted, without the big-company price tag or the 90-minute hold queue.</p>
 
       <h2>The background</h2>
 
@@ -286,16 +286,17 @@
     <li><a href="/services/it-operations.html">IT</a></li>
     <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
     <li><a href="/pricing.html">Pricing</a></li>
-    <li><a href="/case-studies/">Case Studies</a></li>
+    <li><a href="/case-studies/">How we work</a></li>
     <li><a href="/tools/it-health-check.html">Free Tool</a></li>
     <li><a href="/about.html">About</a></li>
     <li><a href="/blog/">Blog</a></li>
     <li><a href="/privacy.html">Privacy</a></li>
   </ul>
-  <p>&copy; 2026 River Mountain Systems. Vancouver, WA.</p>
+  <p>&copy; <span class="ry">2026</span> River Mountain Systems. Vancouver, WA.</p>
   <p style="font-size:0.75rem;color:var(--slate-400);margin-top:0.5rem;">This site uses Microsoft Clarity to record sessions and Google Analytics for traffic measurement. See <a href="/privacy.html">privacy</a>.</p>
 </footer>
 <!-- WU:FOOTER:END -->
 
+<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
 </body>
 </html>

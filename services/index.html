@@ -310,8 +310,9 @@
     <li><a href="/about.html">About</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
-  <p>© 2026 River Mountain Systems · Vancouver, WA · Serving the Portland metro area.</p>
+  <p>© <span class="ry">2026</span> River Mountain Systems · Vancouver, WA · Serving the Portland metro area.</p>
 </footer>
 
+<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
 </body>
 </html>
