@@ -264,6 +264,11 @@
     }
 
     html, body { max-width: 100%; overflow-x: hidden; }
+    /* a11y utility — visually hide content, keep it announced by screen readers */
+    .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+    /* WCAG 2.5.5 — minimum touch target 44×44 for primary tappables (buttons + branded CTAs).
+       Inline body links opt out via .inline-link to keep prose readable. */
+    a.btn, button.btn, .nav-phone, .nav-tool { min-height: 44px; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -341,7 +346,7 @@
       padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
       font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
     }
-    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary { background: var(--teal-500); color: #0f172a; }
     .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
     .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
     .btn-outline:hover { border-color: var(--slate-400); background: rgba(255,255,255,0.04); }
@@ -627,21 +632,41 @@
     <form id="quickForm" style="max-width:520px;margin:2rem auto 0;text-align:left;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:1.5rem;">
       <p style="color:#fff;font-weight:700;font-size:0.95rem;margin-bottom:0.85rem;text-align:center;">…or send us a quick note</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
-        <input type="text" name="name" id="quickName" placeholder="Your name" required style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
-        <input type="email" name="email" id="quickEmail" placeholder="Email" required style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
+        <div>
+          <label for="quickName" class="sr-only">Your name</label>
+          <input type="text" name="name" id="quickName" placeholder="Your name" required autocomplete="name" style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
+        </div>
+        <div>
+          <label for="quickEmail" class="sr-only">Email address</label>
+          <input type="email" name="email" id="quickEmail" placeholder="Email" required autocomplete="email" inputmode="email" style="padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;">
+        </div>
       </div>
+      <label for="quickMessage" class="sr-only">What's broken or what do you want to build?</label>
       <textarea name="message" id="quickMessage" rows="2" placeholder="What's broken or what do you want to build?" required style="width:100%;padding:0.7rem 0.85rem;border-radius:6px;border:1px solid rgba(255,255,255,0.12);background:rgba(0,0,0,0.3);color:#fff;font-family:inherit;font-size:0.95rem;margin-bottom:0.6rem;resize:vertical;"></textarea>
+      <!-- Honeypot — leave empty; bots fill it -->
+      <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+        <label for="quickWebsite">Leave this field empty</label>
+        <input type="text" name="website" id="quickWebsite" tabindex="-1" autocomplete="off" value="">
+      </div>
       <div style="display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
         <button type="submit" id="quickSubmitBtn" class="btn btn-primary" style="font-size:0.95rem;">Send</button>
         <a href="contact.html" style="color:var(--slate-400);font-size:0.85rem;text-decoration:underline;">Need to share more? →</a>
       </div>
-      <p id="quickStatus" style="display:none;font-size:0.85rem;margin-top:0.6rem;"></p>
+      <p id="quickStatus" role="status" aria-live="polite" style="display:none;font-size:0.85rem;margin-top:0.6rem;"></p>
     </form>
     <script>
       document.getElementById('quickForm').addEventListener('submit', function(e){
         e.preventDefault();
         var btn = document.getElementById('quickSubmitBtn');
         var status = document.getElementById('quickStatus');
+        // Honeypot: silently succeed-and-discard if filled (bots think they won)
+        if (document.getElementById('quickWebsite').value) {
+          status.textContent = '✓ Got it — Justin will reach out within 1 business day.';
+          status.style.color = '#22c55e';
+          status.style.display = 'block';
+          document.getElementById('quickForm').reset();
+          return;
+        }
         btn.textContent = 'Sending…';
         btn.disabled = true;
         var fd = new FormData();
@@ -1046,7 +1071,7 @@
       <a href="/about.html" style="text-decoration:none;color:inherit;background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;display:block;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--teal-500)'" onmouseout="this.style.borderColor='var(--slate-200)'">
         <div style="font-size:1.5rem;margin-bottom:0.5rem;">👤</div>
         <h3 style="font-size:1.05rem;margin-bottom:0.4rem;color:var(--slate-900);">Founder, named, with a phone</h3>
-        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">12+ years in warehouse operations and IT. Direct mobile, not a queue. Mon–Fri, 8a–6p PT.</p>
+        <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.75rem;">12+ years in warehouse operations and IT. Direct line, not a queue: <a href="tel:+13606444820" style="color:var(--teal-600);font-weight:600;text-decoration:none;">(360) 644-4820</a>. Mon–Fri, 8a–6p PT.</p>
         <span style="color:var(--teal-600);font-weight:600;font-size:0.88rem;">Read the founder bio →</span>
       </a>
       <div style="background:#fff;border:1px solid var(--slate-200);border-radius:14px;padding:1.5rem;">
@@ -1202,23 +1227,52 @@
         <p style="font-weight:700;color:var(--slate-900);font-size:0.98rem;margin:0;">Just have Justin call you?</p>
         <p style="color:var(--slate-600);font-size:0.88rem;margin:0;">Name + phone, that's it. He'll call within one business day.</p>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;">
-          <input type="text" name="name" id="cbName" placeholder="Your name *" required aria-label="Your name">
-          <input type="tel" name="phone" id="cbPhone" placeholder="Phone *" required aria-label="Phone number">
+          <div>
+            <label for="cbName" class="sr-only">Your name</label>
+            <input type="text" name="name" id="cbName" placeholder="Your name *" required autocomplete="name">
+          </div>
+          <div>
+            <label for="cbPhone" class="sr-only">Phone number</label>
+            <input type="tel" name="phone" id="cbPhone" placeholder="Phone *" required autocomplete="tel" inputmode="tel">
+          </div>
+        </div>
+        <!-- Honeypot -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label for="cbWebsite">Leave this field empty</label>
+          <input type="text" name="website" id="cbWebsite" tabindex="-1" autocomplete="off" value="">
         </div>
         <button type="submit" id="cbSubmit" class="btn btn-primary" style="align-self:flex-start;">Request a call</button>
-        <p id="cbStatus" style="margin:0;font-size:0.88rem;display:none;"></p>
+        <p id="cbStatus" role="status" aria-live="polite" style="margin:0;font-size:0.88rem;display:none;"></p>
       </form>
 
       <form class="contact-form" id="contactForm">
         <p style="color:var(--slate-600);font-size:0.92rem;margin-bottom:0.5rem;">Or send a longer note — only name, email, and message are required. Everything else is optional and helps Justin prep before the call.</p>
         <div class="form-row">
-          <input type="text" name="name" id="formName" placeholder="Your name *" required>
-          <input type="email" name="email" id="formEmail" placeholder="Email *" required>
+          <div>
+            <label for="formName" class="sr-only">Your name</label>
+            <input type="text" name="name" id="formName" placeholder="Your name *" required autocomplete="name">
+          </div>
+          <div>
+            <label for="formEmail" class="sr-only">Email address</label>
+            <input type="email" name="email" id="formEmail" placeholder="Email *" required autocomplete="email" inputmode="email">
+          </div>
         </div>
         <div class="form-row">
-          <input type="text" name="company" id="formCompany" placeholder="Company (optional)">
-          <input type="tel" name="phone" id="formPhone" placeholder="Phone (optional)">
+          <div>
+            <label for="formCompany" class="sr-only">Company</label>
+            <input type="text" name="company" id="formCompany" placeholder="Company (optional)" autocomplete="organization">
+          </div>
+          <div>
+            <label for="formPhone" class="sr-only">Phone number</label>
+            <input type="tel" name="phone" id="formPhone" placeholder="Phone (optional)" autocomplete="tel" inputmode="tel">
+          </div>
         </div>
+        <!-- Honeypot -->
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label for="formWebsite">Leave this field empty</label>
+          <input type="text" name="website" id="formWebsite" tabindex="-1" autocomplete="off" value="">
+        </div>
+        <label for="formSize" class="sr-only">Company size</label>
         <select name="size" id="formSize" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
           <option value="">Company size (optional)</option>
           <option>Just me / 1–5 employees</option>
@@ -1227,6 +1281,7 @@
           <option>51–100 employees</option>
           <option>100+ employees</option>
         </select>
+        <label for="formNeed" class="sr-only">What do you need?</label>
         <select name="need" id="formNeed" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
           <option value="">What do you need? (optional)</option>
           <option>Managed IT support (recurring)</option>
@@ -1239,6 +1294,7 @@
           <option>AI integration / automation</option>
           <option>Not sure — want to talk it through</option>
         </select>
+        <label for="formBudget" class="sr-only">Approximate budget</label>
         <select name="budget" id="formBudget" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
           <option value="">Approximate budget (optional)</option>
           <option>Under $1,000 (one-time)</option>
@@ -1250,6 +1306,7 @@
           <option>$5,000+/month (recurring)</option>
           <option>Not sure yet</option>
         </select>
+        <label for="formTimeline" class="sr-only">Timeline</label>
         <select name="timeline" id="formTimeline" style="padding:0.85rem 1rem;border:1px solid var(--slate-200);border-radius:8px;font-family:inherit;font-size:0.95rem;color:var(--slate-700);background:#fff;">
           <option value="">Timeline (optional)</option>
           <option>Emergency — need help now</option>
@@ -1258,9 +1315,10 @@
           <option>1–3 months out</option>
           <option>Just exploring</option>
         </select>
+        <label for="formMessage" class="sr-only">Briefly describe what's going on or what you want to build</label>
         <textarea name="message" id="formMessage" placeholder="Briefly describe what's going on or what you want to build *" required rows="4"></textarea>
         <button type="submit" class="btn btn-primary" id="submitBtn" style="align-self: flex-start;">Send &amp; Get a Callback</button>
-        <p id="formStatus" style="margin-top: 0.5rem; font-size: 0.9rem; display: none;"></p>
+        <p id="formStatus" role="status" aria-live="polite" style="margin-top: 0.5rem; font-size: 0.9rem; display: none;"></p>
         <p style="font-size:0.8rem;color:var(--slate-500);margin-top:0.5rem;">We respond within 1 business day. For emergencies, call <a href="tel:+13606444820">(360) 644-4820</a>.</p>
       </form>
       <script>
@@ -1269,6 +1327,13 @@
           e.preventDefault();
           var btn = document.getElementById('cbSubmit');
           var status = document.getElementById('cbStatus');
+          // Honeypot: silently succeed if filled
+          if (document.getElementById('cbWebsite').value) {
+            status.textContent = '✓ Got it — Justin will call within 1 business day.';
+            status.style.color = '#0d9488'; status.style.display = 'block';
+            document.getElementById('callbackForm').reset();
+            return;
+          }
           btn.textContent = 'Sending…'; btn.disabled = true;
           var fd = new FormData();
           fd.append('name', document.getElementById('cbName').value);
@@ -1294,6 +1359,13 @@
           e.preventDefault();
           var btn = document.getElementById('submitBtn');
           var status = document.getElementById('formStatus');
+          // Honeypot
+          if (document.getElementById('formWebsite').value) {
+            status.textContent = 'Got it — Justin will reach out within 1 business day.';
+            status.style.color = '#14b8a6'; status.style.display = 'block';
+            document.getElementById('contactForm').reset();
+            return;
+          }
           btn.textContent = 'Sending...';
           btn.disabled = true;
           status.style.display = 'none';
@@ -1393,27 +1465,49 @@
 </style>
 <script>
 (function(){
-  var shown = sessionStorage.getItem('rms_exit_shown');
-  if (shown) return;
+  // 7-day frequency cap via localStorage (was per-session)
+  var SEVEN_DAYS_MS = 7 * 24 * 60 * 60 * 1000;
+  var lastShown = parseInt(localStorage.getItem('rms_exit_last_shown') || '0', 10);
+  if (Date.now() - lastShown < SEVEN_DAYS_MS) return;
+
+  var lastY = null, lastT = null;
+
   function showExit(e) {
-    if (e.clientY < 10 && !sessionStorage.getItem('rms_exit_shown')) {
-      sessionStorage.setItem('rms_exit_shown', '1');
-      document.getElementById('exitModal').classList.add('show');
-      if (window.rmsTrack) rmsTrack('exit_modal_shown');
+    // Only fire when cursor is near the very top edge — URL bar / tab bar zone
+    if (e.clientY > 5) return;
+    // Velocity check — must be moving upward fast (not just hovering near nav)
+    var now = Date.now();
+    if (lastY !== null && lastT !== null) {
+      var dy = e.clientY - lastY;
+      var dt = now - lastT;
+      var velocity = dt > 0 ? dy / dt : 0; // px per ms; negative = upward
+      if (velocity > -0.5) { lastY = e.clientY; lastT = now; return; }
     }
+    lastY = e.clientY; lastT = now;
+    // Ignore if relatedTarget is a child of body (intra-page move, not exit)
+    if (e.relatedTarget) return;
+    localStorage.setItem('rms_exit_last_shown', String(Date.now()));
+    document.getElementById('exitModal').classList.add('show');
+    if (window.rmsTrack) rmsTrack('exit_modal_shown');
+    // Once shown, stop listening
+    document.removeEventListener('mouseout', showExit);
   }
   window.closeExitModal = function() {
     document.getElementById('exitModal').classList.remove('show');
   };
-  // Only on desktop
-  if (window.innerWidth > 768) {
+  // Only on desktop pointer devices (skip mobile + touch laptops)
+  if (window.innerWidth > 768 && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
     setTimeout(function(){
       document.addEventListener('mouseout', showExit);
     }, 5000);
   }
-  // Also close on backdrop click
+  // Backdrop click closes
   document.getElementById('exitModal').addEventListener('click', function(e){
     if (e.target.id === 'exitModal') closeExitModal();
+  });
+  // Esc closes
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeExitModal();
   });
 })();
 </script>

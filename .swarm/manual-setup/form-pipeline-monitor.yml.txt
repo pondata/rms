@@ -1,0 +1,52 @@
+name: Form pipeline daily monitor
+
+# Daily synthetic POST to the public Apps Script endpoint.
+# If the request fails (4xx/5xx/network), the workflow fails — GitHub emails Justin.
+# This is the cheapest available mitigation for the no-cors silent-failure risk
+# until the form pipeline is moved behind a Cloudflare Worker / Formspree / Basin.
+#
+# Reads the same endpoint that's already public in the page source, so no secrets needed.
+# Each tracer record is tagged source=synthetic_monitor + ISO timestamp so Justin can
+# filter them out of his Google Sheet inbox if desired.
+
+on:
+  schedule:
+    # 09:00 UTC = 02:00 PT — well outside business hours
+    - cron: '0 9 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: POST synthetic record to Apps Script endpoint
+        run: |
+          set -euo pipefail
+          ENDPOINT='https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec'
+          TS="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          # Apps Script web apps respond 200 even when behind an auth wall — but a
+          # successful pipeline should give us a redirect chain that ends in 200
+          # OR 302 to googleusercontent.com. A non-2xx/3xx HTTP response means the
+          # deployment URL is broken or rate-limited.
+          STATUS=$(curl -s -o /tmp/body.txt -w "%{http_code}" -L \
+            -X POST "$ENDPOINT" \
+            -H 'Accept: text/plain' \
+            --data-urlencode "name=synthetic-monitor" \
+            --data-urlencode "email=monitor@rivermountainsystems.com" \
+            --data-urlencode "phone=" \
+            --data-urlencode "message=Synthetic tracer at ${TS}. Filter out via source=synthetic_monitor in your Google Sheet." \
+            --data-urlencode "source=synthetic_monitor" \
+            --data-urlencode "ts=${TS}")
+          echo "HTTP status: $STATUS"
+          echo "Response body (first 500 bytes):"
+          head -c 500 /tmp/body.txt || true
+          echo ""
+          if [ "$STATUS" -lt 200 ] || [ "$STATUS" -ge 400 ]; then
+            echo "::error::Apps Script form endpoint returned $STATUS. Pipeline may be broken — leads silently failing."
+            exit 1
+          fi
+          echo "OK: tracer accepted at ${TS}."

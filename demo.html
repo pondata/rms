@@ -42,6 +42,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; }
+    .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+    a.btn, button.btn { min-height: 44px; }
     /* Form input overflow guard */
     input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
     input[type="text"], input[type="email"], input[type="tel"], input[type="number"], input[type="url"], textarea, select { width: 100%; }
@@ -130,7 +132,7 @@
       font-weight: 700; font-size: 0.97rem; text-decoration: none;
       transition: all 0.2s; border: none; cursor: pointer;
     }
-    .btn-primary { background: var(--teal-500); color: #fff; box-shadow: 0 4px 18px rgba(20,184,166,0.3); }
+    .btn-primary { background: var(--teal-500); color: #0f172a; box-shadow: 0 4px 18px rgba(20,184,166,0.3); }
     .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
     .btn-outline { background: transparent; color: #fff; border: 1px solid var(--slate-600); }
     .btn-outline:hover { border-color: var(--slate-400); background: rgba(255,255,255,0.05); }
@@ -413,18 +415,36 @@
     <!-- WU:DEMO-FORM:START -->
     <form class="quick-form" id="demoForm">
       <div class="form-row">
-        <input type="text" name="name" id="demoName" placeholder="Your name" required>
-        <input type="text" name="company" id="demoCompany" placeholder="Company (optional)">
+        <div>
+          <label for="demoName" class="sr-only">Your name</label>
+          <input type="text" name="name" id="demoName" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="demoCompany" class="sr-only">Company</label>
+          <input type="text" name="company" id="demoCompany" placeholder="Company (optional)" autocomplete="organization">
+        </div>
       </div>
       <div class="form-row">
-        <input type="email" name="email" id="demoEmail" placeholder="Email" required>
-        <input type="tel" name="phone" id="demoPhone" placeholder="Phone (optional)">
+        <div>
+          <label for="demoEmail" class="sr-only">Email address</label>
+          <input type="email" name="email" id="demoEmail" placeholder="Email" required autocomplete="email" inputmode="email">
+        </div>
+        <div>
+          <label for="demoPhone" class="sr-only">Phone number</label>
+          <input type="tel" name="phone" id="demoPhone" placeholder="Phone (optional)" autocomplete="tel" inputmode="tel">
+        </div>
       </div>
+      <label for="demoMessage" class="sr-only">What are you dealing with or trying to build?</label>
       <textarea name="message" id="demoMessage" placeholder="What are you dealing with or trying to build?" required></textarea>
+      <!-- Honeypot -->
+      <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+        <label for="demoWebsite">Leave this field empty</label>
+        <input type="text" name="website" id="demoWebsite" tabindex="-1" autocomplete="off" value="">
+      </div>
       <button type="submit" id="demoSubmitBtn" class="btn btn-primary" style="width:100%;justify-content:center;">
         Send message
       </button>
-      <p id="demoFormStatus"></p>
+      <p id="demoFormStatus" role="status" aria-live="polite"></p>
     </form>
     <!-- WU:DEMO-FORM:END -->
 
@@ -576,6 +596,13 @@ document.getElementById('demoForm').addEventListener('submit', function(e) {
   e.preventDefault();
   var btn = document.getElementById('demoSubmitBtn');
   var status = document.getElementById('demoFormStatus');
+  // Honeypot
+  if (document.getElementById('demoWebsite').value) {
+    status.textContent = '✓ Got it.';
+    status.style.color = '#14b8a6';
+    document.getElementById('demoForm').reset();
+    return;
+  }
   btn.textContent = 'Sending…';
   btn.disabled = true;
   var fd = new FormData();
