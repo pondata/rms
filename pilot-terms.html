@@ -16,14 +16,13 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');</script>
   <script src="/assets/rms-track.js" defer></script>
+  <link rel="stylesheet" href="/assets/rms-nav.css">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html,body{max-width:100%;overflow-x:hidden;}
     :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;}
     body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
-    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);}
-    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
-    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;}
+
     .nav-back{color:var(--teal-500);text-decoration:none;font-size:0.9rem;font-weight:600;}
     .container{max-width:760px;margin:0 auto;padding:7rem 1.5rem 3rem;}
     h1{font-size:2rem;color:var(--slate-900);margin-bottom:0.5rem;line-height:1.25;}
@@ -42,10 +41,29 @@
   </style>
 </head>
 <body>
-<nav><div class="nav-inner"><a href="/" class="logo">
-  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-  River Mountain Systems
-</a><a href="/" class="nav-back">← Home</a></div></nav>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT</a></li>
+      <li><a href="/services/logistics-events.html">Logistics</a></li>
+      <li><a href="/industries/">Industries</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/case-studies/">How we work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
 
 <div class="container">
   <h1>30-day pilot terms</h1>

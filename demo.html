@@ -39,10 +39,11 @@
   </script>
   <!-- /ANALYTICS PIXELS -->
 
+  <link rel="stylesheet" href="/assets/rms-nav.css">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { max-width: 100%; overflow-x: hidden; }
-    .sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+    
     a.btn, button.btn { min-height: 44px; }
     /* Form input overflow guard */
     input, textarea, select { max-width: 100%; min-width: 0; box-sizing: border-box; }
@@ -75,10 +76,7 @@
       background: rgba(15, 23, 42, 0.95);
       backdrop-filter: blur(8px);
     }
-    .logo {
-      display: flex; align-items: center; gap: 0.6rem;
-      text-decoration: none; color: #fff; font-weight: 700; font-size: 1rem;
-    }
+    
     .header-phone {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: var(--teal-500); color: #fff;
@@ -284,11 +282,7 @@
     .big-call small { display: block; color: var(--slate-400); font-size: 0.78rem; font-weight: 400; }
 
     /* FOOTER */
-    .footer {
-      text-align: center; padding: 1.75rem 1.5rem;
-      color: var(--slate-600); font-size: 0.82rem;
-      border-top: 1px solid rgba(255,255,255,0.05);
-    }
+    .
     .footer a { color: var(--slate-500); text-decoration: none; margin: 0 0.75rem; }
     .footer a:hover { color: #fff; }
 
@@ -300,6 +294,30 @@
   </style>
 </head>
 <body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      River Mountain Systems
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/it-operations.html">IT</a></li>
+      <li><a href="/services/logistics-events.html">Logistics</a></li>
+      <li><a href="/industries/">Industries</a></li>
+      <li><a href="/pricing.html">Pricing</a></li>
+      <li><a href="/case-studies/">How we work</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+    </ul>
+    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+</nav>
 
 <!-- HEADER -->
 <header class="header">
