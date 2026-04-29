@@ -205,3 +205,27 @@ footer .logo {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+/* ---------- custom-element placeholders -----
+   Before rms-components.js upgrades the elements, reserve layout space so
+   there's no FOUC / layout shift. Once upgraded the tags become structural
+   and these display:block rules don't hurt. */
+rms-nav { display: block; }
+rms-footer { display: block; }
+
+/* If JS is disabled or fails, give a static fallback nav-bar so the page
+   still has the dark sticky header. The text inside is shown only when no
+   <nav> child has been rendered. */
+rms-nav:empty {
+  display: block;
+  height: 64px;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}

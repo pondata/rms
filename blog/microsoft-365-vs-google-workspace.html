@@ -50,10 +50,7 @@
   }
   </script>
   <link rel="stylesheet" href="/assets/rms-nav.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
+  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }:root {
       --slate-50: #f8fafc;
       --slate-100: #f1f5f9;
       --slate-200: #e2e8f0;
@@ -69,99 +66,57 @@
       --teal-400: #2dd4bf;
       --teal-500: #14b8a6;
       --teal-600: #0d9488;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
+    }html { scroll-behavior: smooth; }body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--slate-800);
       background: var(--slate-50);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-    }
-
-    .nav-cta {
+    }.nav-cta {
       background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
       border-radius: 6px; font-weight: 600; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--teal-600); }
-
-    .article-header {
+    }.nav-cta:hover { background: var(--teal-600); }.article-header {
       padding: 8rem 1.5rem 3rem;
       background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
       color: #fff; text-align: center; position: relative; overflow: hidden;
-    }
-    .article-header::before {
+    }.article-header::before {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
                   radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
-    }
-    .article-header-content { position: relative; max-width: 720px; margin: 0 auto; }
-    .article-header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }
-    .article-meta { font-size: 0.9rem; color: var(--slate-400); }
-
-    .article-body {
+    }.article-header-content { position: relative; max-width: 720px; margin: 0 auto; }.article-header h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.25; margin-bottom: 1rem; }.article-meta { font-size: 0.9rem; color: var(--slate-400); }.article-body {
       max-width: 720px; margin: 0 auto; padding: 3rem 1.5rem 4rem;
-    }
-    .article-body h2 {
+    }.article-body h2 {
       font-size: 1.4rem; font-weight: 700; margin: 2.5rem 0 1rem; color: var(--slate-900);
-    }
-    .article-body h3 {
+    }.article-body h3 {
       font-size: 1.15rem; font-weight: 600; margin: 2rem 0 0.75rem; color: var(--slate-800);
-    }
-    .article-body p {
+    }.article-body p {
       margin-bottom: 1.25rem; color: var(--slate-700); font-size: 1.02rem; line-height: 1.75;
-    }
-    .article-body ul, .article-body ol {
+    }.article-body ul, .article-body ol {
       margin: 0 0 1.25rem 1.5rem; color: var(--slate-700); font-size: 1.02rem; line-height: 1.75;
-    }
-    .article-body li { margin-bottom: 0.5rem; }
-    .article-body a { color: var(--teal-600); text-decoration: underline; } .article-body a.btn { color: #fff !important; text-decoration: none; }
-    .article-body a:hover { color: var(--teal-500); }
-    .article-body strong { color: var(--slate-800); }
-    .article-body blockquote {
+    }.article-body li { margin-bottom: 0.5rem; }.article-body a { color: var(--teal-600); text-decoration: underline; }.article-body a.btn { color: #fff !important; text-decoration: none; }.article-body a:hover { color: var(--teal-500); }.article-body strong { color: var(--slate-800); }.article-body blockquote {
       border-left: 3px solid var(--teal-500); padding: 1rem 1.5rem; margin: 1.5rem 0;
       background: var(--slate-100); border-radius: 0 8px 8px 0;
       color: var(--slate-600); font-style: italic;
-    }
-
-    .comparison-table {
+    }.comparison-table {
       width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.93rem;
-    }
-    .comparison-table th {
+    }.comparison-table th {
       background: var(--slate-900); color: #fff; padding: 0.75rem 1rem;
       text-align: left; font-weight: 600;
-    }
-    .comparison-table td {
+    }.comparison-table td {
       padding: 0.75rem 1rem; border-bottom: 1px solid var(--slate-200);
       color: var(--slate-700);
-    }
-    .comparison-table tr:nth-child(even) td { background: var(--slate-50); }
-    .comparison-table td:first-child { font-weight: 600; color: var(--slate-800); }
-
-    .article-cta {
+    }.comparison-table tr:nth-child(even) td { background: var(--slate-50); }.comparison-table td:first-child { font-weight: 600; color: var(--slate-800); }.article-cta {
       background: linear-gradient(135deg, var(--slate-900), #162033);
       color: #fff; border-radius: 12px; padding: 2.5rem; margin-top: 3rem; text-align: center;
-    }
-    .article-cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: #fff; }
-    .article-cta p { color: #cbd5e1; margin-bottom: 1.5rem; font-size: 0.95rem; }
-    .btn {
+    }.article-cta h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 0.75rem; color: #fff; }.article-cta p { color: #cbd5e1; margin-bottom: 1.5rem; font-size: 0.95rem; }.btn {
       display: inline-flex; align-items: center; gap: 0.5rem;
       padding: 0.75rem 1.75rem; border-radius: 8px; font-weight: 600;
       font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer;
-    }
-    .btn-primary { background: var(--teal-500); color: #fff !important; }
-    .btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }
-
-    .back-link {
+    }.btn-primary { background: var(--teal-500); color: #fff !important; }.btn-primary:hover { background: var(--teal-600); transform: translateY(-1px); }.back-link {
       display: inline-flex; align-items: center; gap: 0.35rem;
       color: var(--teal-500); text-decoration: none; font-weight: 600; font-size: 0.9rem;
       margin-bottom: 2rem;
-    }
-    .back-link:hover { color: var(--teal-600); }
-
-    @media (max-width: 768px) {
+    }.back-link:hover { color: var(--teal-600); }@media (max-width: 768px) {
 
       .comparison-table { font-size: 0.82rem; }
       .comparison-table th, .comparison-table td { padding: 0.5rem 0.6rem; }
@@ -169,29 +124,7 @@
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      River Mountain Systems
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/services/it-operations.html">IT</a></li>
-      <li><a href="/services/logistics-events.html">Logistics</a></li>
-      <li><a href="/industries/">Industries</a></li>
-      <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/case-studies/">How we work</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
-      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
+<rms-nav></rms-nav>
 
 <div class="article-header">
   <div class="article-header-content">
@@ -340,24 +273,8 @@
   </div>
 </div>
 
-<footer>
-  <a href="../" class="logo">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
-      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
-    </svg>
-    River Mountain Systems
-  </a>
-  <ul class="footer-links">
-    <li><a href="../#services">Services</a></li>
-    <li><a href="../#why">Why Us</a></li>
-    <li><a href="./">Blog</a></li>
-    <li><a href="../#contact">Contact</a></li>
-  </ul>
-  <p>&copy; <span class="ry">2026</span> River Mountain Systems. All rights reserved.</p>
-</footer>
+<rms-footer></rms-footer>
 
-<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+<script src="/assets/rms-components.js" defer></script>
 </body>
 </html>

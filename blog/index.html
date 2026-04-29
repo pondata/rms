@@ -24,10 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/rms-nav.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
+  <style>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }:root {
       --slate-50: #f8fafc;
       --slate-100: #f1f5f9;
       --slate-200: #e2e8f0;
@@ -43,83 +40,54 @@
       --teal-400: #2dd4bf;
       --teal-500: #14b8a6;
       --teal-600: #0d9488;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
+    }html { scroll-behavior: smooth; }body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
       color: var(--slate-800);
       background: var(--slate-50);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-    }
-
-    /* NAV */
+    }/* NAV */
 
     .nav-cta {
       background: var(--teal-500); color: #fff !important; padding: 0.45rem 1.1rem;
       border-radius: 6px; font-weight: 600; transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--teal-600); }
-
-    /* PAGE HEADER */
+    }.nav-cta:hover { background: var(--teal-600); }/* PAGE HEADER */
     .page-header {
       padding: 8rem 1.5rem 3rem;
       background: linear-gradient(135deg, var(--slate-900) 0%, #162033 50%, #0c2d3e 100%);
       color: #fff; text-align: center; position: relative; overflow: hidden;
-    }
-    .page-header::before {
+    }.page-header::before {
       content: ''; position: absolute; inset: 0;
       background: radial-gradient(circle at 70% 30%, rgba(45, 212, 191, 0.08) 0%, transparent 60%),
                   radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
-    }
-    .page-header-content { position: relative; max-width: 720px; margin: 0 auto; }
-    .page-header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }
-    .page-header p { font-size: 1.1rem; color: var(--slate-400); }
-
-    /* SECTIONS */
-    section { padding: 4rem 1.5rem; }
-    .container { max-width: 1120px; margin: 0 auto; }
-
-    /* BLOG CARDS */
+    }.page-header-content { position: relative; max-width: 720px; margin: 0 auto; }.page-header h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; }.page-header p { font-size: 1.1rem; color: var(--slate-400); }/* SECTIONS */
+    section { padding: 4rem 1.5rem; }.container { max-width: 1120px; margin: 0 auto; }/* BLOG CARDS */
     .blog-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.75rem;
-    }
-    .blog-card {
+    }.blog-card {
       background: #fff;
       border: 1px solid var(--slate-200);
       border-radius: 12px;
       padding: 2rem;
       transition: box-shadow 0.25s, border-color 0.25s;
       display: flex; flex-direction: column;
-    }
-    .blog-card:hover {
+    }.blog-card:hover {
       box-shadow: 0 8px 30px rgba(0,0,0,0.06);
       border-color: var(--teal-400);
-    }
-    .blog-card-date {
+    }.blog-card-date {
       font-size: 0.8rem; color: var(--teal-500); font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.75rem;
-    }
-    .blog-card h2 {
+    }.blog-card h2 {
       font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; line-height: 1.35;
-    }
-    .blog-card h2 a {
+    }.blog-card h2 a {
       color: var(--slate-900); text-decoration: none; transition: color 0.2s;
-    }
-    .blog-card h2 a:hover { color: var(--teal-600); }
-    .blog-card p {
+    }.blog-card h2 a:hover { color: var(--teal-600); }.blog-card p {
       color: var(--slate-500); font-size: 0.93rem; flex: 1; margin-bottom: 1.25rem;
-    }
-    .blog-card .read-more {
+    }.blog-card .read-more {
       color: var(--teal-500); text-decoration: none; font-weight: 600; font-size: 0.9rem;
       display: inline-flex; align-items: center; gap: 0.35rem; transition: gap 0.2s;
-    }
-    .blog-card .read-more:hover { gap: 0.6rem; }
-
-    /* FOOTER */
+    }.blog-card .read-more:hover { gap: 0.6rem; }/* FOOTER */
 
     /* MOBILE */
     @media (max-width: 768px) {
@@ -130,29 +98,7 @@
 <body>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="/" class="logo">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-      River Mountain Systems
-    </a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="/services/it-operations.html">IT</a></li>
-      <li><a href="/services/logistics-events.html">Logistics</a></li>
-      <li><a href="/industries/">Industries</a></li>
-      <li><a href="/pricing.html">Pricing</a></li>
-      <li><a href="/case-studies/">How we work</a></li>
-      <li><a href="/about.html">About</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/blog/">Blog</a></li>
-      <li><a href="/tools/it-health-check.html" class="nav-tool">Free IT Check</a></li>
-      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
-    </ul>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Open navigation menu" aria-expanded="false">
-      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
-    </button>
-  </div>
-</nav>
+<rms-nav></rms-nav>
 
 <!-- PAGE HEADER -->
 <div class="page-header">
@@ -249,28 +195,8 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <a href="../" class="logo">
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-      <rect width="32" height="32" rx="8" fill="#14b8a6"/>
-      <path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <path d="M6 24 C10 22 14 26 18 22 C22 18 26 24 26 24" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none"/>
-    </svg>
-    River Mountain Systems
-  </a>
-  <p style="margin:1rem 0;color:#fff;"><a href="tel:+13606444820" style="color:#fff;text-decoration:none;font-weight:700;">📞 (360) 644-4820</a> · <a href="mailto:joberg@rivermountainsystems.com" style="color:var(--slate-400);text-decoration:none;">joberg@rivermountainsystems.com</a></p>
-  <ul class="footer-links">
-    <li><a href="../services/it-operations.html">IT</a></li>
-    <li><a href="../services/logistics-events.html">Logistics &amp; Events</a></li>
-    <li><a href="../pricing.html">Pricing</a></li>
-    <li><a href="../case-studies/">How we work</a></li>
-    <li><a href="../tools/it-health-check.html">Free Tool</a></li>
-    <li><a href="../about.html">About</a></li>
-    <li><a href="./">Blog</a></li>
-  </ul>
-  <p>&copy; <span class="ry">2026</span> River Mountain Systems. Vancouver, WA · Serving the Portland metro area.</p>
-</footer>
+<rms-footer></rms-footer>
 
-<script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+<script src="/assets/rms-components.js" defer></script>
 </body>
 </html>
