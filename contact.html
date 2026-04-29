@@ -71,12 +71,15 @@
     <a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="#14b8a6"/><path d="M8 22 L12 12 L16 18 L20 10 L24 22" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>River Mountain Systems</a>
     <ul class="nav-links" id="navLinks">
       <li><a href="/services/it-operations.html">IT</a></li>
-      <li><a href="/services/logistics-events.html">Logistics &amp; Events</a></li>
+      <li><a href="/services/logistics-events.html">Logistics</a></li>
+      <li><a href="/industries/">Industries</a></li>
       <li><a href="/pricing.html">Pricing</a></li>
       <li><a href="/case-studies/">How we work</a></li>
-      <li><a href="/tools/it-health-check.html">Free Tool</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html">Contact</a></li>
       <li><a href="/blog/">Blog</a></li>
-      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack('phone_click',{location:'nav'})">📞 (360) 644-4820</a></li>
+      <li><a href="/tools/it-health-check.html" class="nav-tool" style="background:rgba(20,184,166,0.12);color:var(--teal-400)!important;border:1px solid rgba(20,184,166,0.3);padding:0.35rem 0.85rem;border-radius:6px;font-weight:600;">Free IT Check</a></li>
+      <li><a href="tel:+13606444820" class="nav-phone" onclick="if(window.rmsTrack)rmsTrack(&quot;phone_click&quot;,{location:&quot;nav&quot;})">📞 (360) 644-4820</a></li>
     </ul>
     <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
   </div>
@@ -129,16 +132,16 @@
         <input type="text" name="company" id="formCompany" placeholder="Company">
         <input type="tel" name="phone" id="formPhone" placeholder="Phone (optional)">
       </div>
-      <select name="size" id="formSize" required>
-        <option value="">Company size *</option>
+      <select name="size" id="formSize">
+        <option value="">Company size (optional)</option>
         <option>Just me / 1–5 employees</option>
         <option>6–25 employees</option>
         <option>26–50 employees</option>
         <option>51–100 employees</option>
         <option>100+ employees</option>
       </select>
-      <select name="need" id="formNeed" required>
-        <option value="">What do you need? *</option>
+      <select name="need" id="formNeed">
+        <option value="">What do you need? (optional)</option>
         <option>Managed IT support (recurring)</option>
         <option>One-time project (cloud migration, network, etc.)</option>
         <option>Cybersecurity audit or remediation</option>
@@ -149,8 +152,8 @@
         <option>AI integration / automation</option>
         <option>Not sure — want to talk it through</option>
       </select>
-      <select name="budget" id="formBudget" required>
-        <option value="">Approximate budget *</option>
+      <select name="budget" id="formBudget">
+        <option value="">Approximate budget (optional)</option>
         <option>Under $1,000 (one-time)</option>
         <option>$1,000–$5,000 (one-time)</option>
         <option>$5,000–$25,000 (one-time)</option>
@@ -160,8 +163,8 @@
         <option>$5,000+/month (recurring)</option>
         <option>Not sure yet</option>
       </select>
-      <select name="timeline" id="formTimeline" required>
-        <option value="">Timeline *</option>
+      <select name="timeline" id="formTimeline">
+        <option value="">Timeline (optional)</option>
         <option>Emergency — need help now</option>
         <option>This week</option>
         <option>Within 30 days</option>

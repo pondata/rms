@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Response-time SLA matrix | River Mountain Systems</title>
+  <meta name="description" content="The exact response-time targets River Mountain Systems commits to: P1 / P2 / P3 definitions, business-hours, and what happens after hours. Public, plain-English.">
+  <link rel="canonical" href="https://www.rivermountainsystems.com/sla.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');</script>
+  <script src="/assets/rms-track.js" defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{max-width:100%;overflow-x:hidden;}
+    :root{--slate-50:#f8fafc;--slate-200:#e2e8f0;--slate-400:#94a3b8;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.7;-webkit-font-smoothing:antialiased;}
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,0.95);backdrop-filter:blur(12px);}
+    .nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;height:64px;}
+    .logo{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:#fff;font-weight:700;}
+    .nav-back{color:var(--teal-500);text-decoration:none;font-size:0.9rem;font-weight:600;}
+    .container{max-width:880px;margin:0 auto;padding:7rem 1.5rem 3rem;}
+    h1{font-size:2rem;color:var(--slate-900);margin-bottom:0.5rem;line-height:1.25;}
+    .lede{color:var(--slate-600);font-size:1.05rem;margin-bottom:2rem;}
+    h2{font-size:1.3rem;color:var(--slate-900);margin:2.25rem 0 0.75rem;}
+    p{margin-bottom:1rem;color:var(--slate-700);}
+    ul{margin:0.5rem 0 1rem 1.5rem;}
+    ul li{margin-bottom:0.4rem;color:var(--slate-700);}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;background:#fff;border:1px solid var(--slate-200);border-radius:12px;overflow:hidden;}
+    th,td{padding:0.85rem 1rem;text-align:left;border-bottom:1px solid var(--slate-200);font-size:0.95rem;vertical-align:top;}
+    th{background:var(--slate-50);font-weight:700;color:var(--slate-900);}
+    tr:last-child td{border-bottom:none;}
+    .priority{font-weight:700;}
+    .p1{color:#dc2626;}
+    .p2{color:#d97706;}
+    .p3{color:var(--teal-600);}
+    .meta{color:var(--slate-400);font-size:0.85rem;margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--slate-200);}
+    a{color:var(--teal-600);}
+    .cta{display:inline-block;background:var(--teal-500);color:#fff;padding:0.85rem 1.75rem;border-radius:8px;font-weight:600;text-decoration:none;margin-top:1rem;}
+    .cta:hover{background:var(--teal-600);}
+    @media(max-width:600px){table{font-size:0.85rem;}th,td{padding:0.6rem 0.7rem;}}
+  </style>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="logo">
+  <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#0d9488"/><path d="M7 23 L12 11 L16 18 L20 9 L25 23" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  River Mountain Systems
+</a><a href="/" class="nav-back">← Home</a></div></nav>
+
+<div class="container">
+  <h1>Response-time SLA matrix</h1>
+  <p class="lede">The exact targets we commit to in every managed IT engagement. Public on purpose — so you can hold us to them, and so you know what to expect before you sign.</p>
+
+  <h2>Business hours</h2>
+  <p><strong>Mon–Fri, 8a–6p Pacific Time.</strong> Federal holidays observed. Justin answers the phone directly during these hours.</p>
+  <p>Outside business hours: voicemail at <a href="tel:+13606444820">(360) 644-4820</a> for any P1 incident (see below). Routine requests wait until the next business day.</p>
+
+  <h2>Priority definitions</h2>
+  <table>
+    <thead>
+      <tr><th>Priority</th><th>Definition</th><th>Examples</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="priority p1">P1 — Critical</td>
+        <td>Production-stopping. The business cannot operate.</td>
+        <td>Whole network down · email tenant locked out · ransomware in progress · file server offline during work hours</td>
+      </tr>
+      <tr>
+        <td class="priority p2">P2 — High</td>
+        <td>Significant impairment. Workarounds exist but the impact is felt across the team.</td>
+        <td>One critical app failing for multiple users · printer/scanner queues for a department · phishing wave landing in inboxes · backup job failing</td>
+      </tr>
+      <tr>
+        <td class="priority p3">P3 — Standard</td>
+        <td>Single user or routine. Annoying but not blocking.</td>
+        <td>One user can't print · password reset · new laptop setup · SaaS license request · "I have a question about Outlook"</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Response-time commitments</h2>
+  <table>
+    <thead>
+      <tr><th>Priority</th><th>First response</th><th>Active work begins</th><th>Target resolution</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="priority p1">P1 — Critical</td>
+        <td>Same business day. After-hours: voicemail-triage callback by next business morning unless we've agreed to 24/7 (separate engagement).</td>
+        <td>Within 1 business hour of first response</td>
+        <td>4 business hours where humanly possible; honest hourly updates if longer</td>
+      </tr>
+      <tr>
+        <td class="priority p2">P2 — High</td>
+        <td>Same business day</td>
+        <td>Within 4 business hours</td>
+        <td>1 business day</td>
+      </tr>
+      <tr>
+        <td class="priority p3">P3 — Standard</td>
+        <td>Within 1 business day</td>
+        <td>Scheduled at next available slot</td>
+        <td>3 business days</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>What "first response" means</h2>
+  <p>A real human acknowledges the ticket — phone, SMS, or email — confirming we have it, who's working it, and an honest ETA. Not an automated "your ticket has been received."</p>
+
+  <h2>What "same-day response" means in homepage copy</h2>
+  <p>Until we wire a 24/7 answering service, the homepage uses "same-day response" rather than "15-minute SLA" because Justin is one person. If he's on-site at another client when your P1 hits, the response window stretches to "as soon as he's free." This page is the honest version of that promise.</p>
+  <p>If a 15-minute SLA matters more to you than the rest of our wedge (posted price, paid pilot, no clawback), say so on the consult — we'll either decline the engagement or quote a 24/7 tier that includes a separate answering-service line.</p>
+
+  <h2>How to reach us</h2>
+  <ul>
+    <li><strong>P1 (critical):</strong> Call <a href="tel:+13606444820">(360) 644-4820</a>. If voicemail, leave a message starting with "P1" and we'll triage on next listen.</li>
+    <li><strong>P2 (high):</strong> Call or email <a href="mailto:joberg@rivermountainsystems.com">joberg@rivermountainsystems.com</a> with "P2" in the subject.</li>
+    <li><strong>P3 (standard):</strong> Email is fine.</li>
+  </ul>
+
+  <h2>What if we miss an SLA</h2>
+  <p>It will happen occasionally. When it does, we tell you. We document the miss in the monthly report, explain what caused it, and credit the next month's invoice for any P1 miss greater than 4 business hours past target. No clawback, no fine print — just the credit.</p>
+
+  <p style="margin-top:2.5rem;"><a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" class="cta">Book a consult to discuss your environment</a></p>
+  <p>Related: <a href="/pilot-terms.html">30-day pilot terms</a> · <a href="/pricing.html">Full pricing</a></p>
+
+  <p class="meta">Last reviewed <span class="ry">2026</span>. We update this page when our coverage model changes (e.g., adding 24/7 tier, hiring fractional L1). Your signed Master Services Agreement and Statement of Work govern in case of conflict with this page.</p>
+</div>
+<script>document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+</body>
+</html>
