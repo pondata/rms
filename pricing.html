@@ -135,7 +135,7 @@
       padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;
       font-size: 0.95rem; text-decoration: none; transition: all 0.2s; border: none; cursor: pointer; justify-content: center;
     }
-    .btn-primary { background: var(--teal-500); color: #fff; }
+    .btn-primary { background: var(--teal-500); color: #0f172a; }
     .btn-primary:hover { background: var(--teal-600); }
     .btn-outline { background: transparent; color: var(--slate-800); border: 1px solid var(--slate-300); }
     .btn-outline:hover { border-color: var(--slate-500); }
@@ -505,5 +505,53 @@
 <!-- WU:FOOTER:END -->
 
 <script id="ry-update">document.querySelectorAll(".ry").forEach(function(e){e.textContent=new Date().getFullYear();});</script>
+
+<!-- Service + Offer JSON-LD for SERP rich-result eligibility -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Managed IT Services",
+  "name": "Managed IT Services — River Mountain Systems",
+  "description": "Founder-led managed IT, cloud, cybersecurity, and logistics technology for Vancouver, WA and the Portland metro. Posted prices, signed SLA, 30-day paid pilot.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "River Mountain Systems",
+    "url": "https://www.rivermountainsystems.com",
+    "telephone": "+13606444820",
+    "email": "joberg@rivermountainsystems.com"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Vancouver, WA"},
+    {"@type": "AdministrativeArea", "name": "Clark County, WA"},
+    {"@type": "City", "name": "Camas, WA"},
+    {"@type": "City", "name": "Battle Ground, WA"},
+    {"@type": "City", "name": "Beaverton, OR"},
+    {"@type": "City", "name": "Portland, OR"}
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Managed IT — Standard",
+      "description": "Per-user managed IT with same-day response, SLA, monitoring, patching, and security baseline. 10-user minimum.",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "99",
+        "priceCurrency": "USD",
+        "unitText": "user/month"
+      },
+      "eligibleQuantity": {"@type": "QuantitativeValue", "minValue": 10, "unitText": "users"},
+      "availability": "https://schema.org/InStock"
+    },
+    {"@type": "Offer", "name": "30-min Discovery Consult", "description": "Free 30-minute discovery call. No pitch.", "price": "0", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "IT Health Check", "description": "One-time IT environment audit — security, backups, monitoring, network, M365/Workspace posture — with a written priority list.", "price": "497", "priceCurrency": "USD"},
+    {"@type": "Offer", "name": "Cloud Migration", "description": "M365 / Google Workspace migration, on-prem-to-cloud server moves, mail platform consolidation.", "priceSpecification": {"@type": "PriceSpecification", "price": "3000", "priceCurrency": "USD", "minPrice": "3000"}},
+    {"@type": "Offer", "name": "Network Deployment", "description": "Office and jobsite network design, install, configuration. Firewall, VLANs, access points, VPN.", "priceSpecification": {"@type": "PriceSpecification", "price": "5000", "priceCurrency": "USD", "minPrice": "5000"}},
+    {"@type": "Offer", "name": "Cybersecurity Sprint", "description": "2-week focused remediation of the highest-priority security gaps from the IT Health Check.", "priceSpecification": {"@type": "PriceSpecification", "price": "4500", "priceCurrency": "USD", "minPrice": "4500"}},
+    {"@type": "Offer", "name": "WMS / TMS / ERP Implementation", "description": "WMS, TMS, or ERP discovery, configuration, integration, training, post-go-live cleanup.", "priceSpecification": {"@type": "PriceSpecification", "price": "25000", "priceCurrency": "USD", "minPrice": "25000"}},
+    {"@type": "Offer", "name": "Event Operations Technology", "description": "On-site WiFi, credentialing, check-in, parking flow, dispatch coordination for festivals and large gatherings.", "priceSpecification": {"@type": "PriceSpecification", "price": "5000", "priceCurrency": "USD", "minPrice": "5000"}}
+  ]
+}
+</script>
 </body>
 </html>
