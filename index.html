@@ -1165,9 +1165,22 @@
             return;
           }
           btn.textContent = 'Sending…'; btn.disabled = true;
+          // Pad to all 9 fields the long form sends so the Apps Script row aligns to its
+          // expected columns and a column-offset / missing-key writer can't drop the phone.
+          // Embed the phone in 'message' as a belt-and-suspenders so it's visible no matter
+          // which column Apps Script writes to.
+          var name = document.getElementById('cbName').value;
+          var phone = document.getElementById('cbPhone').value;
           var fd = new FormData();
-          fd.append('name', document.getElementById('cbName').value);
-          fd.append('phone', document.getElementById('cbPhone').value);
+          fd.append('name', name);
+          fd.append('email', 'callback-no-email@rivermountainsystems.com');
+          fd.append('company', '');
+          fd.append('phone', phone);
+          fd.append('size', '');
+          fd.append('need', 'Phone callback');
+          fd.append('budget', '');
+          fd.append('timeline', 'Callback request');
+          fd.append('message', '📞 CALLBACK REQUEST — Name: ' + name + ' · Phone: ' + phone + ' · No email provided.');
           fd.append('source', 'callback_mini');
           fetch('https://script.google.com/macros/s/AKfycbx-ObsqmyFUYUeFsQjVri4lt42scvHeztXXDU43PCxDbnLeuc1RLZEhW1ME21V2YBUXCQ/exec', {method:'POST', mode:'no-cors', body: fd}).then(function(){
             if (window.rmsTrack) rmsTrack('form_submit', {form:'callback_mini'});
