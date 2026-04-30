@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ops launchpad — Justin only</title>
+  <meta name="description" content="Internal ops launchpad for Justin Oberg.">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/rms-nav.css">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{max-width:100%;overflow-x:hidden;}
+    :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-400:#2dd4bf;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.5;}
+    .container{max-width:1000px;margin:0 auto;padding:6rem 1.5rem 3rem;}
+    h1{font-size:1.6rem;color:var(--slate-900);margin-bottom:0.4rem;}
+    .lede{color:var(--slate-600);margin-bottom:2rem;font-size:0.95rem;}
+    .lede strong{color:var(--amber-500);}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2rem;}
+    .group h2{font-size:0.78rem;color:var(--slate-500);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin:1.5rem 0 0.6rem;}
+    .group:first-child h2{margin-top:0;}
+    .tile{background:#fff;border:1px solid var(--slate-200);border-radius:10px;padding:1rem 1.1rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.25rem;transition:border-color 0.15s,transform 0.15s;}
+    .tile:hover{border-color:var(--teal-500);transform:translateY(-1px);}
+    .tile-name{font-weight:700;color:var(--slate-900);font-size:0.95rem;}
+    .tile-sub{color:var(--slate-500);font-size:0.83rem;}
+    .tile-url{color:var(--teal-600);font-size:0.75rem;font-family:'SF Mono',Menlo,Consolas,monospace;margin-top:0.25rem;word-break:break-all;}
+    .tile.action{background:var(--slate-900);color:#fff;border-color:var(--slate-900);}
+    .tile.action .tile-name{color:#fff;}
+    .tile.action .tile-sub{color:var(--slate-400);}
+    .tile.action:hover{background:#1e293b;border-color:var(--teal-500);}
+    .note{background:#fef3c7;border:1px solid var(--amber-500);border-radius:8px;padding:0.75rem 1rem;font-size:0.85rem;color:#78350f;margin-bottom:1.5rem;}
+    code{font-family:'SF Mono',Menlo,Consolas,monospace;font-size:0.85em;background:rgba(15,23,42,0.06);padding:0.1em 0.3em;border-radius:3px;}
+  </style>
+</head>
+<body>
+
+<rms-nav></rms-nav>
+
+<main class="container">
+
+  <h1>Ops launchpad</h1>
+  <p class="lede"><strong>Justin only.</strong> noindex'd; no auth — anyone with the URL can see this page, but no secrets live here. Bookmark it (⌘D) and you have one-tap access to every operational tool. Edit the page to add/remove tiles.</p>
+
+  <div class="note">
+    <strong>Privacy:</strong> this page itself is harmless (just links). The links open external dashboards that already have their own logins. No password lives here. If a stranger lands on this URL, the worst they see is a list of tools you use.
+  </div>
+
+  <div class="group">
+    <h2>Daily action</h2>
+    <div class="grid">
+      <a class="tile action" href="https://docs.google.com/spreadsheets/" target="_blank" rel="noopener">
+        <div class="tile-name">📊 Lead inbox (Google Sheet)</div>
+        <div class="tile-sub">Where every form submission lands. Check daily.</div>
+        <div class="tile-url">docs.google.com → your RMS sheet</div>
+      </a>
+      <a class="tile action" href="https://app.cal.com/event-types" target="_blank" rel="noopener">
+        <div class="tile-name">📅 Cal.com bookings</div>
+        <div class="tile-sub">Upcoming consults, edit availability, event types.</div>
+        <div class="tile-url">app.cal.com</div>
+      </a>
+      <a class="tile action" href="https://mail.google.com/" target="_blank" rel="noopener">
+        <div class="tile-name">📧 joberg@rivermountainsystems.com</div>
+        <div class="tile-sub">Inbox.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Marketing / acquisition</h2>
+    <div class="grid">
+      <a class="tile" href="https://analytics.google.com/" target="_blank" rel="noopener">
+        <div class="tile-name">GA4 — Analytics</div>
+        <div class="tile-sub">Traffic, conversions, sources. Property G-L25PDRR5GL.</div>
+      </a>
+      <a class="tile" href="https://ads.google.com/aw/overview" target="_blank" rel="noopener">
+        <div class="tile-name">Google Ads</div>
+        <div class="tile-sub">Campaign mgmt, spend, search-terms report.</div>
+      </a>
+      <a class="tile" href="https://business.google.com/" target="_blank" rel="noopener">
+        <div class="tile-name">Google Business Profile</div>
+        <div class="tile-sub">Reviews, posts, photos, Q&amp;A. Local pack ranking lever.</div>
+      </a>
+      <a class="tile" href="https://clarity.microsoft.com/" target="_blank" rel="noopener">
+        <div class="tile-name">Microsoft Clarity</div>
+        <div class="tile-sub">Session recordings, heatmaps, rage-clicks. ID wigv6g8n69.</div>
+      </a>
+      <a class="tile" href="https://www.linkedin.com/campaignmanager/" target="_blank" rel="noopener">
+        <div class="tile-name">LinkedIn Insight</div>
+        <div class="tile-sub">Insight Tag 9256716. B2B retargeting if/when ready.</div>
+      </a>
+      <a class="tile" href="https://search.google.com/search-console" target="_blank" rel="noopener">
+        <div class="tile-name">Search Console</div>
+        <div class="tile-sub">Organic search performance, sitemap status, crawl errors.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Code / site</h2>
+    <div class="grid">
+      <a class="tile" href="https://github.com/pondata/rms" target="_blank" rel="noopener">
+        <div class="tile-name">GitHub repo</div>
+        <div class="tile-sub">pondata/rms · master deploys to Pages on push.</div>
+      </a>
+      <a class="tile" href="https://github.com/pondata/rms/actions" target="_blank" rel="noopener">
+        <div class="tile-name">GitHub Actions</div>
+        <div class="tile-sub">Workflows. Add the form-pipeline-monitor here.</div>
+      </a>
+      <a class="tile" href="https://github.com/pondata/rms/pulls" target="_blank" rel="noopener">
+        <div class="tile-name">Open PRs</div>
+        <div class="tile-sub">Swarm work in flight. Merge to deploy.</div>
+      </a>
+      <a class="tile" href="https://script.google.com/" target="_blank" rel="noopener">
+        <div class="tile-name">Apps Script editor</div>
+        <div class="tile-sub">The form-pipeline backend. Edit doPost here.</div>
+      </a>
+      <a class="tile" href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener">
+        <div class="tile-name">Public booking page</div>
+        <div class="tile-sub">cal.com/rivermountainsystems · what prospects see.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Money / legal</h2>
+    <div class="grid">
+      <a class="tile" href="https://dashboard.stripe.com/" target="_blank" rel="noopener">
+        <div class="tile-name">Stripe</div>
+        <div class="tile-sub">Set up when first invoice goes out. Keep payouts here.</div>
+      </a>
+      <a class="tile" href="https://www.hiscox.com/customer" target="_blank" rel="noopener">
+        <div class="tile-name">Hiscox (insurance)</div>
+        <div class="tile-sub">Policy P106.395.009.1 · E&amp;O $1M · COI on request via contact@hiscox.com.</div>
+      </a>
+      <a class="tile" href="https://wabiz.org/" target="_blank" rel="noopener">
+        <div class="tile-name">WA business license</div>
+        <div class="tile-sub">Annual filings, UBI lookup.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Site debug</h2>
+    <div class="grid">
+      <a class="tile" href="/contact.html" target="_blank">
+        <div class="tile-name">Live contact form</div>
+        <div class="tile-sub">Test submissions land in the Sheet via Apps Script.</div>
+      </a>
+      <a class="tile" href="/tools/it-health-check.html" target="_blank">
+        <div class="tile-name">IT Health Check tool</div>
+        <div class="tile-sub">12-question scorecard quiz.</div>
+      </a>
+      <a class="tile" href="/samples/it-health-check-sample.html" target="_blank">
+        <div class="tile-name">Sample report</div>
+        <div class="tile-sub">Redacted example deliverable.</div>
+      </a>
+      <a class="tile" href="/refer.html" target="_blank">
+        <div class="tile-name">Referral link generator</div>
+        <div class="tile-sub">UTM-tagged share links.</div>
+      </a>
+      <a class="tile" href="/sitemap.xml" target="_blank">
+        <div class="tile-name">sitemap.xml</div>
+        <div class="tile-sub">Submitted to Google Search Console.</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="group">
+    <h2>Notes</h2>
+    <p style="color:var(--slate-700);font-size:0.92rem;line-height:1.7;">
+      • This page replaces "should we build a real admin login?" — for a 1-person shop, a bookmark hub beats an auth system. Add tiles by editing <code>/ops.html</code> and pushing.<br>
+      • If you eventually need real internal tooling (client portal, ticket inbox, billing automation), that's when a PSA like Atera or HaloPSA earns its $129/mo. Don't build it yourself.<br>
+      • The form-pipeline-monitor GitHub Actions workflow is sitting in <code>.swarm/manual-setup/form-pipeline-monitor.yml.txt</code> — install via the Actions tab when ready.
+    </p>
+  </div>
+
+</main>
+
+<rms-footer></rms-footer>
+<script src="/assets/rms-components.js" defer></script>
+</body>
+</html>
