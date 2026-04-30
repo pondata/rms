@@ -58,10 +58,10 @@
         <div class="tile-sub">Where every form submission lands. Check daily.</div>
         <div class="tile-url">docs.google.com → your RMS sheet</div>
       </a>
-      <a class="tile action" href="https://app.cal.com/event-types" target="_blank" rel="noopener">
+      <a class="tile action" href="https://app.cal.com/bookings/upcoming" target="_blank" rel="noopener">
         <div class="tile-name">📅 Cal.com bookings</div>
-        <div class="tile-sub">Upcoming consults, edit availability, event types.</div>
-        <div class="tile-url">app.cal.com</div>
+        <div class="tile-sub">Each booking shows a 📍 line in "Additional notes" with which page + button → source attribution. Also UTM tags in the booking metadata.</div>
+        <div class="tile-url">app.cal.com/bookings</div>
       </a>
       <a class="tile action" href="https://mail.google.com/" target="_blank" rel="noopener">
         <div class="tile-name">📧 joberg@rivermountainsystems.com</div>
@@ -171,6 +171,21 @@
   </div>
 
   <div class="group">
+    <h2>How to see which button a Cal.com booker clicked</h2>
+    <p style="color:var(--slate-700);font-size:0.92rem;line-height:1.7;">
+      Every Cal.com link on the site is auto-decorated client-side with attribution params. When a booking lands, look at the booking detail page in Cal.com — two places will tell you the source:
+    </p>
+    <ol style="margin:0.5rem 0 0.75rem 1.5rem;color:var(--slate-700);font-size:0.92rem;line-height:1.7;">
+      <li><strong>Additional notes field</strong> on the booking — pre-filled with a line like:<br>
+        <code>📍 Pricing → "Buy Health Check" (hero_cta)</code><br>
+        The buyer can edit it, but most don't. This appears in the booking confirmation email too.
+      </li>
+      <li><strong>UTM params</strong> on the booking record — Cal.com stores <code>utm_source=site</code>, <code>utm_medium=cta</code>, <code>utm_campaign=&lt;page-slug&gt;</code>, <code>utm_content=&lt;button-location&gt;</code>. Visible in the booking metadata panel and in any webhook payload (Zapier, Make, GA4 Measurement Protocol if you set one up).</li>
+    </ol>
+    <p style="color:var(--slate-700);font-size:0.92rem;line-height:1.7;">
+      Decoration happens in <code>/assets/rms-components.js</code>. To override per-link (e.g. when the auto-detected source is wrong), add <code>data-cal-source="my-label"</code> to the <code>&lt;a&gt;</code>.
+    </p>
+
     <h2>Notes</h2>
     <p style="color:var(--slate-700);font-size:0.92rem;line-height:1.7;">
       • This page replaces "should we build a real admin login?" — for a 1-person shop, a bookmark hub beats an auth system. Add tiles by editing <code>/ops.html</code> and pushing.<br>
