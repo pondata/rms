@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample IT Health Check report (redacted) | River Mountain Systems</title>
+  <meta name="description" content="An illustrative redacted IT Health Check report from River Mountain Systems. The format and depth you'd receive from a real $497 audit. Vancouver, WA.">
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://www.rivermountainsystems.com/samples/it-health-check-sample.html">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0d9488">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/rms-nav.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L25PDRR5GL"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L25PDRR5GL');</script>
+  <script src="/assets/rms-track.js" defer></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html,body{max-width:100%;overflow-x:hidden;}
+    :root{--slate-50:#f8fafc;--slate-100:#f1f5f9;--slate-200:#e2e8f0;--slate-300:#cbd5e1;--slate-400:#94a3b8;--slate-500:#64748b;--slate-600:#475569;--slate-700:#334155;--slate-800:#1e293b;--slate-900:#0f172a;--teal-500:#14b8a6;--teal-600:#0d9488;--amber-500:#f59e0b;--red-500:#ef4444;}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--slate-800);background:var(--slate-50);line-height:1.65;-webkit-font-smoothing:antialiased;}
+    .doc{max-width:780px;margin:0 auto;padding:6rem 1.5rem 4rem;}
+    .banner{background:#fef3c7;border:1px solid var(--amber-500);border-radius:10px;padding:0.85rem 1.1rem;margin-bottom:2rem;font-size:0.9rem;color:#78350f;}
+    .banner strong{color:#78350f;}
+    h1{font-size:2rem;color:var(--slate-900);margin-bottom:0.5rem;line-height:1.25;}
+    .lede{color:var(--slate-600);font-size:1.05rem;margin-bottom:2rem;}
+    .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:0.5rem 1.5rem;background:#fff;border:1px solid var(--slate-200);border-radius:10px;padding:1.25rem;margin-bottom:2rem;font-size:0.92rem;}
+    .meta dt{color:var(--slate-500);font-weight:600;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:0.15rem;}
+    .meta dd{color:var(--slate-800);font-weight:600;}
+    .score{display:flex;align-items:center;gap:1.25rem;background:#fff;border:2px solid var(--amber-500);border-radius:14px;padding:1.5rem;margin-bottom:2rem;}
+    .score-num{font-size:3rem;font-weight:800;color:var(--amber-500);line-height:1;}
+    .score-detail h3{font-size:1.1rem;margin-bottom:0.25rem;color:var(--slate-900);}
+    .score-detail p{color:var(--slate-600);font-size:0.92rem;margin:0;}
+    h2{font-size:1.4rem;color:var(--slate-900);margin:2.5rem 0 0.75rem;border-bottom:2px solid var(--slate-200);padding-bottom:0.4rem;}
+    h3{font-size:1.05rem;color:var(--slate-900);margin:1.5rem 0 0.4rem;}
+    p{margin-bottom:0.85rem;color:var(--slate-700);}
+    .findings{display:grid;grid-template-columns:1fr;gap:0.8rem;margin:1rem 0 1.5rem;}
+    .finding{background:#fff;border-left:4px solid var(--slate-400);border-top:1px solid var(--slate-200);border-right:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200);border-radius:8px;padding:1rem 1.15rem;}
+    .finding.critical{border-left-color:var(--red-500);}
+    .finding.high{border-left-color:var(--amber-500);}
+    .finding.medium{border-left-color:var(--teal-600);}
+    .finding-head{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;flex-wrap:wrap;}
+    .pill{font-size:0.7rem;font-weight:700;padding:0.15rem 0.55rem;border-radius:999px;text-transform:uppercase;letter-spacing:0.05em;}
+    .pill.critical{background:#fee2e2;color:#991b1b;}
+    .pill.high{background:#fef3c7;color:#78350f;}
+    .pill.medium{background:#ccfbf1;color:#115e59;}
+    .finding h4{font-size:1rem;color:var(--slate-900);margin:0;flex:1;}
+    .finding p{font-size:0.9rem;color:var(--slate-700);margin:0.25rem 0 0;}
+    .finding .impact{color:var(--slate-500);font-size:0.85rem;margin-top:0.4rem;font-style:italic;}
+    table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--slate-200);border-radius:10px;overflow:hidden;margin:1rem 0;font-size:0.9rem;}
+    th,td{padding:0.7rem 0.9rem;text-align:left;border-bottom:1px solid var(--slate-200);vertical-align:top;}
+    th{background:var(--slate-50);font-weight:700;color:var(--slate-900);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.05em;}
+    tr:last-child td{border-bottom:none;}
+    .priority{margin:0.4rem 0;padding-left:1rem;color:var(--slate-700);}
+    .priority strong{color:var(--slate-900);}
+    .footer-cta{margin-top:3rem;padding:1.75rem;background:var(--slate-900);color:#fff;border-radius:14px;text-align:center;}
+    .footer-cta h3{color:#fff;margin-bottom:0.5rem;}
+    .footer-cta p{color:var(--slate-300);margin-bottom:1.25rem;}
+    .footer-cta a{display:inline-block;padding:0.85rem 1.75rem;border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;background:var(--teal-500);color:#0f172a;}
+    .footer-cta a + a{margin-left:0.5rem;background:transparent;color:#fff;border:1px solid var(--slate-600);}
+    @media print{nav,rms-nav,rms-footer,.print-hide{display:none!important;}body{background:#fff;}.doc{padding:1.5rem;max-width:100%;}}
+    @media (max-width:640px){.score{flex-direction:column;text-align:center;}.score-num{font-size:2.5rem;}}
+  </style>
+</head>
+<body>
+
+<rms-nav></rms-nav>
+
+<main class="doc">
+
+  <div class="banner">
+    <strong>Sample report.</strong> This is a redacted example of the IT Health Check deliverable — based on a fictional 22-person Vancouver-area firm. Real reports are tailored to your environment, identify your specific gaps, and arrive within 5 business days of the audit.
+  </div>
+
+  <h1>IT Health Check Report</h1>
+  <p class="lede">A point-in-time assessment of cybersecurity posture, backup health, network hygiene, and licensing exposure.</p>
+
+  <dl class="meta">
+    <div><dt>Client</dt><dd>[Redacted] · 22 employees</dd></div>
+    <div><dt>Industry</dt><dd>Construction / GC</dd></div>
+    <div><dt>Audit window</dt><dd>2 hrs onsite + 4 hrs analysis</dd></div>
+    <div><dt>Endpoints reviewed</dt><dd>22 (18 Windows · 4 macOS)</dd></div>
+    <div><dt>Auditor</dt><dd>Justin Oberg, RMS</dd></div>
+    <div><dt>Report version</dt><dd>v1.0</dd></div>
+  </dl>
+
+  <div class="score">
+    <div class="score-num">62 / 100</div>
+    <div class="score-detail">
+      <h3>Moderate exposure — significant gaps, no active incidents.</h3>
+      <p>Score reflects 6 high-severity findings and 4 medium-severity findings against a baseline of 40 controls. No critical breaches in evidence; recommended remediation timeline is 90 days.</p>
+    </div>
+  </div>
+
+  <h2>Executive summary</h2>
+  <p>Your environment is operationally functional but carries above-average risk in three areas: <strong>backup verification</strong>, <strong>endpoint protection consistency</strong>, and <strong>privileged-account hygiene</strong>. None of the findings are emergencies, but the combination would slow recovery from a ransomware event by an estimated 4–6 business days versus a hardened environment. The 30-day stabilization plan in §6 closes the highest-impact gaps without requiring net-new licensing.</p>
+
+  <h2>1. Critical findings (resolve in &lt; 30 days)</h2>
+  <div class="findings">
+    <div class="finding critical">
+      <div class="finding-head"><span class="pill critical">Critical</span><h4>Local-admin account shared by 4 users</h4></div>
+      <p>The Windows local-admin account "office-admin" is in active use on 14 of 18 endpoints. Same password since 2023.</p>
+      <p class="impact">Impact: a single phishing compromise on any user grants admin on the entire fleet. Lateral-movement risk is high.</p>
+    </div>
+    <div class="finding critical">
+      <div class="finding-head"><span class="pill critical">Critical</span><h4>Backup verification: 0 successful test-restores in 18 months</h4></div>
+      <p>Datto/M365 backups are running but no recovery has been tested. Backup retention is 30 days.</p>
+      <p class="impact">Impact: in a real recovery scenario, RTO is unknown. Industry baseline says 30%+ of "working" backups fail when restored.</p>
+    </div>
+  </div>
+
+  <h2>2. High-severity findings</h2>
+  <div class="findings">
+    <div class="finding high">
+      <div class="finding-head"><span class="pill high">High</span><h4>MFA coverage: 11 of 22 M365 accounts</h4></div>
+      <p>Half the M365 user accounts have no MFA enrolled. Conditional Access is configured but not enforced.</p>
+      <p class="impact">Impact: any one credential leak unlocks email + SharePoint without challenge.</p>
+    </div>
+    <div class="finding high">
+      <div class="finding-head"><span class="pill high">High</span><h4>EDR: 3 endpoints with expired Sophos licenses</h4></div>
+      <p>3 laptops show "endpoint protection out of date" — last definition update 4+ weeks ago.</p>
+      <p class="impact">Impact: those 3 devices are running effectively unprotected against signature-based threats.</p>
+    </div>
+    <div class="finding high">
+      <div class="finding-head"><span class="pill high">High</span><h4>Patching: 6 endpoints &gt; 90 days behind on Windows updates</h4></div>
+      <p>No centralized patch management. Updates are user-discretion and 6 devices have skipped 3+ cumulative updates.</p>
+    </div>
+    <div class="finding high">
+      <div class="finding-head"><span class="pill high">High</span><h4>Procore + Sage: shared credentials across 4 users</h4></div>
+      <p>Construction-management and accounting platforms share login credentials documented in a Google Sheet titled "passwords."</p>
+      <p class="impact">Impact: no audit trail per user, no offboarding control, single shared password as the only barrier.</p>
+    </div>
+  </div>
+
+  <h2>3. Medium-severity findings</h2>
+  <div class="findings">
+    <div class="finding medium">
+      <div class="finding-head"><span class="pill medium">Medium</span><h4>No DKIM/DMARC on outbound email</h4></div>
+      <p>Domain has SPF but no DKIM signing or DMARC policy. Spoofing risk is elevated.</p>
+    </div>
+    <div class="finding medium">
+      <div class="finding-head"><span class="pill medium">Medium</span><h4>3 unmanaged BYOD phones accessing M365</h4></div>
+      <p>Three personal phones are connected to company email with no Intune enrollment or wipe capability.</p>
+    </div>
+    <div class="finding medium">
+      <div class="finding-head"><span class="pill medium">Medium</span><h4>Office firewall on Comcast default firmware</h4></div>
+      <p>The router/firewall has not been updated since installation. Vendor has issued 2 security advisories since.</p>
+    </div>
+    <div class="finding medium">
+      <div class="finding-head"><span class="pill medium">Medium</span><h4>No documented offboarding checklist</h4></div>
+      <p>Two former employees retain active accounts in 1+ SaaS tools. No standard process exists.</p>
+    </div>
+  </div>
+
+  <h2>4. License &amp; spend audit</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Tier</th><th>Active seats</th><th>Paid seats</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Microsoft 365 Business Standard</td><td>Standard</td><td>22</td><td>25</td><td>3 unused seats — refund eligible</td></tr>
+      <tr><td>Procore</td><td>Project Management</td><td>15</td><td>15</td><td>Right-sized</td></tr>
+      <tr><td>Sage 300 CRE</td><td>Construction</td><td>4</td><td>5</td><td>1 unused seat</td></tr>
+      <tr><td>Adobe Creative Cloud</td><td>All Apps</td><td>2</td><td>4</td><td>2 unused — biggest savings opportunity</td></tr>
+      <tr><td>Datto SIRIS backup</td><td>500GB</td><td>—</td><td>—</td><td>Right-sized</td></tr>
+    </tbody>
+  </table>
+  <p>Estimated annual recoverable spend from unused seats: <strong>~$2,400 USD</strong>.</p>
+
+  <h2>5. Network &amp; hardware</h2>
+  <h3>Topology summary</h3>
+  <p>Single-site office network: Comcast cable modem → consumer-grade router → 8-port unmanaged switch → ~30 wired/wireless endpoints. No VLAN separation. No guest WiFi. No wired-vs-wireless trust differentiation.</p>
+  <h3>Hardware lifecycle</h3>
+  <table>
+    <thead><tr><th>Asset class</th><th>Count</th><th>Avg age</th><th>Est. replacement window</th></tr></thead>
+    <tbody>
+      <tr><td>Laptops (Windows)</td><td>18</td><td>3.4 yrs</td><td>4 due in next 12 months</td></tr>
+      <tr><td>Laptops (macOS)</td><td>4</td><td>2.1 yrs</td><td>None imminent</td></tr>
+      <tr><td>Office printer/MFP</td><td>1</td><td>6+ yrs</td><td>Replace in next 6 months — out of vendor support</td></tr>
+      <tr><td>Conference-room display</td><td>1</td><td>4 yrs</td><td>Acceptable</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6. 30-day stabilization plan (priority-ordered)</h2>
+  <p>If you signed a managed-IT pilot tomorrow, here is exactly what gets fixed in the first 30 days, in this order:</p>
+  <ol style="padding-left:1.5rem;color:var(--slate-700);">
+    <li class="priority"><strong>Week 1, Day 1–2:</strong> Deploy a fresh local-admin password per device via LAPS. Disable shared "office-admin" account.</li>
+    <li class="priority"><strong>Week 1, Day 3–5:</strong> Enroll all 22 M365 users in MFA. Enforce Conditional Access. Test 1 phished-credential simulation.</li>
+    <li class="priority"><strong>Week 2:</strong> Renew Sophos on the 3 expired endpoints. Push patch baseline (latest cumulative + driver updates) to all Windows endpoints via RMM.</li>
+    <li class="priority"><strong>Week 3:</strong> Run first verified test-restore from Datto backup. Document RTO. Move "passwords" Google Sheet to 1Password Business.</li>
+    <li class="priority"><strong>Week 4:</strong> Configure DKIM + DMARC. Replace consumer firewall with managed Sophos XGS-87. Enroll 3 BYOD phones in Intune (or remove M365 access). Document offboarding checklist.</li>
+  </ol>
+  <p>Estimated cost (one-time + first-month recurring): <strong>$3,400</strong> · estimated time saved on the next inevitable security event: <strong>~3 business days of downtime</strong>.</p>
+
+  <h2>7. Build vs buy recommendation</h2>
+  <p>For a 22-person GC with no in-house IT, <strong>buy</strong>. Hiring a part-time IT person at $30–50/hr × ~10 hrs/week = $1,300–2,200/mo, with no SLA, no after-hours coverage, and a single-point-of-failure on availability. RMS managed IT at $99 × 22 = $2,178/mo provides equivalent coverage with documented response times, vendor management, and continuity if Justin is unavailable. The math is roughly even on cost; the decisive factor is risk transfer and consistency.</p>
+
+  <h2>What this report is, and isn't</h2>
+  <p>This is the <strong>illustrative format</strong>. A real IT Health Check is tailored to your specific environment, runs against your actual asset list, and identifies your specific gaps — not these example findings. Real reports include screenshots of misconfigured settings (redacted), exact CVE references where relevant, and contact info for vendor escalation paths.</p>
+  <p><strong>What it is not:</strong> a SOC 2 audit, a HIPAA risk assessment, a PCI scope review, or a penetration test. RMS refers those out to specialists.</p>
+
+  <div class="footer-cta">
+    <h3>Want one of these for your environment?</h3>
+    <p>$497 flat. 2-hour onsite + written report. Yours to keep — no obligation, no follow-up sales push.</p>
+    <a href="/contact.html" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'sample_to_buy',location:'sample_report_footer'})">Buy the IT Health Check</a>
+    <a href="https://cal.com/rivermountainsystems" target="_blank" rel="noopener" onclick="if(window.rmsTrack)rmsTrack('cta_click',{label:'sample_to_consult',location:'sample_report_footer'})">Free 30-min consult first</a>
+  </div>
+</main>
+
+<rms-footer></rms-footer>
+<script src="/assets/rms-components.js" defer></script>
+</body>
+</html>
