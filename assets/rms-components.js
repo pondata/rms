@@ -172,4 +172,86 @@
   if (!customElements.get('rms-footer')) {
     customElements.define('rms-footer', RmsFooter);
   }
+
+  // ----- Cal.com link attribution ----------------------------------------
+  // Decorates every <a href*="cal.com/rivermountainsystems"> with UTM + notes
+  // params so each booking arrives stamped with which page + which button it
+  // came from. Justin sees the result in:
+  //   - the Cal.com booking dashboard (UTM source/medium/campaign/content)
+  //   - the booking confirmation email (the "Additional notes" field is
+  //     prefilled with a human-readable source line, which the buyer can edit
+  //     but rarely does)
+  //   - any Cal.com webhook payload sent to GA4 / Slack / Zapier
+  //
+  // Sources (priority, first-wins):
+  //   1. data-cal-source="..."  attribute on the <a>
+  //   2. location:'X' inside the existing onclick rmsTrack call
+  //   3. nearest <section id="...">
+  //   4. nearest heading text (h1/h2/h3)
+  //   5. literal "unknown"
+
+  function deriveCalSource(a) {
+    if (a.dataset.calSource) return a.dataset.calSource;
+    var onclickStr = a.getAttribute('onclick') || '';
+    var m = onclickStr.match(/(?:location|loc)\s*:\s*['"]([^'"]+)['"]/);
+    if (m) return m[1];
+    var sect = a.closest('section');
+    if (sect && sect.id) return sect.id;
+    var head = a.closest('section, article, main, div');
+    while (head) {
+      var h = head.querySelector('h1, h2, h3');
+      if (h && h.textContent.trim()) return h.textContent.trim().slice(0, 50);
+      head = head.parentElement && head.parentElement.closest('section, article, main, div');
+    }
+    return 'unknown';
+  }
+
+  function pageSlug() {
+    var p = location.pathname.replace(/\/$/, '');
+    if (!p || p === '') return 'homepage';
+    return p.replace(/^\//, '').replace(/\.html$/, '').replace(/\//g, '-');
+  }
+
+  function decorateCalLinks() {
+    try {
+      var links = document.querySelectorAll('a[href*="cal.com/rivermountainsystems"]');
+      var slug = pageSlug();
+      var pageLabel = (document.title || '').split('|')[0].trim().slice(0, 50) || slug;
+
+      links.forEach(function (a) {
+        if (a.dataset.calDecorated === '1') return;
+        var src = deriveCalSource(a);
+        var btnText = (a.textContent || '').trim().replace(/^\W+/, '').slice(0, 40);
+
+        try {
+          var url = new URL(a.href);
+          if (!url.searchParams.has('utm_source'))   url.searchParams.set('utm_source', 'site');
+          if (!url.searchParams.has('utm_medium'))   url.searchParams.set('utm_medium', 'cta');
+          if (!url.searchParams.has('utm_campaign')) url.searchParams.set('utm_campaign', slug);
+          if (!url.searchParams.has('utm_content'))  url.searchParams.set('utm_content', src);
+          if (!url.searchParams.has('notes')) {
+            var notes = '📍 ' + pageLabel + ' → "' + btnText + '" (' + src + ')';
+            url.searchParams.set('notes', notes);
+          }
+          a.href = url.toString();
+          a.dataset.calDecorated = '1';
+        } catch (e) { /* malformed href, leave alone */ }
+      });
+    } catch (e) { /* never break a page over this */ }
+  }
+
+  // Run after DOM is ready. rms-components.js loads with defer, so DOM is parsed
+  // by the time we get here, but be defensive.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', decorateCalLinks);
+  } else {
+    decorateCalLinks();
+  }
+  // Re-run if a custom element later injects new Cal links (e.g., rms-footer
+  // adds a Cal CTA in the future). MutationObserver scoped to the body.
+  if (window.MutationObserver) {
+    var mo = new MutationObserver(function () { decorateCalLinks(); });
+    if (document.body) mo.observe(document.body, { childList: true, subtree: true });
+    else document.addEventListener('DOMContentLoaded', function(){ mo.observe(document.body, { childList: true, subtree: true }); });
+  }
 })();
