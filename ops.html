@@ -44,10 +44,62 @@
 <main class="container">
 
   <h1>Ops launchpad</h1>
-  <p class="lede"><strong>Justin only.</strong> noindex'd; no auth — anyone with the URL can see this page, but no secrets live here. Bookmark it (⌘D) and you have one-tap access to every operational tool. Edit the page to add/remove tiles.</p>
+  <p class="lede"><strong>Justin only.</strong> noindex'd; no auth — anyone with the URL can see this page, but no secrets live here. Bookmark it (⌘D) and you have one-tap access to every operational tool.</p>
+
+  <!-- TODAY — single highest-leverage block. Site is built; what matters now is shipping conversations. -->
+  <div style="background:linear-gradient(135deg,#0f172a,#0c2d3e);color:#fff;border-radius:14px;padding:1.75rem 1.75rem 1.5rem;margin-bottom:2rem;border:2px solid var(--teal-500);">
+    <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.4rem;">
+      <span style="font-size:0.72rem;font-weight:800;color:#0f172a;background:var(--teal-400);padding:0.2rem 0.55rem;border-radius:4px;letter-spacing:0.06em;text-transform:uppercase;">TODAY</span>
+      <span style="font-size:0.85rem;color:var(--slate-300);">≈30 min total · in this order</span>
+    </div>
+    <h2 style="font-size:1.3rem;color:#fff;margin:0 0 0.85rem;border:none;padding:0;">The site is sales-ready. Selling is now the bottleneck.</h2>
+
+    <ol style="margin:0 0 0 1.25rem;padding:0;color:var(--slate-200);font-size:0.93rem;line-height:1.65;">
+      <li style="margin-bottom:1.1rem;">
+        <strong style="color:#fff;">Send the proof-asset asks (15 min).</strong>
+        Three messages to Total Transit, Marengo, Load to Ride. One yes = first Google review + first logo + first testimonial. Triples your post-proof close rate.
+        <details style="margin-top:0.5rem;background:rgba(255,255,255,0.05);border-radius:8px;padding:0.85rem 1rem;">
+          <summary style="cursor:pointer;font-weight:600;color:var(--teal-400);font-size:0.88rem;">📋 Tap to see the message — copy &amp; send</summary>
+          <p style="margin:0.85rem 0 0.4rem;color:var(--slate-300);font-size:0.82rem;font-style:italic;">Replace <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.3em;border-radius:3px;">[FIRST_NAME]</code> and <code style="background:rgba(255,255,255,0.1);padding:0.1em 0.3em;border-radius:3px;">[BUSINESS]</code>. SMS or email per recipient.</p>
+          <pre style="background:rgba(0,0,0,0.3);color:#e2e8f0;padding:1rem;border-radius:8px;font-size:0.85rem;line-height:1.55;white-space:pre-wrap;font-family:'SF Mono',Menlo,Consolas,monospace;margin:0.5rem 0;">Hey [FIRST_NAME] — Justin here. I just launched River Mountain Systems — IT + logistics ops for small fleets, built on the 12+ years I spent inside warehouses and server rooms. You're one of three prior clients I trust enough to ask: would you take 4 hours of free IT work OR a $1 nominal-fee project from me at [BUSINESS]?
+
+In exchange I'd ask three things — a Google review on the RMS listing once it verifies, permission to put [BUSINESS]'s name and logo on rivermountainsystems.com, and a 60-second phone testimonial (audio, no video).
+
+If it's not a fit, no hard feelings. Reply here, call (360) 644-4820, or grab time at cal.com/rivermountainsystems.</pre>
+          <p style="margin:0.6rem 0 0;color:var(--slate-400);font-size:0.8rem;">Day-5 nudge if no reply: <em>"Hey [FIRST_NAME] — circling back on the 4-free-hours / $1-project offer for [BUSINESS]. No pressure; just making sure it didn't get buried. Reply yes / no / not now — Justin, (360) 644-4820."</em></p>
+        </details>
+      </li>
+
+      <li style="margin-bottom:1.1rem;">
+        <strong style="color:#fff;">Verify the form pipeline (5 min).</strong>
+        Open the lead inbox Sheet. Search for <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.35em;border-radius:3px;">TRACER</code> or <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.35em;border-radius:3px;">555-PROPER</code> or <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.35em;border-radius:3px;">555-VERBOSE</code>. If rows landed → script works, you're golden. If zero → tell me, every form submission since deploy has been silently lost and we replace the backend now.
+        <a href="https://docs.google.com/spreadsheets/" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.5rem;color:var(--teal-400);font-weight:600;font-size:0.88rem;text-decoration:underline;">Open the Sheet →</a>
+      </li>
+
+      <li style="margin-bottom:1.1rem;">
+        <strong style="color:#fff;">Install the form-pipeline monitor (5 min).</strong>
+        Paste-once, never worry again. GitHub catches future silent failures and emails you within 24 hours.
+        <a href="https://github.com/pondata/rms/actions/new" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.5rem;color:var(--teal-400);font-weight:600;font-size:0.88rem;text-decoration:underline;">GitHub → Actions → "set up a workflow yourself" →</a><br>
+        <span style="font-size:0.83rem;color:var(--slate-400);">Name it <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.3em;border-radius:3px;">form-pipeline-monitor.yml</code> · paste from <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.3em;border-radius:3px;">.swarm/manual-setup/form-pipeline-monitor.yml.txt</code> · commit to master.</span>
+      </li>
+
+      <li style="margin-bottom:0.5rem;">
+        <strong style="color:#fff;">Drive 5 humans to the site this week (~5 min ea).</strong>
+        Pick any. <strong>One outbound message you actually send beats the next code change.</strong>
+        <ul style="margin:0.5rem 0 0 1.1rem;padding:0;color:var(--slate-300);font-size:0.88rem;list-style:disc;line-height:1.6;">
+          <li>DM one Vancouver contractor on LinkedIn the link to <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.3em;border-radius:3px;">/industries/construction-vancouver-wa.html</code></li>
+          <li>Post the <a href="/tools/it-health-check.html" style="color:var(--teal-400);">IT Health Check</a> to one Reddit thread (r/sysadmin, r/msp, r/vancouverwa)</li>
+          <li>Forward the <a href="/samples/it-health-check-sample.html" style="color:var(--teal-400);">sample report</a> to two warm contacts: "would this be useful for your business?"</li>
+          <li>Bump the existing $1.50/day Google Ads campaign to $15/day on "IT support Vancouver WA" (you already approved this; just push the slider)</li>
+          <li>The 8 NetSuite SDN-partner DMs in <code style="background:rgba(255,255,255,0.08);padding:0.1em 0.3em;border-radius:3px;">.swarm/outbound-sdn-partners.md</code> are pre-written — paste &amp; send</li>
+        </ul>
+      </li>
+    </ol>
+    <p style="margin:1rem 0 0;font-size:0.85rem;color:var(--slate-400);font-style:italic;">No more site polish until 5 conversations are in motion. The next code change has lower ROI than one outbound message.</p>
+  </div>
 
   <div class="note">
-    <strong>Privacy:</strong> this page itself is harmless (just links). The links open external dashboards that already have their own logins. No password lives here. If a stranger lands on this URL, the worst they see is a list of tools you use.
+    <strong>Privacy:</strong> this page is harmless — just links. The dashboards have their own logins; no password lives here.
   </div>
 
   <div class="group">
